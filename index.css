@@ -6,7 +6,6 @@ img,
 audio,
 video {
 	max-width: 100%;
-	max-heigth:100%;
 }
 
 * {

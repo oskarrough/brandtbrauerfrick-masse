@@ -56,10 +56,6 @@ video {
 	margin: auto;
 }
 
-.GridOrchestra-box-playButton:hover {
-	transform: rotate(360deg);
-}
-
 .GridOrchestra-box-img,
 .GridOrchestra-box-video {
 	width:100%;

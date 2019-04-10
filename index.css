@@ -22,7 +22,6 @@ video {
 	grid-template-rows: repeat(4, minmax(10rem, 1fr));
 	margin:0;
 	padding:0;
-	border:2px solid black;
 }
 .VideoFrameWrapper {
 	grid-column: 1/3;

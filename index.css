@@ -23,6 +23,7 @@ video {
 }
 
 .GridOrchestra-box {
+	/* avoid cell overlaw on Chrome */
 	overflow: hidden;
 }
 

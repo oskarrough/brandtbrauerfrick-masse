@@ -22,6 +22,10 @@ video {
 	grid-gap:0.3rem;
 }
 
+.GridOrchestra-box {
+	overflow: hidden;
+}
+
 .GridOrchestra  video {
 
 	width:100%;

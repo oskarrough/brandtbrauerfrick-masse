@@ -4,17 +4,42 @@
 
 const videos = document.querySelectorAll("video");
 
+function muteAll() {
+    videos.forEach( video => {
+        video.muted = true;
+    })
+}
+
+function playAll() {
+    videos.forEach(video => {
+        video.play();
+    })   
+}
+
+async function pauseAll() {
+    videos.forEach(video => {
+        video.pause();
+    })
+}
 
 videos.forEach(video => {
-    video.addEventListener("click", event =>{
+    video.addEventListener("click", async (event) => {   
         if (event.target.paused) {
-            playVideo(event.target);
-            showBox(event.target);
+            /* target is paused and requested by user */
+            muteAll();
+            event.target.muted = false;
+            playAll();
         }
-        else {
-            pauseVideo(event.target);
-            hideBox(event.target);
+        else if (!event.target.paused && event.target.muted){
+            /* while current instrument is played, user requests for another instrument */
+            muteAll();
+            event.target.muted = false;       
         }
-        
+
+        else if (!event.target.muted) {
+            /* user pauses currently listened instrument */
+            muteAll();
+            pauseAll();
+        }
     })
-});
+})

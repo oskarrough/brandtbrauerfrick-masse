@@ -23,7 +23,7 @@ async function pauseAll() {
 }
 
 videos.forEach(video => {
-    video.addEventListener("click", async (event) => {   
+    video.addEventListener("click", (event) => {   
         if (event.target.paused) {
             /* target is paused and requested by user */
             muteAll();

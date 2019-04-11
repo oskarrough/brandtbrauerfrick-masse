@@ -22,23 +22,26 @@ function pauseAll() {
     })
 }
 
+function handleClick() {
+
+    if (event.target.paused) {
+    /* target is paused and requested by user */
+        muteAll();
+        event.target.muted = false;
+        playAll();
+    }
+    else if (!event.target.paused && event.target.muted){
+        /* while current instrument is played, user requests for another instrument */
+        muteAll();
+        event.target.muted = false;       
+    }
+    else {
+        /* user pauses currently listened instrument */
+        muteAll();
+        pauseAll();
+    }
+}
+
 videos.forEach(video => {
-    video.addEventListener("click", (event) => {   
-        if (event.target.paused) {
-            /* target is paused and requested by user */
-            muteAll();
-            event.target.muted = false;
-            playAll();
-        }
-        else if (!event.target.paused && event.target.muted){
-            /* while current instrument is played, user requests for another instrument */
-            muteAll();
-            event.target.muted = false;       
-        }
-        else if (!event.target.muted) {
-            /* user pauses currently listened instrument */
-            muteAll();
-            pauseAll();
-        }
-    })
+    video.addEventListener("click", handleClick);
 })

@@ -16,7 +16,7 @@ function playAll() {
     })   
 }
 
-async function pauseAll() {
+function pauseAll() {
     videos.forEach(video => {
         video.pause();
     })
@@ -35,7 +35,6 @@ videos.forEach(video => {
             muteAll();
             event.target.muted = false;       
         }
-
         else if (!event.target.muted) {
             /* user pauses currently listened instrument */
             muteAll();

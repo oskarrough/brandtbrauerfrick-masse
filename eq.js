@@ -45,7 +45,7 @@ function doit() {
 		// c.width = W
 		
 		// motion blur
-    ctx.fillStyle = '#00112204'
+    ctx.fillStyle = '#00112205' // the last two digits indicate alphatransparency
     ctx.fillRect(0, 0, W, H)
 		ctx.save()
 		
@@ -66,11 +66,11 @@ function doit() {
     ctx.strokeStyle = `hsl(${ms / 300}, 50%, 50%)`
 
 		// only render every fourth frame. otherwise its too busy
-    if (frameIndex % 4 === 0) {
+    if (frameIndex % 3 === 0) {
       ctx.beginPath()
       for (i = 0; i < len; i += 2) {
         index = i < len / 2 ? i : len - 1 - i
-        v = 1 - audioData[index] / 256
+        v = 1 - audioData[index] / 256 // change this for intensity
         ctx.lineTo((i / len - 0.5) * equalizerW, v * equalizerH)
       }
       ctx.stroke()
@@ -79,22 +79,22 @@ function doit() {
 		function clouds() {
 			const x = (Math.random() - 0.5) * equalizerW
 			const y = H / 16 - Math.random() * equalizerH
-			ctx.strokeStyle = '#cff'
+			// ctx.strokeStyle = '#cff'
+      ctx.strokeStyle = `hsl(20, ${ms + 50}%, 50%)`
 			ctx.beginPath()
-			for (i = 0; i < 5; i++) {
+			for (i = 0; i < 6; i++) {
 				ctx.lineTo(
-					x + equalizerW / 64 * Math.cos(x + i),
-					y + equalizerW / 64 * Math.sin(x + i)
+					x + equalizerW / 128 * Math.cos(x + i),
+					y + equalizerW / 128 * Math.sin(x + i)
 				)
 			}
 			ctx.closePath()
 			ctx.stroke()
 		}
 
-		clouds()
+    clouds()
 
 		ctx.globalCompositeOperation = 'source-over'
-
 
     ctx.restore()
   }

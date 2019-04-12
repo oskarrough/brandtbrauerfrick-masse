@@ -1,3 +1,6 @@
+// All credit goes to Mathieu 'p01' Henri
+// https://www.youtube.com/watch?v=symlQgdQBTw
+
 const song = document.querySelector('audio')
 song.autoplay = true
 song.loop = true

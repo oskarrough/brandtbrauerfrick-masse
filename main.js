@@ -1,43 +1,54 @@
-const videos = document.querySelectorAll("video");
+const videos = document.querySelectorAll('video')
 
 function muteVideos() {
-	videos.forEach( video => {
-		video.muted = true;
-	})
+  videos.forEach(video => {
+    video.muted = true
+  })
 }
 
 function playVideos() {
-	videos.forEach(video => {
-		video.play();
-	})   
+  videos.forEach(video => {
+    video.play()
+  })
 }
 
 function pauseVideos() {
-	videos.forEach(video => {
-		video.pause();
-	})
+  videos.forEach(video => {
+    video.pause()
+  })
 }
 
 function handleVideoClick() {
-
-	if (event.target.paused) {
-		/* target is paused and requested by user */
-		muteVideos();
-		event.target.muted = false;
-		playVideos();
-	}
-	else if (!event.target.paused && event.target.muted){
-		/* while current instrument is played, user requests for another instrument */
-		muteVideos();
-		event.target.muted = false;       
-	}
-	else {
-		/* user pauses currently listened video */
-		muteVideos();
-		pauseVideos();
-	}
+  if (event.target.paused) {
+    /* target is paused and requested by user */
+    muteVideos()
+    event.target.muted = false
+    playVideos()
+  } else if (!event.target.paused && event.target.muted) {
+    /* while current instrument is played, user requests for another instrument */
+    muteVideos()
+    event.target.muted = false
+  } else {
+    /* user pauses currently listened video */
+    muteVideos()
+    pauseVideos()
+  }
 }
 
 videos.forEach(video => {
-	video.addEventListener("click", handleVideoClick);
+  video.addEventListener('click', handleVideoClick)
+
+  // Events below are for debugging and reference.
+  video.addEventListener('canplay', event => {
+    console.log(`${video.classList[0]} canplay`)
+  })
+  video.addEventListener('play', event => {
+    console.log(`${video.classList[0]} play`)
+  })
+  video.addEventListener('pause', event => {
+    console.log(`${video.classList[0]} pause`)
+  })
+  video.addEventListener('timeupdate', event => {
+    console.log(`${video.classList[0]} timeupdate ${video.currentTime}`)
+  })
 })

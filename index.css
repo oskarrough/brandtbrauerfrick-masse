@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+	font-family: "minion";
+	src: url(assets/MinionPro-Regular.woff);
+}
+
+html {
+	font-family: minion;
+}
+
 body {
   margin: 0;
 }
@@ -39,4 +48,13 @@ video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.CreditsBox {
+	padding-left:0.5rem;
+	overflow:scroll;
+}
+
+.Title {
+	font-size:1.5rem;
 }

@@ -1,21 +1,43 @@
-// play/pause a video = play/pause all videos
-// only clicked video to have sound, others are muted
-// video encoding on low quality
+const videos = document.querySelectorAll("video");
 
-const videos = document.querySelectorAll('video')
+function muteVideos() {
+	videos.forEach( video => {
+		video.muted = true;
+	})
+}
+
+function playVideos() {
+	videos.forEach(video => {
+		video.play();
+	})   
+}
+
+function pauseVideos() {
+	videos.forEach(video => {
+		video.pause();
+	})
+}
+
+function handleVideoClick() {
+
+	if (event.target.paused) {
+		/* target is paused and requested by user */
+		muteVideos();
+		event.target.muted = false;
+		playVideos();
+	}
+	else if (!event.target.paused && event.target.muted){
+		/* while current instrument is played, user requests for another instrument */
+		muteVideos();
+		event.target.muted = false;       
+	}
+	else {
+		/* user pauses currently listened video */
+		muteVideos();
+		pauseVideos();
+	}
+}
 
 videos.forEach(video => {
-  video.addEventListener('click', handleVideoClick)
+	video.addEventListener("click", handleVideoClick);
 })
-
-function handleVideoClick(event) {
-	const paused = event.target.paused
-  console.log({paused})
-  // if (event.target.paused) {
-  //   playVideo(event.target)
-  //   showBox(event.target)
-  // } else {
-  //   pauseVideo(event.target)
-  //   hideBox(event.target)
-  // }
-}

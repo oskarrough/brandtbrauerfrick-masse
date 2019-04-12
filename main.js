@@ -20,14 +20,28 @@ function pauseVideos() {
   })
 }
 
+function addActive(video) {
+  video.classList.add("active");
+}
+
+function removeActive() {
+  if (document.querySelector(".active")) {
+    document.querySelector(".active").classList.remove("active");
+  }
+}
+
 function handleVideoClick() {
   if (event.target.paused) {
     /* target is paused and requested by user */
+    removeActive();
+    addActive(event.target);
     muteVideos()
     event.target.muted = false
     playVideos(event.target.currentTime)
   } else if (!event.target.paused && event.target.muted) {
     /* while current instrument is played, user requests for another instrument */
+    removeActive();
+    addActive(event.target);
     muteVideos()
     event.target.muted = false
   } else {

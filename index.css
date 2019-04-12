@@ -50,6 +50,10 @@ video {
   object-fit: cover;
 }
 
+.active {
+  border:5px solid #C6AA64;
+}
+
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;

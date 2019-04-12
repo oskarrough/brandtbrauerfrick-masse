@@ -6,8 +6,10 @@ function muteVideos() {
   })
 }
 
-function playVideos() {
+function playVideos(currentTime) {
   videos.forEach(video => {
+		console.log(`setting currentTime ${currentTime}`)
+		video.currentTime = currentTime
     video.play()
   })
 }
@@ -23,7 +25,7 @@ function handleVideoClick() {
     /* target is paused and requested by user */
     muteVideos()
     event.target.muted = false
-    playVideos()
+    playVideos(event.target.currentTime)
   } else if (!event.target.paused && event.target.muted) {
     /* while current instrument is played, user requests for another instrument */
     muteVideos()

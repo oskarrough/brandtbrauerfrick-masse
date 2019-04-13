@@ -51,6 +51,7 @@ video {
 }
 
 video::after {
+  content: "HELLO";
 }
 
 .active {

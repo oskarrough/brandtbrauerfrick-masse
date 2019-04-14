@@ -42,22 +42,24 @@ video {
 .GridOrchestra-box--big {
   grid-column: 1/3;
   grid-row: 1/3;
-  position: relative;
 }
 
 .GridOrchestra video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all 0.7s ease-in-out;
 }
 
-video.active {
-  border:4px solid #C6AA64;
+.GridOrchestra video.active {
+  //border:4px solid #C6AA64;
   position: absolute;
   top:0;
   left:0;
   width:50%;
   height:50%;
+  object-fit: contain;
+  background: hsl(0, 0%, 95%)
 }
 
 .CreditsBox {

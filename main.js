@@ -29,17 +29,30 @@ function removeActive() {
     document.querySelector(".active").classList.remove("active");
   }
 }
+function addControls() {
+  if (document.querySelector(".active")) {
+    document.querySelector(".active").controls = true;
+  } 
+}
+function removeControls() {
+  if (document.querySelector(".active")) {
+    document.querySelector(".active").controls = false;
+  } 
+}
 
 function handleVideoClick() {
   if (event.target.paused) {
     /* target is paused and requested by user */
+    addControls();
     removeActive();
     addActive(event.target);
+    event.target.controls = true;
     muteVideos()
     event.target.muted = false
     playVideos(event.target.currentTime)
   } else if (!event.target.paused && event.target.muted) {
     /* while current instrument is played, user requests for another instrument */
+    removeControls();
     removeActive();
     addActive(event.target);
     muteVideos()

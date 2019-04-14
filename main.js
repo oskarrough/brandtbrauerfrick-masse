@@ -46,7 +46,7 @@ function handleVideoClick() {
     addControls();
     removeActive();
     addActive(event.target);
-    event.target.controls = true;
+    addControls();
     muteVideos()
     event.target.muted = false
     playVideos(event.target.currentTime)
@@ -55,6 +55,7 @@ function handleVideoClick() {
     removeControls();
     removeActive();
     addActive(event.target);
+    addControls();
     muteVideos()
     event.target.muted = false
   } else {

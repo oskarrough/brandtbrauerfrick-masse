@@ -45,16 +45,16 @@ function handleVideoClick() {
     /* target is paused and requested by user */
     removeActive();
     addActive(event.target);
-    addControls();
+    //addControls();
     muteVideos()
     event.target.muted = false
     playVideos(event.target.currentTime)
   } else if (!event.target.paused && event.target.muted) {
     /* while current instrument is played, user requests for another instrument */
-    removeControls();
+    //removeControls();
     removeActive();
     addActive(event.target);
-    addControls();
+    //addControls();
     muteVideos()
     event.target.muted = false
   } else {

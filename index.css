@@ -51,8 +51,7 @@ video {
   transition: all 0.7s ease-in-out;
 }
 
-.GridOrchestra video.active {
-  //border:4px solid #C6AA64;
+//.GridOrchestra video.active {
   position: absolute;
   top:0;
   left:0;

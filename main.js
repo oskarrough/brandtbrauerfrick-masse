@@ -59,8 +59,8 @@ function handleVideoClick() {
     event.target.muted = false
   } else {
     // User pauses currently listened video.
-    muteVideos()
-    pauseVideos()
+    muteVideos();
+    pauseVideos();
   }
 }
 

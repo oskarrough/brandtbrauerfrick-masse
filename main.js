@@ -8,8 +8,8 @@ function muteVideos() {
 
 function playVideos(currentTime) {
   videos.forEach(video => {
-		console.log(`setting currentTime ${currentTime}`)
-		video.currentTime = currentTime
+    console.log(`setting currentTime ${currentTime}`)
+    video.currentTime = currentTime
     video.play()
   })
 }

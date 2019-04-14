@@ -43,7 +43,6 @@ function removeControls() {
 function handleVideoClick() {
   if (event.target.paused) {
     /* target is paused and requested by user */
-    addControls();
     removeActive();
     addActive(event.target);
     addControls();

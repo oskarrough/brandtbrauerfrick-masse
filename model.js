@@ -1,8 +1,4 @@
-export {orchestraModel};
-
-const orchestraModel = {};
-
-orchestraModel.ids = [
+export default [
     {
         id:"v1553870910/video2/percussion-close"
     },

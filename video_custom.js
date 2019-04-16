@@ -1,5 +1,4 @@
 const hyper = window.hyperHTML;
-const grid = document.querySelector(".GridOrchestra");
 
 export class VideoCustom extends HTMLElement {
     constructor(){
@@ -8,7 +7,6 @@ export class VideoCustom extends HTMLElement {
         this.state = {};
     }
     connectedCallback(){
-        this.classList.add("GridOrchestra-grid-box");
         this.state.id = this.id;
         this.render();
     }

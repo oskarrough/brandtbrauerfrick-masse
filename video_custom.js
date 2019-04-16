@@ -1,5 +1,4 @@
 const hyper = window.hyperHTML;
-const grid = document.querySelector(".GridOrchestra");
 
 export class VideoCustom extends HTMLElement {
     constructor(){

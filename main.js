@@ -2,6 +2,7 @@ import {VideoCustom} from '/video_custom.js'
 import videosIDs from '/model.js'
 
 const hyper = window.hyperHTML;
+const grid = document.querySelector(".GridOrchestra");
 customElements.define("video-custom", VideoCustom);
 
 class View {

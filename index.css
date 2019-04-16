@@ -34,37 +34,41 @@ video {
   padding: 0.3rem;
 }
 
+<<<<<<< HEAD
+video-custom {
+=======
 .GridOrchestra-box {
 	background: hsl(0, 0%, 95%);
+>>>>>>> master
   /* avoid cell overflow on Chrome */
-  overflow: hidden;
+  overflow: hidden
 }
 
 .GridOrchestra-box--big {
 	grid-column: 1/3;
 	grid-row: 1/3;
-	margin-left: 0.15rem;
+	background: hsl(0, 0%, 2%);
 }
 
 .GridOrchestra video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-	border: 0.3rem solid transparent;
-	/* without this borders break in chrome */
-	border-radius: 1px; 
+  border:0.3rem solid transparent;
+  border-radius: 1px;
+  /*transition: all 0.7s ease-in-out;*/
 }
 
 .GridOrchestra video.active {
-	position: absolute;
-	top: 0.3rem;
-	left: 0.3rem;
-	width: calc(50% - 0.6rem);
-	height: calc(50% - 0.3rem);
-	object-fit: contain;
-	border-color: #ed1a36;
-}
-
+  border-color:red;
+  /*position: absolute;
+  top:0;
+  left:0;
+  width:50%;
+  height:50%;
+  object-fit: contain;
+  background: hsl(0, 0%, 95%)*/
+} 
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;

@@ -3,12 +3,12 @@
 }
 
 @font-face {
-	font-family: "minion";
-	src: url(assets/MinionPro-Regular.woff);
+	font-family: "crimson";
+	src: url(assets/CrimsonText-Regular.ttf);
 }
 
 html {
-	font-family: minion;
+	font-family: crimson;
 }
 
 body {
@@ -22,18 +22,45 @@ video {
   vertical-align: top;
 }
 
+/******** Spinner  *********/
+
+.Spinner {
+	position:fixed;
+	font-size:6rem;
+	top:36vh;
+	left:48vw;
+}
+
+
+.LoadingText {
+	position:fixed;
+	top:47vh;
+	font-size:3rem;
+	width:100vw;
+	text-align:center;
+}
+
+.Spinner.inactive,
+.LoadingText.inactive{
+	display:none;
+}		
+
 /******** Grid  *********/
 
 .GridOrchestra {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  /*grid-template-rows: repeat(4, minmax(0, 1fr));*/
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 0.3rem;
-  padding: 0.3rem;
+  	width: 100vw;
+  	height: 100vh;
+  	display: grid;
+  	grid-template-columns: repeat(4, 1fr);
+  	/*grid-template-rows: repeat(4, minmax(0, 1fr));*/
+  	grid-template-rows: repeat(3, 1fr);
+  	grid-gap: 0.3rem;
+  	padding: 0.3rem;
 }
+
+.GridOrchestra.Loading  {
+	opacity:0.2;
+}	
 
 video-custom {
   /* avoid cell overflow on Chrome */

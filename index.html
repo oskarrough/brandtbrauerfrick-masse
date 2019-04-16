@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-
-    <div class="GridOrchestra">
-  		<video-custom class="GridOrchestra-box" id="v1553870910/video2/percussion-close"></video-custom>
+	  <rough-spinner class="Spinner" interval="100">←↖↑↗→↘↓↙</rough-spinner>
+	  <div class="LoadingText">Loading...</div>
+	  <div class="GridOrchestra Loading">
+		<video-custom class="GridOrchestra-box" id="v1553870910/video2/percussion-close"></video-custom>
   		<video-custom class="GridOrchestra-box" id="v1553870910/video2/moog-wide"></video-custom>
   		<video-custom class="GridOrchestra-box" id="v1553870910/video2/piano-closer"></video-custom>
   		<video-custom class="GridOrchestra-box" id="v1553870910/video2/trombone-wide"></video-custom>
@@ -29,6 +30,8 @@
       		</div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/document-register-element@1.11.0/build/document-register-element.js"></script>
+    <script src="https://rough-spinner.glitch.me/rough-spinner.js"></script>
     <script src="https://unpkg.com/hyperhtml@latest/min.js"></script>
     <script type="module" async src="main.js"></script>
   </body>

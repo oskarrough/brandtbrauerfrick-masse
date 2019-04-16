@@ -1,16 +1,27 @@
 import {VideoCustom} from '/video_custom.js'
 
 const hyper = window.hyperHTML;
-const grid = document.querySelector(".GridOrchestra");
+const grid = document.querySelector(".Loading");
 customElements.define("video-custom", VideoCustom);
 
 class View {
 
   constructor() {
-    this.state = {};
-    grid.querySelectorAll("video").forEach(video => {
-            video.addEventListener("click", this.handleVideoClick.bind(this),false);
-    });
+	this.amountReady = 0;
+	this.videos = grid.querySelectorAll("video"); 
+	this.videos.forEach(video => {
+	video.addEventListener("click", this.handleVideoClick.bind(this),false);
+		video.addEventListener("canplay", () =>  this.handleCanPlay(video));
+  	});
+  }
+
+  handleCanPlay(video) {
+	this.amountReady += 1;
+	if (this.amountReady ===  this.videos.length) {
+		document.querySelector(".Spinner").classList.add("inactive");
+		document.querySelector(".LoadingText").classList.add("inactive");
+		document.querySelector(".Loading").classList.remove("Loading");
+	}
   }
   
   handleVideoClick() {

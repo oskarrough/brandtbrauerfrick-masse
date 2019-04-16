@@ -18,7 +18,6 @@ class View {
   handleCanPlay() {
 	this.amountReady += 1;
 	if (this.amountReady ===  this.videos.length) {
-		document.querySelector(".Spinner").style.display = none;
 		document.querySelector(".Spinner").classList.add("inactive");
 		document.querySelector(".LoadingText").classList.add("inactive");
 		document.querySelector(".Loading").classList.remove("Loading");

@@ -10,7 +10,7 @@ class View {
 	this.amountReady = 0;
 	this.videos = grid.querySelectorAll("video"); 
 	this.videos.forEach(video => {
-	video.addEventListener("click", this.handleVideoClick.bind(this),false);
+		video.addEventListener("click", this.handleVideoClick.bind(this),false);
 		video.addEventListener("canplay", this.handleCanPlay.bind(this),false);
   	});
   }
@@ -18,7 +18,8 @@ class View {
   handleCanPlay() {
 	this.amountReady += 1;
 	if (this.amountReady ===  this.videos.length) {
-		document.querySelector(".Spinner").className = "inactive";
+		document.querySelector(".Spinner").style.display = none;
+		document.querySelector(".Spinner").classList.add("inactive");
 		document.querySelector(".LoadingText").classList.add("inactive");
 		document.querySelector(".Loading").classList.remove("Loading");
 	}

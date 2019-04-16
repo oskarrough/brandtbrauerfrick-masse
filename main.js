@@ -11,11 +11,11 @@ class View {
 	this.videos = grid.querySelectorAll("video"); 
 	this.videos.forEach(video => {
 	video.addEventListener("click", this.handleVideoClick.bind(this),false);
-		video.addEventListener("canplay", () =>  this.handleCanPlay(video));
+		video.addEventListener("canplay", this.handleCanPlay.bind(this),false);
   	});
   }
 
-  handleCanPlay(video) {
+  handleCanPlay() {
 	this.amountReady += 1;
 	if (this.amountReady ===  this.videos.length) {
 		document.querySelector(".Spinner").classList.add("inactive");

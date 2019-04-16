@@ -29,17 +29,13 @@ video {
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, minmax(0, 1fr));
+  /*grid-template-rows: repeat(4, minmax(0, 1fr));*/
+  grid-template-rows: repeate(4, 1fr);
   grid-gap: 0.3rem;
   padding: 0.3rem;
 }
 
-<<<<<<< HEAD
 video-custom {
-=======
-.GridOrchestra-box {
-	background: hsl(0, 0%, 95%);
->>>>>>> master
   /* avoid cell overflow on Chrome */
   overflow: hidden
 }

@@ -24,7 +24,7 @@ video {
 
 /******** Spinner  *********/
 
-.Spinner {
+.Spinner{
 	position:fixed;
 	font-size:6rem;
 	top:36vh;
@@ -59,7 +59,7 @@ video {
 }
 
 .GridOrchestra.Loading  {
-	opacity:0.2;
+	opacity:0.1;
 }	
 
 video-custom {

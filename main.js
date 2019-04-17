@@ -27,9 +27,10 @@ class View {
   handleVideoClick() {
 	  if (event.target.paused) {
 		  /* target is paused and requested by user */
-		  this.hideVideos(event.target);
+		  this.hideAllVideos();
        		  this.removeActive();
        		  this.addActive(event.target);
+		  this.showCurrentActive();
         	  //addControls();
         	  this.muteVideos();
         	  event.target.muted = false;
@@ -53,7 +54,7 @@ class View {
       	}
   }
 
-  showCurrentActive(current) {
+  showCurrentActive() {
 	grid.querySelector(".GridOrchestra video.active").classList.remove("inactive");
   }
 
@@ -61,11 +62,9 @@ class View {
 	grid.querySelector(".GridOrchestra video.active").classList.add("inactive");
   }
 
-  hideVideos(current) {	
+  hideAllVideos(current) {	
 	  grid.querySelectorAll("video").forEach(video => {
-		if (video != current) {
 			video.classList.add("inactive");
-		}
 	  });
   }
 

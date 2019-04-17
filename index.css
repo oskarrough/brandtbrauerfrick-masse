@@ -13,6 +13,7 @@ html {
 
 body {
   margin: 0;
+  background:black;
 }
 
 img,
@@ -135,7 +136,7 @@ video-custom {
        	object-fit:cover; 
 	border:0.2rem solid transparent;
        	border-radius: 1px;
-       	opacity: 0.55;
+       	opacity: 0.40;
        	transition:opacity 0.3s ease-in-out;
 }
 
@@ -159,6 +160,7 @@ video-custom {
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;
+	color:white;
 }
 
 .Title {

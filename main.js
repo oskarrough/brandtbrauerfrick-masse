@@ -72,15 +72,15 @@ class View {
   
   addActive(video) {
 	  video.classList.add('active');
+	  console.log(video.parentNode.firstChild);
 	  video.parentNode.firstChild.classList.add("active"); // InstrumentName
   }
   
   removeActive() {
     if (grid.querySelector(".active")) {
-	    grid.querySelector(".active").classList.remove("active");
+	    grid.querySelector("video.active").classList.remove("active");
+	    console.log(grid.querySelector(".InstrumentName.active"));
 	    grid.querySelector(".InstrumentName.active").classList.remove("active");
-	
-
     }
   }
   

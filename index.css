@@ -86,7 +86,7 @@ video-custom {
 .All{
 	grid-column: 3/7;
 	grid-row: 3/6;
-	background: hsl(0, 0%, 2%);
+	/*background: hsl(0, 0%, 2%);*/
 }
 
 .Percussion {
@@ -160,8 +160,10 @@ video-custom {
   /*transition: all 0.7s ease-in-out;*/
 }
 
+
 .GridOrchestra video.active {
-  border-color:red;
+  /*border-color:red;*/
+  transition:opactiy 0.2s ease-in-out;
   /*position: absolute;
   top:0;
   left:0;
@@ -170,6 +172,10 @@ video-custom {
   object-fit: contain;
   background: hsl(0, 0%, 95%)*/
 } 
+
+.GridOrchestra video.inactive {
+	opacity: 0.5;
+}
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;

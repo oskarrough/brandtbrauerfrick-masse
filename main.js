@@ -27,6 +27,7 @@ class View {
   handleVideoClick() {
 	  if (event.target.paused) {
 		  /* target is paused and requested by user */
+		  this.hideVideos(event.target);
        		  this.removeActive();
        		  this.addActive(event.target);
         	  //addControls();
@@ -37,8 +38,10 @@ class View {
       	 else if (!event.target.paused && event.target.muted) {
          	  /* while current instrument is played, user requests for another instrument */
         	  //removeControls();
+		  this.hidePreviousActive();
        		  this.removeActive();
         	  this.addActive(event.target);
+		  this.showCurrentActive();
         	  //addControls();
         	  this.muteVideos();
         	  event.target.muted = false;
@@ -48,6 +51,22 @@ class View {
        		  this.muteVideos();
        		  this.pauseVideos();
       	}
+  }
+
+  showCurrentActive(current) {
+	grid.querySelector(".GridOrchestra video.active").classList.remove("inactive");
+  }
+
+  hidePreviousActive() {
+	grid.querySelector(".GridOrchestra video.active").classList.add("inactive");
+  }
+
+  hideVideos(current) {	
+	  grid.querySelectorAll("video").forEach(video => {
+		if (video != current) {
+			video.classList.add("inactive");
+		}
+	  });
   }
 
   muteVideos() {
@@ -72,21 +91,19 @@ class View {
   
   addActive(video) {
 	  video.classList.add('active');
-	  console.log(video.parentNode.firstChild);
 	  video.parentNode.firstChild.classList.add("active"); // InstrumentName
   }
   
   removeActive() {
     if (grid.querySelector(".active")) {
 	    grid.querySelector("video.active").classList.remove("active");
-	    console.log(grid.querySelector(".InstrumentName.active"));
 	    grid.querySelector(".InstrumentName.active").classList.remove("active");
     }
   }
   
   addControls() {
     if (this.childNodes[0].classList.contains('active')) {
-	    this.choldNodes[0].controls = true;
+	    this.childNodes[0].controls = true;
     } 
   }
   

@@ -96,7 +96,7 @@ class View {
   removeActive() {
     if (grid.querySelector(".active")) {
 	    grid.querySelector("video.active").classList.remove("active");
-	    grid.querySelector(".InstrumentName.active").classList.remove("active");
+	    grid.querySelector(".InstrumentName").classList.remove("active");
     }
   }
   

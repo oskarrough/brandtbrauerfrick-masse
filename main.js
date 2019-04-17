@@ -31,19 +31,19 @@ class View {
        		  this.removeActive();
        		  this.addActive(event.target);
 		  this.showCurrentActive();
-        	  //addControls();
+        	  //this.addControls();
         	  this.muteVideos();
         	  event.target.muted = false;
         	  this.playVideos(event.target.currentTime);
       	  }
       	 else if (!event.target.paused && event.target.muted) {
          	  /* while current instrument is played, user requests for another instrument */
-        	  //removeControls();
+        	  //this.removeControls();
 		  this.hidePreviousActive();
        		  this.removeActive();
         	  this.addActive(event.target);
 		  this.showCurrentActive();
-        	  //addControls();
+        	  //this.addControls();
         	  this.muteVideos();
         	  event.target.muted = false;
       	 }
@@ -101,15 +101,11 @@ class View {
   }
   
   addControls() {
-    if (this.childNodes[0].classList.contains('active')) {
-	    this.childNodes[0].controls = true;
-    } 
+	  grid.querySelector("video.active").controls = true;
   }
   
   removeControls() {
-    if (this.childNodes[0].classList.contains('active')) {
-	    this.childNodes[0].controls = false;
+	  grid.querySelector("video.active").controls = false;
     } 
-  }
 }
 window.onload = new View();

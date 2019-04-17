@@ -12,6 +12,7 @@ export class VideoCustom extends HTMLElement {
         this.render();
     }
     render() {
+	console.log(this.state.id);
         const baseURL = "https://res.cloudinary.com/bbf/video/upload/";
         const encodingImages = "f_auto,q_auto";
         const encodingH265 = "vc_h265,w_1280,c_limit";
@@ -22,6 +23,7 @@ export class VideoCustom extends HTMLElement {
         const urlVP9 = baseURL + encodingVP9 + "/" + this.state.id + ".webm";
         const urlAuto = baseURL + encodingAuto + "/" + this.state.id + ".mp4";
         this.html`
+		<h1 class="InstrumentName">${this.classList[1]}</h1>
                 <video
                     preload="auto"
                     poster=${urlPoster}

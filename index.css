@@ -134,7 +134,7 @@ video-custom {
 	width: 100%;
        	height: 100%;
        	object-fit:cover; 
-	border:0.2rem solid transparent;
+	border:0.1rem solid transparent;
        	border-radius: 1px;
 }
 

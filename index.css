@@ -129,24 +129,14 @@ video-custom {
   position:relative;
 }
 
-
-
 .GridOrchestra video {
-  width: 100%;
-  height: 100%;
-  object-fit:cover; 
-  border:0.2rem solid transparent;
-  border-radius: 1px;
-  transition:opacity 0.3s ease-in-out;
-}
-
-
-.GridOrchestra video.active {
-	opacity:1;
-} 
-
-.GridOrchestra video.inactive {
-	opacity: 0.55;
+	width: 100%;
+       	height: 100%;
+       	object-fit:cover; 
+	border:0.2rem solid transparent;
+       	border-radius: 1px;
+       	opacity: 0.55;
+       	transition:opacity 0.3s ease-in-out;
 }
 
 .InstrumentName {
@@ -160,11 +150,10 @@ video-custom {
 	transition: opacity 0.3s ease-in-out;
 }
 
+.GridOrchestra video.active, 
 .InstrumentName.active {
-	opacity: 1;
-}
-
-
+	opacity:1;
+} 
 /******** Credits  *********/
 
 .CreditsBox {

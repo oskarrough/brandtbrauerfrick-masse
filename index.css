@@ -136,8 +136,6 @@ video-custom {
        	object-fit:cover; 
 	border:0.2rem solid transparent;
        	border-radius: 1px;
-       	opacity: 0.40;
-       	transition:opacity 0.3s ease-in-out;
 }
 
 .InstrumentName {
@@ -147,7 +145,11 @@ video-custom {
 	font-size:1.4rem;
 	left:0.7rem;
 	top: -0.4rem;
-	opacity:0.1;
+}
+
+.GridOrchestra video,
+.InstrumentName {
+	opacity:0.4;
 	transition: opacity 0.3s ease-in-out;
 }
 

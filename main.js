@@ -18,7 +18,7 @@ class View {
   handleCanPlay() {
 	this.amountReady += 1;
 	if (this.amountReady ===  this.videos.length) {
-		document.querySelector(".Spinner").classList.add("inactive");
+		document.querySelector(".Spinner").parentNode.removeChild(document.querySelector(".Spinner"));
 		document.querySelector(".LoadingText").classList.add("inactive");
 		document.querySelector(".Loading").classList.remove("Loading");
 	}
@@ -86,14 +86,14 @@ class View {
   }
 
   addActive(video) {
-	  video.classList.add('active');
+	  //video.classList.add('active');
 	  video.parentNode.firstChild.classList.add("active"); // InstrumentName
   }
   
   removeActive() {
 	  grid.querySelectorAll("video").forEach(video => {
 		if (video.classList.contains("active")) {
-			video.classList.remove("active");
+			//video.classList.remove("active");
 			video.parentNode.firstChild.classList.remove("active");
 		}
 	  });

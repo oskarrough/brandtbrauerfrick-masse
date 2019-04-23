@@ -13,7 +13,6 @@ html {
 
 body {
   margin: 0;
-  background:black;
 }
 
 img,
@@ -108,7 +107,6 @@ video {
 }
 
 .Harp {
-	grid-column: 1/2;
 	grid-row: 6/9;
 }
 
@@ -142,20 +140,13 @@ video-custom {
 	position:absolute;
 	text-shadow: 0.5px 0 0 hsla(0, 0%, 0%, 0.6);
 	color:white;
-	font-size:1.4rem;
+	font-size:1rem;
 	left:0.7rem;
 	top: -0.4rem;
 }
 
-.GridOrchestra video,
-.InstrumentName {
-	opacity:0.4;
-	transition: opacity 0.3s ease-in-out;
-}
-
-.GridOrchestra video.active, 
 .InstrumentName.active {
-	opacity:1;
+	color:red;
 } 
 /******** Credits  *********/
 

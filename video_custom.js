@@ -9,6 +9,7 @@ export class VideoCustom extends HTMLElement {
     connectedCallback(){
         this.classList.add("GridOrchestra-grid-box");
         this.state.id = this.id;
+        this.state.instrument = this.getAttribute("data-instrument");
         this.render();
     }
     render() {
@@ -22,7 +23,7 @@ export class VideoCustom extends HTMLElement {
         const urlVP9 = baseURL + encodingVP9 + "/" + this.state.id + ".webm";
         const urlAuto = baseURL + encodingAuto + "/" + this.state.id + ".mp4";
         this.html`
-		<h3 class="InstrumentName">${this.classList[1]}</h3>
+		<h3 class=${this.state.instrument}>${this.state.instrument}</h3>
                 <video
                     preload="auto"
                     poster=${urlPoster}

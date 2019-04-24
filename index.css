@@ -128,15 +128,7 @@ video-custom {
   position:relative;
 }
 
-.GridOrchestra video {
-	width: 100%;
-       	height: 100%;
-       	object-fit:cover; 
-	border:0.1rem solid transparent;
-       	border-radius: 1px;
-}
-
-.InstrumentName {
+video-custom h3 {
 	position:absolute;
 	text-shadow: 0.5px 0 0 hsla(0, 0%, 0%, 0.6);
 	color:white;
@@ -145,18 +137,26 @@ video-custom {
 	top: -0.4rem;
 }
 
-.InstrumentName.active {
+video-custom h3.active {
 	color:red;
 } 
+
+.GridOrchestra video {
+	width: 100%;
+       	height: 100%;
+       	object-fit:cover; 
+	border:0.1rem solid transparent;
+       	border-radius: 1px;
+}
+
 /******** Credits  *********/
 
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;
-	color:white;
-}
-
-.Title {
-	font-size:1.5rem;
-	margin-top:3rem;
+	color:black;
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

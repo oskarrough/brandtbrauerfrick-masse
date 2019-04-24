@@ -22,25 +22,14 @@ video {
   vertical-align: top;
 }
 
-/******** Spinner  *********/
-
-.Spinner{
-	position:fixed;
-	font-size:6rem;
-	top:36vh;
-	left:48vw;
-}
-
-
 .LoadingText {
 	position:fixed;
 	top:47vh;
-	font-size:3rem;
+	font-size:2rem;
 	width:100vw;
 	text-align:center;
 }
 
-.Spinner.inactive,
 .LoadingText.inactive{
 	display:none;
 }		
@@ -61,7 +50,7 @@ video {
 	opacity:0.1;
 }	
 
-.All{
+.Main {
 	grid-column: 3/7;
 	grid-row: 3/6;
 }
@@ -140,9 +129,9 @@ video-custom {
 	position:absolute;
 	text-shadow: 0.5px 0 0 hsla(0, 0%, 0%, 0.6);
 	color:white;
-	font-size:1rem;
-	left:0.7rem;
-	top: -0.4rem;
+	font-size: 0.875rem;
+	right:0.7rem;
+	bottom: -0.4rem;
 }
 
 .InstrumentName.active {
@@ -153,7 +142,6 @@ video-custom {
 .CreditsBox {
 	padding-left:0.5rem;
 	overflow:scroll;
-	color:white;
 }
 
 .Title {

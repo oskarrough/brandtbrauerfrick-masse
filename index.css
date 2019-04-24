@@ -22,25 +22,14 @@ video {
   vertical-align: top;
 }
 
-/******** Spinner  *********/
-
-.Spinner{
-	position:fixed;
-	font-size:6rem;
-	top:36vh;
-	left:48vw;
-}
-
-
 .LoadingText {
 	position:fixed;
 	top:47vh;
-	font-size:3rem;
+	font-size:2rem;
 	width:100vw;
 	text-align:center;
 }
 
-.Spinner.inactive,
 .LoadingText.inactive{
 	display:none;
 }		

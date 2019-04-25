@@ -2,13 +2,8 @@
   box-sizing: border-box;
 }
 
-@font-face {
-	font-family: "crimson";
-	src: url(assets/CrimsonText-Regular.ttf);
-}
-
 html {
-	font-family: crimson;
+	font-family: minion-3, minion pro, minion, serif;
 }
 
 body {
@@ -125,6 +120,7 @@ video-custom h3 {
 	text-shadow: 0.5px 0 0 hsla(0, 0%, 0%, 0.6);
 	color:white;
 	font-size: 0.875rem;
+	font-weight: normal;
 	left:1rem;
 
 }

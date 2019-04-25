@@ -1,110 +1,107 @@
 import {VideoCustom} from '/video_custom.js'
 
-const hyper = window.hyperHTML;
-const grid = document.querySelector(".Loading");
-customElements.define("video-custom", VideoCustom);
+const hyper = window.hyperHTML
+const grid = document.querySelector('.Loading')
+customElements.define('video-custom', VideoCustom)
 
 class View {
-
   constructor() {
-	this.amountReady = 0;
-	this.videos = grid.querySelectorAll("video"); 
-	this.videos.forEach(video => {
-		video.addEventListener("click", this.handleVideoClick.bind(this),false);
-		video.addEventListener("canplay", this.handleCanPlay.bind(this),false);
-  	});
+    this.amountReady = 0
+    this.videos = grid.querySelectorAll('video')
+    this.videos.forEach(video => {
+      video.addEventListener('click', this.handleVideoClick.bind(this), false)
+      video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
+    })
   }
 
   handleCanPlay() {
-		this.amountReady += 1;
-		if (this.amountReady ===  this.videos.length) {
-			document.querySelector(".LoadingText").classList.add("inactive");
-			document.querySelector(".Loading").classList.remove("Loading");
-		}
+    this.amountReady += 1
+    if (this.amountReady === this.videos.length) {
+      document.querySelector('.LoadingText').classList.add('inactive')
+      document.querySelector('.Loading').classList.remove('Loading')
+    }
   }
 
-/********* router ********/
+  /********* router ********/
   handleVideoClick() {
-	  if (event.target.paused) {
-		  this.handlePlayVideo();
-      	  }
-      	 else if (!event.target.paused && event.target.muted) {
-		 this.handleSwitchVideo();
-      	 }
-         else {
-		this.handlePauseVideo();
-      	}
+    if (event.target.paused) {
+      this.handlePlayVideo()
+    } else if (!event.target.paused && event.target.muted) {
+      this.handleSwitchVideo()
+    } else {
+      this.handlePauseVideo()
+    }
   }
 
-/****** handle video state *******/
+  /****** handle video state *******/
   handlePlayVideo() {
-	  /* target is paused and requested by user */
-	  this.removeActive();
-	  this.addActive(event.target);
-	  //this.addControls();
-	  this.muteVideos();
-	  event.target.muted = false;
-	  this.playVideos(event.target.currentTime);
-  }
-  
-  handlePauseVideo() { 
-	  // User pauses currently listened video.
-	  this.muteVideos();
-	  this.pauseVideos();
+    /* target is paused and requested by user */
+    this.removeActive()
+    this.addActive(event.target)
+    //this.addControls();
+    this.muteVideos()
+    event.target.muted = false
+    this.playVideos(event.target.currentTime)
   }
 
-  handleSwitchVideo() { 
-	  /* while current instrument is played, user requests for another instrument */
-	  //this.removeControls();
-	  this.removeActive();
-	  this.addActive(event.target);
-	  //this.addControls();
-	  this.muteVideos();
-	  event.target.muted = false;
+  handlePauseVideo() {
+    // User pauses currently listened video.
+    this.muteVideos()
+    this.pauseVideos()
   }
 
-/********* videos states ***********/
+  handleSwitchVideo() {
+    /* while current instrument is played, user requests for another instrument */
+    //this.removeControls();
+    this.removeActive()
+    this.addActive(event.target)
+    //this.addControls();
+    this.muteVideos()
+    event.target.muted = false
+  }
+
+  /********* videos states ***********/
   playVideos(currentTime) {
-    grid.querySelectorAll("video").forEach(video => {
-	    console.log(`setting currentTime ${currentTime}`);
-      	    video.currentTime = currentTime;
-            video.play();
+    grid.querySelectorAll('video').forEach(video => {
+      console.log(`setting currentTime ${currentTime}`)
+      video.currentTime = currentTime
+      video.play()
     })
   }
 
   pauseVideos() {
-    grid.querySelectorAll("video").forEach(video => {
-	    video.pause();
+    grid.querySelectorAll('video').forEach(video => {
+      video.pause()
     })
   }
-  
+
   muteVideos() {
-    grid.querySelectorAll("video").forEach(video => {
-	    video.muted = true;
+    grid.querySelectorAll('video').forEach(video => {
+      video.muted = true
     })
   }
 
   addActive(video) {
-	  //video.classList.add('active');
-	  video.parentNode.firstChild.classList.add("active"); // InstrumentName
-  }
-  
-  removeActive() {
-	  grid.querySelectorAll("video").forEach(video => {
-		if (video.classList.contains("active")) {
-			//video.classList.remove("active");
-			video.parentNode.firstChild.classList.remove("active");
-		}
-	  });
+    //video.classList.add('active');
+    video.parentNode.firstChild.classList.add('active') // InstrumentName
   }
 
-/********* controls  ***********/
-  addControls() {
-	  grid.querySelector("video.active").controls = true;
+  removeActive() {
+    grid.querySelectorAll('video').forEach(video => {
+      if (video.classList.contains('active')) {
+        //video.classList.remove("active");
+        video.parentNode.firstChild.classList.remove('active')
+      }
+    })
   }
-  
+
+  /********* controls  ***********/
+  addControls() {
+    grid.querySelector('video.active').controls = true
+  }
+
   removeControls() {
-	  grid.querySelector("video.active").controls = false;
-    } 
+    grid.querySelector('video.active').controls = false
+  }
 }
-window.onload = new View();
+window.onload = new View()

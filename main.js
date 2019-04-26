@@ -17,7 +17,7 @@ class View {
   handleCanPlay() {
     this.amountReady += 1
 
-     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
+    document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
 
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('inactive')

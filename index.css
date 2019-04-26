@@ -194,6 +194,11 @@ video-custom.Tuba {
 	align-items: flex-end;
 }
 
+.Credits,
+.SocialLinks {
+	padding-right:1rem;
+}
+
 /******** Videos *********/
 
 video-custom {

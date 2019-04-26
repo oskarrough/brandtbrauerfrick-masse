@@ -144,12 +144,12 @@ video-custom.Harp {
 
 video-custom.Trombone {
 	grid-column: 4/6;
-	grid-row: 6/11;
+	grid-row: 6/12;
   margin-bottom: 4rem;
 }
 
 video-custom.Cello {
-	grid-column: 6/8;
+	grid-column: 6/10;
 	grid-row:9/12;
 }
 

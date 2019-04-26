@@ -40,15 +40,16 @@ class View {
 
   /****** handle video state *******/
 
-  handleRefresh() {
+  /*handleRefresh() {
     console.log("reaching end of video");
     document.querySelector(".Reloader").classList.add("active");
     this.videos.forEach( video => {
       video.classList.add("foo");
     })
-  }
+  }*/
 
   handlePlayVideo() {
+    console.log("here");
     /* target is paused and requested by user */
     this.removeActive()
     this.addActive(event.target)

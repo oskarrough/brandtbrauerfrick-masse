@@ -193,12 +193,11 @@ video-custom h3.active {
 
 /********* social logos ******/
 .SocialLinks {
-	/* display: flex; */
-	text-align: right;
+	display: flex;
 }
 
 .SocialLinks img {
-	max-width: 3rem;
+	max-width: 1.2rem;
 }
 
 .Page {

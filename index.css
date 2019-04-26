@@ -67,8 +67,8 @@ p {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  grid-gap: 0.1rem;
-	padding: 0.3rem;
+  grid-gap: 0.5rem;
+	padding: 0.5rem;
 }
 
 .GridOrchestra-box {
@@ -80,7 +80,7 @@ p {
 }
 
 .Presentation {
-	grid-column: 1/5;
+	grid-column: 1/6;
 	grid-row:1/2;
 	margin-left:2rem;
 }
@@ -96,22 +96,17 @@ video-custom.Percussion {
 	grid-column: 6/8;
 	grid-row: 1/4;
 	margin-top:2rem;
-	margin-left:0.5rem;
-	margin-right:0.5rem;
-	margin-bottom:0.5rem;
 }
 
 video-custom.Moog {
 	grid-column: 8/10;
 	grid-row: 1/4;
-	margin:0.5rem;
 	margin-top: 3rem;
 }
 
 video-custom.Drums {
 	grid-column: 10/13;
 	grid-row: 1/4;
-	margin:0.5rem;
 	margin-right:3rem;
 	margin-top:3rem;
 }
@@ -121,59 +116,46 @@ video-custom.Marimba {
 	grid-row: 2/5;
 	margin-top:2rem;
 	margin-left:2rem;
-	margin-right:0.5rem;
-	margin-bottom: 0.5rem;
 }
 
 video-custom.Piano {
 	grid-column: 4/6;
 	grid-row:2/6;
-	margin:0.5rem;
 }
 
 video-custom.Main {
 	/* all videos */
 	grid-column: 6/10;
 	grid-row: 4/9;
-	margin:0.5rem;
 }
 
 video-custom.Violin {
 	grid-column: 10/13;
 	grid-row: 4/8;
-	margin: 0.5rem;
-
+	margin-right: 1rem;
 }
 
 video-custom.Harp {
 	grid-column: 1/4;
 	grid-row: 5/10;
 	margin-left: 3rem;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
 video-custom.Trombone {
 	grid-column: 4/6;
 	grid-row: 6/11;
-	margin-left: 0.5rem;
-	margin-right: 0.5rem;
-  margin-top: 0.5rem;
   margin-bottom: 4rem;
-	
 }
 
 video-custom.Cello {
 	grid-column: 6/8;
 	grid-row:9/12;
-	margin: 0.5rem;
 }
 
 video-custom.Tuba {
 	grid-column: 10/13;
 	grid-row: 8/11;
-	margin:0.5rem;
 	margin-right:2rem;
 }
 
@@ -193,6 +175,7 @@ video-custom.Tuba {
 	grid-row: 11/12;
 	display: flex;
 	align-items: flex-end;
+	justify-content: flex-end;
 }
 
 .Credits,

@@ -89,6 +89,7 @@ p {
 	grid-column: 12/13;
 	grid-row: 1/2;
 	margin-top:0.2rem;
+	text-align: right;
 }
 
 video-custom.Percussion {

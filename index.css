@@ -17,10 +17,14 @@ video {
   vertical-align: top;
 }
 
+a {
+	color: black;
+}
+
 .LoadingText {
   position: fixed;
   top: 47vh;
-  font-size: 2rem;
+  font-size: 3rem;
   width: 100vw;
   text-align: center;
 }
@@ -42,7 +46,7 @@ video {
 }
 
 .GridOrchestra.Loading {
-  opacity: 0.1;
+  opacity: 0.05;
 }
 
 video-custom.Percussion {
@@ -144,4 +148,8 @@ video-custom h3.active {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.Container {
+	margin: 1rem;
 }

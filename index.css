@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 img,
@@ -222,10 +222,18 @@ video-custom h3.active {
   max-width: 30rem;
 }
 
+.SocialLinks-icon {
+	width: 1.6rem;
+}
+
+/*.SocialLinks:nth-of-type(1) {
+	max-width:1.2rem;
+}*/
+
 .SocialLinks a {
   padding: 0.2em;
 }
 
-.SocialLinks img {
-  max-width: 1.2rem;
-}
+/*.SocialLinks img {
+  max-width: 1.6rem;
+}*/

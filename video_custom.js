@@ -8,7 +8,7 @@ export class VideoCustom extends HTMLElement {
   }
   connectedCallback() {
     this.classList.add('GridOrchestra-grid-box')
-    this.state.id = this.id
+    this.state.id = 'video/' + this.id
     this.state.title = this.getAttribute('data-title')
     this.render()
   }
@@ -18,6 +18,7 @@ export class VideoCustom extends HTMLElement {
     const encodingH265 = 'vc_h265,w_1280,c_limit'
     const encodingVP9 = 'vc_vp9,w_1280,c_limit'
     const encodingAuto = 'vc_auto,w_1280,c_limit'
+    const url = baseURL + this.state.id 
     const urlPoster = baseURL + encodingImages + '/' + this.state.id + '.jpg'
     const urlH265 = baseURL + encodingH265 + '/' + this.state.id + '.mp4'
     const urlVP9 = baseURL + encodingVP9 + '/' + this.state.id + '.webm'
@@ -28,6 +29,7 @@ export class VideoCustom extends HTMLElement {
 				<source src=${urlH265} type="video/mp4; codecs=hvc1">
 				<source src=${urlVP9} type="video/webm; codecs=vp9">
 				<source src=${urlAuto} type="video/mp4">
+				<source src=${url} type="video/mp4">
 			</video>
 		`
   }

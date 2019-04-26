@@ -18,7 +18,7 @@ video {
 }
 
 a {
-	color: black;
+  color: black;
 }
 
 .LoadingText {
@@ -33,30 +33,29 @@ a {
   display: none;
 }
 
-
 h1 {
-	font-size: 2.5rem;
-	font-weight: normal;
-	line-height: 1;
-	margin-bottom: 1rem;
+  font-size: 2.5rem;
+  font-weight: normal;
+  line-height: 1;
+  margin-bottom: 1rem;
 }
 
 h2 {
-	font-size: 1.2rem;
-	font-weight: normal;
+  font-size: 1.2rem;
+  font-weight: normal;
 }
 
 p {
-	margin-top: 0;
-	margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 .Link {
-	font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 
 .mb0 {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 /******** Grid  *********/
@@ -68,11 +67,11 @@ p {
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.5rem;
-	padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 .GridOrchestra-box {
-	/*border:2px solid red;*/
+  /*border:2px solid red;*/
 }
 
 .GridOrchestra.Loading {
@@ -80,66 +79,66 @@ p {
 }
 
 .Presentation {
-	grid-column: 1/6;
-	grid-row:1/2;
-	margin-left: 1rem;
+  grid-column: 1/6;
+  grid-row: 1/2;
+  margin-left: 1rem;
 }
 
 .Credits {
-	grid-column: 12/13;
-	grid-row: 1/2;
-	margin-top:0.2rem;
-	text-align: right;
+  grid-column: 12/13;
+  grid-row: 1/2;
+  margin-top: 0.2rem;
+  text-align: right;
 }
 
 video-custom.Percussion {
-	grid-column: 6/8;
-	grid-row: 1/4;
-	margin-top:2rem;
+  grid-column: 6/8;
+  grid-row: 1/4;
+  margin-top: 2rem;
 }
 
 video-custom.Moog {
-	grid-column: 8/10;
-	grid-row: 1/4;
-	margin-top: 3rem;
+  grid-column: 8/10;
+  grid-row: 1/4;
+  margin-top: 4rem;
 }
 
 video-custom.Drums {
-	grid-column: 10/13;
-	grid-row: 1/4;
-	margin-right:3rem;
-	margin-top:3rem;
+  grid-column: 10/13;
+  grid-row: 1/4;
+  margin-right: 3rem;
+  margin-top: 5rem;
 }
 
 video-custom.Marimba {
-	grid-column: 1/4;
-	grid-row: 2/5;
-	margin-top:2rem;
-	margin-left:2rem;
+  grid-column: 1/4;
+  grid-row: 2/5;
+  margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 video-custom.Piano {
-	grid-column: 4/6;
-	grid-row:2/6;
+  grid-column: 4/6;
+  grid-row: 2/6;
 }
 
 video-custom.Main {
-	/* all videos */
-	grid-column: 6/10;
-	grid-row: 4/9;
+  /* all videos */
+  grid-column: 6/10;
+  grid-row: 4/9;
 }
 
 video-custom.Violin {
-	grid-column: 10/13;
-	grid-row: 4/8;
-	margin-right: 1rem;
+  grid-column: 10/13;
+  grid-row: 4/8;
+  margin-right: 1rem;
 }
 
 video-custom.Harp {
-	grid-column: 1/4;
-	grid-row: 5/10;
-	margin-left: 3rem;
-  margin-bottom: 0.5rem;
+  grid-column: 1/4;
+  grid-row: 5/10;
+  margin-left: 6rem;
+  margin-bottom: 1rem;
 }
 
 video-custom.Trombone {
@@ -154,34 +153,34 @@ video-custom.Cello {
 }
 
 video-custom.Tuba {
-	grid-column: 10/13;
-	grid-row: 8/11;
-	margin-right:2rem;
+  grid-column: 10/13;
+  grid-row: 8/11;
+  margin-right: 3rem;
 }
 
 .Release {
-	grid-column: 1/6;
-	grid-row: 10/12;
-	/* content bottom aligned*/
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-end;
-	margin-left: 0.5rem;
-	margin-bottom: 0.5rem;
+  grid-column: 1/6;
+  grid-row: 10/12;
+  /* content bottom aligned*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .SocialLinks {
-	grid-column: 8/13;
-	grid-row: 11/12;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-end;
-	padding-top: 1rem;
+  grid-column: 8/13;
+  grid-row: 11/12;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-top: 1rem;
 }
 
 .Credits,
 .SocialLinks {
-	padding-right: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 /******** Videos *********/
@@ -197,11 +196,10 @@ video-custom h3 {
   position: absolute;
   color: white;
   font-size: 0.875rem;
-	font-weight: normal;
-	width: 100%;
-	bottom:-1%;
-	text-align: center;
-
+  font-weight: normal;
+  width: 100%;
+  bottom: -1%;
+  text-align: center;
 }
 
 video-custom h3.active {
@@ -219,15 +217,14 @@ video-custom h3.active {
 /********* social logos ******/
 
 .Page {
-	margin: 2rem;
-	max-width: 30rem;
+  margin: 2rem;
+  max-width: 30rem;
 }
 
 .SocialLinks a {
-	padding: 0.2em;
+  padding: 0.2em;
 }
 
 .SocialLinks img {
-	max-width: 1.2rem;
+  max-width: 1.2rem;
 }
-

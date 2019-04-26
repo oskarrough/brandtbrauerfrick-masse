@@ -9,7 +9,7 @@ class View {
     this.amountReady = 0
     this.videos = grid.querySelectorAll('video')
     this.mainVideo = document.querySelector(".Main");
-    this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
+    //this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
     this.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false);
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false);

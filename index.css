@@ -193,6 +193,7 @@ video-custom {
 }
 
 video-custom h3 {
+	display: none;
   position: absolute;
   color: white;
   font-size: 0.875rem;

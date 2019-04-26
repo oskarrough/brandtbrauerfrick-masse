@@ -1,7 +1,7 @@
 import {VideoCustom} from '/video_custom.js'
 
 const hyper = window.hyperHTML
-const grid = document.querySelector('.Loading')
+const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
 
 class View {
@@ -16,9 +16,12 @@ class View {
 
   handleCanPlay() {
     this.amountReady += 1
+
+     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
+
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('inactive')
-      document.querySelector('.Loading').classList.remove('Loading')
+      document.querySelector('.GridOrchestra').classList.remove('Loading')
     }
   }
 

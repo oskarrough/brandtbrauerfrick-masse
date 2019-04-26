@@ -33,6 +33,32 @@ a {
   display: none;
 }
 
+
+h1 {
+	font-size: 2.5rem;
+	font-weight: normal;
+	line-height: 1;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.2rem;
+	font-weight: normal;
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: 1rem;
+}
+
+.Link {
+	font-size: 1.2rem;
+}
+
+.mb0 {
+	margin-bottom: 0;
+}
+
 /******** Grid  *********/
 
 .GridOrchestra {
@@ -62,6 +88,7 @@ a {
 .Credits {
 	grid-column: 12/13;
 	grid-row: 1/1;
+	text-align: right;
 }
 
 video-custom.Percussion {
@@ -124,6 +151,10 @@ video-custom.Tuba {
 .Release {
 	grid-column: 1/4;
 	grid-row: 10/12;
+	/* content bottom aligned*/
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
 }
 
 .SocialLinks {
@@ -143,7 +174,7 @@ video-custom h3 {
   position: absolute;
   text-shadow: 0.5px 0 0 hsla(0, 0%, 0%, 0.6);
   color: white;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: normal;
   left: 1rem;
 }
@@ -162,9 +193,15 @@ video-custom h3.active {
 
 /********* social logos ******/
 .SocialLinks {
-	display: flex;
+	/* display: flex; */
+	text-align: right;
 }
 
-.SocialLinks > a {
-	width: 3rem;
+.SocialLinks img {
+	max-width: 3rem;
+}
+
+.Page {
+	margin: 2rem;
+	max-width: 30rem;
 }

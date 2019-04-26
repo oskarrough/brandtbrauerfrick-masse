@@ -39,74 +39,96 @@ a {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.1rem;
-  padding: 0.3rem;
+	padding: 0.3rem;
+	border:4px solid blue;
+}
+
+.GridOrchestra-box {
+	border:2px solid red;
 }
 
 .GridOrchestra.Loading {
   opacity: 0.05;
 }
 
+.Presentation {
+	grid-column: 1/5;
+	grid-row:1/2;
+}
+
+.Credits {
+	grid-column: 12/13;
+	grid-row: 1/1;
+}
+
 video-custom.Percussion {
-  grid-column: 1/3;
-  grid-row: 1/3;
+	grid-column: 6/8;
+	grid-row: 1/4;
 }
 
 video-custom.Moog {
-  grid-column: 3/4;
-  grid-row: 1/3;
+	grid-column: 8/10;
+	grid-row: 1/4;
 }
 
 video-custom.Drums {
-  grid-column: 4/6;
-  grid-row: 1/3;
+	grid-column: 10/12;
+	grid-row: 2/4;
 }
 
 video-custom.Marimba {
-  grid-column: 1/3;
-  grid-row: 3/6;
+	grid-column: 1/4;
+	grid-row: 2/5;
 }
 
 video-custom.Piano {
-  grid-column: 6/9;
-  grid-row: 1/3;
+	grid-column: 4/6;
+	grid-row:2/5;
 }
 
 video-custom.Main {
-  /* all video */
-  grid-column: 3/7;
-  grid-row: 3/6;
-}
-
-video-custom.Trombone {
-  grid-column: 7/9;
-  grid-row: 3/6;
-}
-
-video-custom.Harp {
-  grid-row: 6/9;
+	/* all videos */
+	grid-column: 6/10;
+	grid-row: 4/9;
 }
 
 video-custom.Violin {
-  grid-column: 2/4;
-  grid-row: 6/9;
+	grid-column: 10/13;
+	grid-row: 4/8;
+}
+
+video-custom.Harp {
+	grid-column: 1/4;
+	grid-row: 5/10;
+}
+
+video-custom.Trombone {
+	grid-column: 4/6;
+	grid-row: 5/10;
+	
 }
 
 video-custom.Cello {
-  grid-column: 4/6;
-  grid-row: 6/9;
+	grid-column: 6/8;
+	grid-row:9/12;
 }
 
 video-custom.Tuba {
-  grid-column: 6/8;
-  grid-row: 6/9;
+	grid-column: 10/13;
+	grid-row: 8/11;
 }
 
-.CreditsBox {
-  grid-column: 8/9;
-  grid-row: 6/9;
+.Release {
+	grid-column: 1/4;
+	grid-row: 10/12;
+}
+
+.SocialLinks {
+	grid-column: 10/13;
+	grid-row: 11/12;
 }
 
 /******** Videos *********/
@@ -138,18 +160,11 @@ video-custom h3.active {
   border-radius: 1px;
 }
 
-/******** Credits  *********/
-
-.CreditsBox {
-  padding-left: 0.5rem;
-  overflow: scroll;
-  color: black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+/********* social logos ******/
+.SocialLinks {
+	display: flex;
 }
 
-.Container {
-	margin: 1rem;
+.SocialLinks > a {
+	width: 3rem;
 }

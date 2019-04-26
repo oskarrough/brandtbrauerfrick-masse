@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 img,
@@ -217,15 +217,9 @@ video-custom h3.active {
 
 /********* social logos ******/
 
-.Page {
-  margin: 2rem;
-  max-width: 30rem;
+.SocialLinks-icon {
+	width: 1.6rem;
 }
 
 .SocialLinks a {
   padding: 0.2em;
-}
-
-.SocialLinks img {
-  max-width: 1.2rem;
-}

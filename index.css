@@ -175,7 +175,8 @@ video-custom.Tuba {
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  padding-top: 1rem;
+	padding-top: 1rem;
+	flex-wrap: wrap;
 }
 
 .Credits,

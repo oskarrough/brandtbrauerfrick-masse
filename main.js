@@ -8,9 +8,11 @@ class View {
   constructor() {
     this.amountReady = 0
     this.videos = grid.querySelectorAll('video')
+    this.mainVideo = document.querySelector(".Main");
+    this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
     this.videos.forEach(video => {
-      video.addEventListener('click', this.handleVideoClick.bind(this), false)
-      video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
+      video.addEventListener('click', this.handleVideoClick.bind(this), false);
+      video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
     })
   }
 
@@ -37,6 +39,15 @@ class View {
   }
 
   /****** handle video state *******/
+
+  handleRefresh() {
+    console.log("reaching end of video");
+    document.querySelector(".Reloader").classList.add("active");
+    this.videos.forEach( video => {
+      video.classList.add("foo");
+    })
+  }
+
   handlePlayVideo() {
     /* target is paused and requested by user */
     this.removeActive()

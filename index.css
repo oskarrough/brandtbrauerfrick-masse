@@ -189,7 +189,7 @@ video-custom.Tuba {
 video-custom {
   /* avoid cell overflow on Chrome */
   overflow: hidden;
-  position: relative;
+	position: relative;
 }
 
 video-custom h3 {
@@ -212,9 +212,13 @@ video-custom h3.active {
   height: 100%;
   object-fit: cover;
   border: 0.1rem solid transparent;
-  border-radius: 1px;
+	border-radius: 1px;
+	transition: opacity 0.3s ease-in-out;
 }
 
+.GridOrchestra video.foo {
+	opacity: 0.4;
+}
 /********* social logos ******/
 
 .SocialLinks-icon {
@@ -222,4 +226,22 @@ video-custom h3.active {
 }
 
 .SocialLinks a {
-  padding: 0.2em;
+	padding: 0.2em;
+}
+
+/********* reloader ******/
+
+.Reloader {
+	display: none;
+}
+
+.Reloader.active {
+	display: block;
+	position: absolute;
+	left:45%;
+	bottom:22rem;
+}
+
+.Reloader > img {
+	width:13rem;
+}

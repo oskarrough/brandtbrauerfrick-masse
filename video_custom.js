@@ -24,7 +24,7 @@ export class VideoCustom extends HTMLElement {
     const urlAuto = baseURL + encodingAuto + '/' + this.state.id + '.mp4'
     this.html`
 			<h3 class=${this.state.title}>${this.state.title}</h3>
-			<video controls preload="auto" poster=${urlPoster} class="active">
+			<video preload="auto" poster=${urlPoster} class="active">
 				<source src=${urlH265} type="video/mp4; codecs=hvc1">
 				<source src=${urlVP9} type="video/webm; codecs=vp9">
 				<source src=${urlAuto} type="video/mp4">

@@ -217,23 +217,9 @@ video-custom h3.active {
 
 /********* social logos ******/
 
-.Page {
-  margin: 2rem;
-  max-width: 30rem;
-}
-
 .SocialLinks-icon {
 	width: 1.6rem;
 }
 
-/*.SocialLinks:nth-of-type(1) {
-	max-width:1.2rem;
-}*/
-
 .SocialLinks a {
   padding: 0.2em;
-}
-
-/*.SocialLinks img {
-  max-width: 1.6rem;
-}*/

@@ -86,9 +86,8 @@ p {
 }
 
 .Credits {
-	grid-column: 4/6;
-	grid-row: 11/12;
-	text-align: right;
+	grid-column: 12/13;
+	grid-row: 1/2;
 	font-size: 2rem;
 	margin-top:0.2rem;
 }
@@ -114,6 +113,7 @@ video-custom.Drums {
 	grid-row: 1/4;
 	margin:0.5rem;
 	margin-right:3rem;
+	margin-top:3rem;
 }
 
 video-custom.Marimba {
@@ -184,7 +184,8 @@ video-custom.Tuba {
 	display: flex;
 	flex-flow: column nowrap;
 	justify-content: flex-end;
-	margin-left:2rem;
+	margin-left:3rem;
+	font-size:2rem;
 }
 
 .SocialLinks {

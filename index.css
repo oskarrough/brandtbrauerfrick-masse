@@ -232,6 +232,10 @@ video-custom h3.active {
 	max-width: 30rem;
 }
 
+.SocialLinks > * {
+	margin:0.7rem;
+}
+
 .SocialLinks-website {
 	font-size:1.7rem;
 }

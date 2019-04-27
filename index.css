@@ -254,6 +254,7 @@ video-custom h3.active {
   left: 0.4rem;
   fill: white;
   top: 0.4rem;
+  z-index: 2;
 }
 
 .PlayButton:hover {

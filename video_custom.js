@@ -32,7 +32,7 @@ export class VideoCustom extends HTMLElement {
         S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
       </svg>
 			<h3 class=${this.state.title}>${this.state.title}</h3>
-			<video preload="auto" poster=${urlPoster} class="active">
+			<video preload="auto" poster=${urlPoster}>
 				<source src=${urlH265} type="video/mp4; codecs=hvc1">
 				<source src=${urlVP9} type="video/webm; codecs=vp9">
 				<source src=${urlAuto} type="video/mp4">

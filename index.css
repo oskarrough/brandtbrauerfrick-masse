@@ -70,10 +70,6 @@ p {
   padding: 0.5rem;
 }
 
-.GridOrchestra-box {
-  /*border:2px solid red;*/
-}
-
 .GridOrchestra.Loading {
   opacity: 0.05;
 }
@@ -216,9 +212,6 @@ video-custom h3.active {
 	transition: opacity 0.3s ease-in-out;
 }
 
-.GridOrchestra video.foo {
-	opacity: 0.4;
-}
 /********* social logos ******/
 
 .SocialLinks-icon {
@@ -259,4 +252,8 @@ video-custom h3.active {
 
 .PlayButton:hover {
   cursor: pointer;
+}
+
+.PlayButton.active {
+  fill: green;
 }

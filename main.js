@@ -11,6 +11,7 @@ class View {
     this.mainVideo = document.querySelector(".Main");
     //this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
     this.videos.forEach(video => {
+      video.parentNode.firstChild.addEventListener("click", this.handlePlay.bind(this),false);
       //video.addEventListener('click', this.handleVideoClick.bind(this), false);
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
     })
@@ -24,6 +25,47 @@ class View {
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('inactive')
       document.querySelector('.GridOrchestra').classList.remove('Loading')
+    }
+  }
+
+  handlePlay() {
+    const targetVideo = event.target.parentNode.querySelector("video");
+    const mainVideoCustom = document.querySelector(".Main");
+    if (targetVideo.currentTime === 0) {
+      /* first play and mute all videos expect selected not muted */
+      this.muteVideos();
+      targetVideo.muted = false;
+      this.removeActive();
+      event.target.classList.add("active");
+      this.playVideos(targetVideo.currentTime);
+    }
+
+    else if (event.target.classList.contains("active")) {
+      /* mute selected active video */
+      event.target.classList.remove("active");
+      targetVideo.muted = true;
+    }
+
+    else {
+      if (targetVideo.parentNode === mainVideoCustom) {
+        /* requesting main -> mute all other videos to avoid superposition */
+        this.muteVideos();
+        targetVideo.muted = false;
+        this.removeActive();
+        event.target.classList.add("active");
+      }
+      else if (mainVideoCustom.firstChild.classList.contains("active")) {
+        /* asking for instrument while main is active -> mute main to avoid superposition */
+        mainVideoCustom.querySelector("video").muted = true;
+        mainVideoCustom.firstChild.classList.remove("active");
+        event.target.classList.add("active");
+        targetVideo.muted = false;
+      }
+      else {
+        /* asking for instrument while main is not active */
+        event.target.classList.add("active");
+        targetVideo.muted = false;
+      }
     }
   }
 
@@ -50,10 +92,10 @@ class View {
 
   handlePlayVideo() {
     /* target is paused and requested by user */
-    this.removeActive()
+    this.removeActive();
     this.addActive(event.target)
     //this.addControls();
-    this.muteVideos()
+    this.muteVideos();
     event.target.muted = false
     this.playVideos(event.target.currentTime)
   }
@@ -83,15 +125,15 @@ class View {
     })
   }
 
-  pauseVideos() {
+  /*pauseVideos() {
     grid.querySelectorAll('video').forEach(video => {
       video.pause()
     })
-  }
+  }*/
 
   muteVideos() {
     grid.querySelectorAll('video').forEach(video => {
-      video.muted = true
+      video.muted = true;
     })
   }
 
@@ -101,21 +143,22 @@ class View {
   }
 
   removeActive() {
-    grid.querySelectorAll('video').forEach(video => {
-      if (video.classList.contains('active')) {
-        //video.classList.remove("active");
-        video.parentNode.firstChild.classList.remove('active')
+    grid.querySelectorAll('.PlayButton').forEach(playButton => {
+      if (playButton.classList.contains('active')) {
+        playButton.classList.remove("active");
+        //video.parentNode.firstChild.classList.remove('active')
       }
     })
-  }
+  } 
 
   /********* controls  ***********/
-  addControls() {
+  /*addControls() {
     grid.querySelector('video.active').controls = true
   }
 
   removeControls() {
     grid.querySelector('video.active').controls = false
-  }
+  }*/
 }
-window.onload = new View()
+
+window.onload = new View();

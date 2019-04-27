@@ -49,7 +49,6 @@ class View {
   }*/
 
   handlePlayVideo() {
-    console.log("here");
     /* target is paused and requested by user */
     this.removeActive()
     this.addActive(event.target)

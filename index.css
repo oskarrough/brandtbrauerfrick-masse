@@ -245,3 +245,17 @@ video-custom h3.active {
 .Reloader > img {
 	width:13rem;
 }
+
+/**** controls ****/
+
+.PlayButton {
+  position: absolute;
+  width: 1.4rem;
+  left: 0.4rem;
+  fill: white;
+  top: 0.4rem;
+}
+
+.PlayButton:hover {
+  cursor: pointer;
+}

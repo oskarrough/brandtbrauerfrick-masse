@@ -11,7 +11,7 @@ class View {
     this.mainVideo = document.querySelector(".Main");
     //this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
     this.videos.forEach(video => {
-      video.addEventListener('click', this.handleVideoClick.bind(this), false);
+      //video.addEventListener('click', this.handleVideoClick.bind(this), false);
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
     })
   }
@@ -28,7 +28,7 @@ class View {
   }
 
   /********* router ********/
-  handleVideoClick() {
+  /*handleVideoClick() {
     if (event.target.paused) {
       this.handlePlayVideo()
     } else if (!event.target.paused && event.target.muted) {
@@ -36,7 +36,7 @@ class View {
     } else {
       this.handlePauseVideo()
     }
-  }
+  }*/
 
   /****** handle video state *******/
 

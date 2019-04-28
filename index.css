@@ -70,10 +70,6 @@ p {
   padding: 0.5rem;
 }
 
-.GridOrchestra-box {
-  /*border:2px solid red;*/
-}
-
 .GridOrchestra.Loading {
   opacity: 0.05;
 }
@@ -244,4 +240,23 @@ video-custom h3.active {
 
 .Reloader > img {
 	width:13rem;
+}
+
+/**** controls ****/
+
+.PlayButton {
+  position: absolute;
+  width: 1.4rem;
+  left: 0.4rem;
+  fill: white;
+  top: 0.4rem;
+  z-index: 2;
+}
+
+.PlayButton:hover {
+  cursor: pointer;
+}
+
+.PlayButton.active {
+  fill: green;
 }

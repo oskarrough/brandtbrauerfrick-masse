@@ -68,10 +68,12 @@ p {
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
+  opacity:1;
 }
 
-.GridOrchestra-box {
-  /*border:2px solid red;*/
+.GridOrchestra.inactive {
+  opacity:0.3;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .GridOrchestra.Loading {
@@ -189,7 +191,12 @@ video-custom.Tuba {
 video-custom {
   /* avoid cell overflow on Chrome */
   overflow: hidden;
-	position: relative;
+  position: relative;
+  opacity:0.5;  
+}
+
+video-custom {
+  opacity:1;
 }
 
 video-custom h3 {
@@ -231,6 +238,29 @@ video-custom h3.active {
 .ActiveDot.active {
   display: block;
   background-color:red;
+}
+
+.PlayButton {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.PlayButton.inactive {
+  display: none;
+}
+
+.PlayButton-svg {
+  width:20%;
+  margin-left: 9rem;
+}
+
+.PlayButton-svg:hover {
+  cursor: pointer;
 }
 
 /********* social logos ******/

@@ -22,15 +22,23 @@ class View {
     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
 
     if (this.amountReady === this.videos.length) {
-      document.querySelector('.LoadingText').classList.add('inactive')
-      document.querySelector('.GridOrchestra').classList.remove('Loading')
+      document.querySelector('.LoadingText').classList.add('inactive');
+      document.querySelector('.GridOrchestra').classList.remove('Loading');
+      document.querySelector(".PlayButton").classList.remove("inactive");
+      document.querySelector(".PlayButton-svg").addEventListener("click",this.handlePlayMain.bind(this),false);
     }
   }
 
-  /********* router ********/
+  handlePlayMain() {
+    document.querySelector(".GridOrchestra").classList.remove("inactive");
+    document.querySelector(".PlayButton").classList.add("inactive");
+    const mainVideo = this.mainVideo.querySelector("video");
+    this.handlePlayVideo(mainVideo);
+  }
+
   handleVideoClick() {
     if (event.target.paused) {
-      this.handlePlayVideo()
+      this.handlePlayVideo(event.target)
     } else if (!event.target.paused && event.target.muted) {
       this.handleSwitchVideo()
     } else {
@@ -48,14 +56,14 @@ class View {
     })
   }*/
 
-  handlePlayVideo() {
+  handlePlayVideo(target) {
     /* target is paused and requested by user */
     this.removeActive()
-    this.addActive(event.target)
+    this.addActive(target)
     //this.addControls();
     this.muteVideos()
-    event.target.muted = false
-    this.playVideos(event.target.currentTime)
+    target.muted = false
+    this.playVideos(target.currentTime)
   }
 
   handlePauseVideo() {

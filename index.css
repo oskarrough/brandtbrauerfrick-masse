@@ -254,7 +254,7 @@ video-custom h3.is-active {
 
 .Controls-play,
 .Controls-refresh {
-  width:20%;
+  width:12%;
   margin-left: 7rem;
 }
 
@@ -277,7 +277,7 @@ video-custom h3.is-active {
 	padding: 0.2em;
 }
 
-/********* reloader ******/
+/* Credits page */
 
 .Page {
 	margin: 2rem;

@@ -245,3 +245,8 @@ video-custom h3.active {
 .Reloader > img {
 	width:13rem;
 }
+
+.Page {
+	margin: 2rem;
+	max-width: 30rem;
+}

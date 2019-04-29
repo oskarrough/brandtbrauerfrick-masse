@@ -194,22 +194,7 @@ video-custom {
   opacity:1;
 }
 
-video-custom h3 {
-	display: none;
-  position: absolute;
-  color: white;
-  font-size: 0.875rem;
-  font-weight: normal;
-  width: 100%;
-  bottom: -1%;
-  text-align: center;
-}
-
-video-custom h3.is-active {
-  color: red;
-}
-
-.GridOrchestra video {
+video-custom video {
   width: 100%;
   height: 100%;
   object-fit: cover;

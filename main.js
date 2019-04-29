@@ -96,14 +96,14 @@ class View {
   }
 
   addActive(video) {
-    //video.classList.add('active');
+    video.classList.add('active');
     video.parentNode.firstChild.classList.add('active') // InstrumentName
   }
 
   removeActive() {
     grid.querySelectorAll('video').forEach(video => {
       if (video.classList.contains('active')) {
-        //video.classList.remove("active");
+        video.classList.remove("active");
         video.parentNode.firstChild.classList.remove('active')
       }
     })

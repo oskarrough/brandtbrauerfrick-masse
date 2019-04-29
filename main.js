@@ -85,21 +85,23 @@ class View {
 
   /********* videos states ***********/
   playVideos(currentTime) {
-    grid.querySelectorAll('video').forEach(video => {
-      console.log(`setting currentTime ${currentTime}`)
+    console.log(`setting currentTime ${currentTime}`)
+    this.videos.forEach(video => {
       video.currentTime = currentTime
       video.play()
     })
   }
 
   pauseVideos() {
-    grid.querySelectorAll('video').forEach(video => {
+    console.log('pausing')
+    this.videos.forEach(video => {
       video.pause()
     })
   }
 
   muteVideos() {
-    grid.querySelectorAll('video').forEach(video => {
+    console.log('muting')
+    this.videos.forEach(video => {
       video.muted = true
     })
   }
@@ -110,7 +112,7 @@ class View {
   }
 
   removeActive() {
-    grid.querySelectorAll('video').forEach(video => {
+    this.videos.forEach(video => {
       if (video.classList.contains('is-active')) {
         video.classList.remove("is-active");
         video.parentNode.firstChild.classList.remove('is-active')

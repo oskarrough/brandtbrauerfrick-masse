@@ -72,12 +72,8 @@ p {
 }
 
 .GridOrchestra.inactive {
-  opacity:0.3;
+  opacity:0.5;
   transition: opacity 0.5s ease-in-out;
-}
-
-.GridOrchestra.Loading {
-  opacity: 0.05;
 }
 
 .Presentation {
@@ -220,7 +216,6 @@ video-custom h3.active {
   object-fit: cover;
   border: 0.1rem solid transparent;
 	border-radius: 1px;
-	transition: opacity 0.3s ease-in-out;
 }
 
 .ActiveDot {

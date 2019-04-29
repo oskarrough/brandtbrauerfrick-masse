@@ -24,7 +24,6 @@ class View {
 
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('inactive');
-      document.querySelector('.GridOrchestra').classList.remove('Loading');
       document.querySelector(".Controls-play").classList.remove("inactive");
       document.querySelector(".Controls-play").addEventListener("click",this.handleFirstPlay.bind(this),false);
     }

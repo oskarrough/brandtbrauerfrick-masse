@@ -9,7 +9,8 @@ class View {
     this.amountReady = 0
     this.videos = grid.querySelectorAll('video')
     this.mainVideo = document.querySelector(".Main");
-    //this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
+    this.mainVideo.querySelector("video").addEventListener("ended", this.showRefresh.bind(this),false);
+    document.querySelector(".Controls-refresh").addEventListener("click", this.refresh.bind(this),false);
     this.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false);
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
@@ -22,15 +23,34 @@ class View {
     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
 
     if (this.amountReady === this.videos.length) {
-      document.querySelector('.LoadingText').classList.add('inactive')
-      document.querySelector('.GridOrchestra').classList.remove('Loading')
+      document.querySelector('.LoadingText').classList.add('is-inactive');
+      document.querySelector(".Controls-play").classList.remove("is-inactive");
+      document.querySelector(".Controls-play").addEventListener("click",this.handleFirstPlay.bind(this),false);
     }
   }
 
-  /********* router ********/
+  handleFirstPlay() {
+    document.querySelector(".GridOrchestra").classList.remove("is-inactive");
+    document.querySelector(".Controls").classList.add("is-inactive");
+    document.querySelector(".Controls-play").classList.add("is-inactive");
+    const mainVideo = this.mainVideo.querySelector("video");
+    this.handlePlayVideo(mainVideo);
+
+  }
+
+  showRefresh() {
+    document.querySelector(".Controls").classList.remove("is-inactive");
+    document.querySelector(".Controls-refresh").classList.remove("is-inactive");
+    document.querySelector(".GridOrchestra").classList.add("is-inactive");
+  }
+
+  refresh() {
+    window.location = "video.html";
+  }
+
   handleVideoClick() {
     if (event.target.paused) {
-      this.handlePlayVideo()
+      this.handlePlayVideo(event.target)
     } else if (!event.target.paused && event.target.muted) {
       this.handleSwitchVideo()
     } else {
@@ -40,22 +60,13 @@ class View {
 
   /****** handle video state *******/
 
-  /*handleRefresh() {
-    console.log("reaching end of video");
-    document.querySelector(".Reloader").classList.add("active");
-    this.videos.forEach( video => {
-      video.classList.add("foo");
-    })
-  }*/
-
-  handlePlayVideo() {
+  handlePlayVideo(target) {
     /* target is paused and requested by user */
     this.removeActive()
-    this.addActive(event.target)
-    //this.addControls();
+    this.addActive(target)
     this.muteVideos()
-    event.target.muted = false
-    this.playVideos(event.target.currentTime)
+    target.muted = false
+    this.playVideos(target.currentTime)
   }
 
   handlePauseVideo() {
@@ -66,10 +77,8 @@ class View {
 
   handleSwitchVideo() {
     /* while current instrument is played, user requests for another instrument */
-    //this.removeControls();
     this.removeActive()
     this.addActive(event.target)
-    //this.addControls();
     this.muteVideos()
     event.target.muted = false
   }
@@ -96,26 +105,17 @@ class View {
   }
 
   addActive(video) {
-    //video.classList.add('active');
-    video.parentNode.firstChild.classList.add('active') // InstrumentName
+    video.classList.add('is-active');
+    video.parentNode.firstChild.classList.add('is-active') // InstrumentName
   }
 
   removeActive() {
     grid.querySelectorAll('video').forEach(video => {
-      if (video.classList.contains('active')) {
-        //video.classList.remove("active");
-        video.parentNode.firstChild.classList.remove('active')
+      if (video.classList.contains('is-active')) {
+        video.classList.remove("is-active");
+        video.parentNode.firstChild.classList.remove('is-active')
       }
     })
-  }
-
-  /********* controls  ***********/
-  addControls() {
-    grid.querySelector('video.active').controls = true
-  }
-
-  removeControls() {
-    grid.querySelector('video.active').controls = false
   }
 }
 window.onload = new View()

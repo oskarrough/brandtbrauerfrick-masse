@@ -29,7 +29,7 @@ a {
   text-align: center;
 }
 
-.LoadingText.inactive {
+.LoadingText.is-inactive {
   display: none;
 }
 
@@ -67,14 +67,12 @@ p {
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
+  opacity:1;
 }
 
-.GridOrchestra-box {
-  /*border:2px solid red;*/
-}
-
-.GridOrchestra.Loading {
-  opacity: 0.05;
+.GridOrchestra.is-inactive {
+  opacity:0.5;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .Presentation {
@@ -188,7 +186,12 @@ video-custom.Tuba {
 video-custom {
   /* avoid cell overflow on Chrome */
   overflow: hidden;
-	position: relative;
+  position: relative;
+  opacity:0.5;  
+}
+
+video-custom {
+  opacity:1;
 }
 
 video-custom h3 {
@@ -202,7 +205,7 @@ video-custom h3 {
   text-align: center;
 }
 
-video-custom h3.active {
+video-custom h3.is-active {
   color: red;
 }
 
@@ -212,16 +215,62 @@ video-custom h3.active {
   object-fit: cover;
   border: 0.1rem solid transparent;
 	border-radius: 1px;
-	transition: opacity 0.3s ease-in-out;
 }
 
-.GridOrchestra video.foo {
-	opacity: 0.4;
+.ActiveDot {
+  position: absolute;
+  z-index: 2;
+  width:0.5rem;
+  height:0.5rem;
+  border-radius: 50%;
+  background-color:white;
+  left: 0.4rem;
+  top: 0.4rem;
+  display:none;
 }
+
+.ActiveDot.is-active {
+  display: block;
+  background-color:red;
+}
+
+/* play and refresh buttons */
+
+.Controls {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Controls.is-inactive,
+.Controls-play.is-inactive, 
+.Controls-refresh.is-inactive {
+  display: none;
+}
+
+.Controls-play,
+.Controls-refresh {
+  width:20%;
+  margin-left: 7rem;
+}
+
+.Controls-refresh {
+  height:27rem;
+}
+
+.Controls-play:hover,
+.Controls-refresh:hover {
+  cursor: pointer;
+}
+
 /********* social logos ******/
 
 .SocialLinks-icon {
-	width: 1.6rem;
+	width: 1.2rem;
 }
 
 .SocialLinks a {
@@ -229,21 +278,6 @@ video-custom h3.active {
 }
 
 /********* reloader ******/
-
-.Reloader {
-	display: none;
-}
-
-.Reloader.active {
-	display: block;
-	position: absolute;
-	left:45%;
-	bottom:22rem;
-}
-
-.Reloader > img {
-	width:13rem;
-}
 
 .Page {
 	margin: 2rem;

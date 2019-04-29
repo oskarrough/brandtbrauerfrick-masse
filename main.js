@@ -8,12 +8,12 @@ class View {
   constructor() {
     this.amountReady = 0
     this.videos = grid.querySelectorAll('video')
-    this.mainVideo = document.querySelector(".Main");
-    this.mainVideo.querySelector("video").addEventListener("ended", this.showRefresh.bind(this),false);
-    document.querySelector(".Controls-refresh").addEventListener("click", this.refresh.bind(this),false);
+    this.mainVideo = document.querySelector('.Main')
+    this.mainVideo.querySelector('video').addEventListener('ended', this.showRefresh.bind(this), false)
+    document.querySelector('.Controls-refresh').addEventListener('click', this.refresh.bind(this), false)
     this.videos.forEach(video => {
-      video.addEventListener('click', this.handleVideoClick.bind(this), false);
-      video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
+      video.addEventListener('click', this.handleVideoClick.bind(this), false)
+      video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
   }
 
@@ -23,29 +23,28 @@ class View {
     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
 
     if (this.amountReady === this.videos.length) {
-      document.querySelector('.LoadingText').classList.add('is-inactive');
-      document.querySelector(".Controls-play").classList.remove("is-inactive");
-      document.querySelector(".Controls-play").addEventListener("click",this.handleFirstPlay.bind(this),false);
+      document.querySelector('.LoadingText').classList.add('is-inactive')
+      document.querySelector('.Controls-play').classList.remove('is-inactive')
+      document.querySelector('.Controls-play').addEventListener('click', this.handleFirstPlay.bind(this), false)
     }
   }
 
   handleFirstPlay() {
-    document.querySelector(".GridOrchestra").classList.remove("is-inactive");
-    document.querySelector(".Controls").classList.add("is-inactive");
-    document.querySelector(".Controls-play").classList.add("is-inactive");
-    const mainVideo = this.mainVideo.querySelector("video");
-    this.handlePlayVideo(mainVideo);
-
+    document.querySelector('.GridOrchestra').classList.remove('is-inactive')
+    document.querySelector('.Controls').classList.add('is-inactive')
+    document.querySelector('.Controls-play').classList.add('is-inactive')
+    const mainVideo = this.mainVideo.querySelector('video')
+    this.handlePlayVideo(mainVideo)
   }
 
   showRefresh() {
-    document.querySelector(".Controls").classList.remove("is-inactive");
-    document.querySelector(".Controls-refresh").classList.remove("is-inactive");
-    document.querySelector(".GridOrchestra").classList.add("is-inactive");
+    document.querySelector('.Controls').classList.remove('is-inactive')
+    document.querySelector('.Controls-refresh').classList.remove('is-inactive')
+    document.querySelector('.GridOrchestra').classList.add('is-inactive')
   }
 
   refresh() {
-    window.location = "video.html";
+    window.location = 'video.html'
   }
 
   handleVideoClick() {

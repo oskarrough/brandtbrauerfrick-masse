@@ -214,7 +214,7 @@ video-custom video {
   display:none;
 }
 
-.ActiveDot.is-active {
+video-custom.is-active .ActiveDot {
   display: block;
   background-color:red;
 }

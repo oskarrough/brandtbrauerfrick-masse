@@ -107,17 +107,16 @@ class View {
   }
 
   addActive(video) {
-    video.classList.add('is-active');
-    video.parentNode.firstChild.classList.add('is-active') // InstrumentName
+    video.parentNode.classList.add('is-active')
   }
 
   removeActive() {
     this.videos.forEach(video => {
       if (video.classList.contains('is-active')) {
-        video.classList.remove("is-active");
-        video.parentNode.firstChild.classList.remove('is-active')
+        video.parentNode.classList.remove('is-active')
       }
     })
   }
 }
+
 window.onload = new View()

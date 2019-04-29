@@ -260,3 +260,8 @@ video-custom h3.active {
 .PlayButton.active {
   fill: green;
 }
+
+.Page {
+	margin: 2rem;
+	max-width: 30rem;
+}

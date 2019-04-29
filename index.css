@@ -29,7 +29,7 @@ a {
   text-align: center;
 }
 
-.LoadingText.inactive {
+.LoadingText.is-inactive {
   display: none;
 }
 
@@ -71,7 +71,7 @@ p {
   opacity:1;
 }
 
-.GridOrchestra.inactive {
+.GridOrchestra.is-inactive {
   opacity:0.5;
   transition: opacity 0.5s ease-in-out;
 }
@@ -206,7 +206,7 @@ video-custom h3 {
   text-align: center;
 }
 
-video-custom h3.active {
+video-custom h3.is-active {
   color: red;
 }
 
@@ -230,7 +230,7 @@ video-custom h3.active {
   display:none;
 }
 
-.ActiveDot.active {
+.ActiveDot.is-active {
   display: block;
   background-color:red;
 }
@@ -247,9 +247,9 @@ video-custom h3.active {
   height: 100vh;
 }
 
-.Controls.inactive,
-.Controls-play.inactive, 
-.Controls-refresh.inactive {
+.Controls.is-inactive,
+.Controls-play.is-inactive, 
+.Controls-refresh.is-inactive {
   display: none;
 }
 
@@ -271,7 +271,7 @@ video-custom h3.active {
 /********* social logos ******/
 
 .SocialLinks-icon {
-	width: 1.6rem;
+	width: 1.2rem;
 }
 
 .SocialLinks a {

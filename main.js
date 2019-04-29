@@ -23,25 +23,25 @@ class View {
     document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
 
     if (this.amountReady === this.videos.length) {
-      document.querySelector('.LoadingText').classList.add('inactive');
-      document.querySelector(".Controls-play").classList.remove("inactive");
+      document.querySelector('.LoadingText').classList.add('is-inactive');
+      document.querySelector(".Controls-play").classList.remove("is-inactive");
       document.querySelector(".Controls-play").addEventListener("click",this.handleFirstPlay.bind(this),false);
     }
   }
 
   handleFirstPlay() {
-    document.querySelector(".GridOrchestra").classList.remove("inactive");
-    document.querySelector(".Controls").classList.add("inactive");
-    document.querySelector(".Controls-play").classList.add("inactive");
+    document.querySelector(".GridOrchestra").classList.remove("is-inactive");
+    document.querySelector(".Controls").classList.add("is-inactive");
+    document.querySelector(".Controls-play").classList.add("is-inactive");
     const mainVideo = this.mainVideo.querySelector("video");
     this.handlePlayVideo(mainVideo);
 
   }
 
   showRefresh() {
-    document.querySelector(".Controls").classList.remove("inactive");
-    document.querySelector(".Controls-refresh").classList.remove("inactive");
-    document.querySelector(".GridOrchestra").classList.add("inactive");
+    document.querySelector(".Controls").classList.remove("is-inactive");
+    document.querySelector(".Controls-refresh").classList.remove("is-inactive");
+    document.querySelector(".GridOrchestra").classList.add("is-inactive");
   }
 
   refresh() {
@@ -105,15 +105,15 @@ class View {
   }
 
   addActive(video) {
-    video.classList.add('active');
-    video.parentNode.firstChild.classList.add('active') // InstrumentName
+    video.classList.add('is-active');
+    video.parentNode.firstChild.classList.add('is-active') // InstrumentName
   }
 
   removeActive() {
     grid.querySelectorAll('video').forEach(video => {
-      if (video.classList.contains('active')) {
-        video.classList.remove("active");
-        video.parentNode.firstChild.classList.remove('active')
+      if (video.classList.contains('is-active')) {
+        video.classList.remove("is-active");
+        video.parentNode.firstChild.classList.remove('is-active')
       }
     })
   }

@@ -9,7 +9,8 @@ class View {
     this.amountReady = 0
     this.videos = grid.querySelectorAll('video')
     this.mainVideo = document.querySelector(".Main");
-    //this.mainVideo.querySelector("video").addEventListener("ended", this.handleRefresh.bind(this),false);
+    this.mainVideo.querySelector("video").addEventListener("ended", this.showRefresh.bind(this),false);
+    document.querySelector(".Controls-refresh").addEventListener("click", this.refresh.bind(this),false);
     this.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false);
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false);
@@ -24,16 +25,28 @@ class View {
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('inactive');
       document.querySelector('.GridOrchestra').classList.remove('Loading');
-      document.querySelector(".PlayButton").classList.remove("inactive");
-      document.querySelector(".PlayButton-svg").addEventListener("click",this.handlePlayMain.bind(this),false);
+      document.querySelector(".Controls").classList.remove("inactive");
+      document.querySelector(".Controls-play").addEventListener("click",this.handleFirstMain.bind(this),false);
     }
   }
 
-  handlePlayMain() {
+  handleFirstMain() {
     document.querySelector(".GridOrchestra").classList.remove("inactive");
-    document.querySelector(".PlayButton").classList.add("inactive");
+    document.querySelector(".Controls").classList.add("inactive");
+    document.querySelector(".Controls-play").classList.add("inactive");
     const mainVideo = this.mainVideo.querySelector("video");
     this.handlePlayVideo(mainVideo);
+
+  }
+
+  showRefresh() {
+    document.querySelector(".Controls").classList.remove("inactive");
+    document.querySelector(".Controls-refresh").classList.remove("inactive");
+    document.querySelector(".GridOrchestra").classList.add("inactive");
+  }
+
+  refresh() {
+    window.location = "video.html";
   }
 
   handleVideoClick() {
@@ -48,19 +61,10 @@ class View {
 
   /****** handle video state *******/
 
-  /*handleRefresh() {
-    console.log("reaching end of video");
-    document.querySelector(".Reloader").classList.add("active");
-    this.videos.forEach( video => {
-      video.classList.add("foo");
-    })
-  }*/
-
   handlePlayVideo(target) {
     /* target is paused and requested by user */
     this.removeActive()
     this.addActive(target)
-    //this.addControls();
     this.muteVideos()
     target.muted = false
     this.playVideos(target.currentTime)
@@ -74,10 +78,8 @@ class View {
 
   handleSwitchVideo() {
     /* while current instrument is played, user requests for another instrument */
-    //this.removeControls();
     this.removeActive()
     this.addActive(event.target)
-    //this.addControls();
     this.muteVideos()
     event.target.muted = false
   }
@@ -115,15 +117,6 @@ class View {
         video.parentNode.firstChild.classList.remove('active')
       }
     })
-  }
-
-  /********* controls  ***********/
-  addControls() {
-    grid.querySelector('video.active').controls = true
-  }
-
-  removeControls() {
-    grid.querySelector('video.active').controls = false
   }
 }
 window.onload = new View()

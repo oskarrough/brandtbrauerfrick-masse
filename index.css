@@ -240,7 +240,9 @@ video-custom h3.active {
   background-color:red;
 }
 
-.PlayButton {
+/* play and refresh buttons */
+
+.Controls {
   position: absolute;
   z-index: 2;
   display: flex;
@@ -250,16 +252,24 @@ video-custom h3.active {
   height: 100vh;
 }
 
-.PlayButton.inactive {
+.Controls.inactive,
+.Controls-play.inactive, 
+.Controls-refresh.inactive {
   display: none;
 }
 
-.PlayButton-svg {
+.Controls-play,
+.Controls-refresh {
   width:20%;
   margin-left: 7rem;
 }
 
-.PlayButton-svg:hover {
+.Controls-refresh {
+  height:27rem;
+}
+
+.Controls-play:hover,
+.Controls-refresh:hover {
   cursor: pointer;
 }
 
@@ -274,21 +284,6 @@ video-custom h3.active {
 }
 
 /********* reloader ******/
-
-.Reloader {
-	display: none;
-}
-
-.Reloader.active {
-	display: block;
-	position: absolute;
-	left:45%;
-	bottom:22rem;
-}
-
-.Reloader > img {
-	width:13rem;
-}
 
 .Page {
 	margin: 2rem;

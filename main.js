@@ -111,8 +111,9 @@ class View {
 
   removeActive() {
     this.videos.forEach(video => {
-      if (video.classList.contains('is-active')) {
-        video.parentNode.classList.remove('is-active')
+			const el = video.parentNode
+      if (el.classList.contains('is-active')) {
+        el.classList.remove('is-active')
       }
     })
   }

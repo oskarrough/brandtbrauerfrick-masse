@@ -81,6 +81,15 @@ class View {
     this.addActive(event.target)
     this.muteVideos()
     event.target.muted = false
+
+    const time = event.target.currentTime
+
+    this.videos.forEach(video => {
+      if (!video.parentNode.classList.contains('is-active')) {
+        console.log('extra sync')
+        video.currentTime = time
+      }
+    })
   }
 
   /********* videos states ***********/
@@ -112,7 +121,7 @@ class View {
 
   removeActive() {
     this.videos.forEach(video => {
-			const el = video.parentNode
+      const el = video.parentNode
       if (el.classList.contains('is-active')) {
         el.classList.remove('is-active')
       }

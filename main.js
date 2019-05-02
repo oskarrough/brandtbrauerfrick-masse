@@ -24,6 +24,7 @@ class View {
 
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('is-inactive')
+      document.querySelector('.Controls').classList.remove('is-inactive')
       document.querySelector('.Controls-play').classList.remove('is-inactive')
       document.querySelector('.Controls-play').addEventListener('click', this.handleFirstPlay.bind(this), false)
     }

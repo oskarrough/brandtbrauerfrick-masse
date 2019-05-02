@@ -225,26 +225,32 @@ video-custom.is-active .ActiveDot {
   position: absolute;
   z-index: 2;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  border: 1px solid;
+  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .Controls.is-inactive,
 .Controls-play.is-inactive,
 .Controls-refresh.is-inactive {
   display: none;
+  border-color: transparent;
 }
 
-.Controls-play,
-.Controls-refresh {
-  width: 12%;
-  margin-left: 7rem;
+.Controls-play {
+  width: 3rem;
+  height: 3rem;
+  margin: auto;
+  position: relative;
+  left: 0.5rem;
 }
 
 .Controls-refresh {
-  height: 27rem;
+  /* height: 27rem; */
 }
 
 .Controls-play:hover,

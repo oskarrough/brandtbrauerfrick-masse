@@ -190,6 +190,11 @@ video-custom {
   cursor: pointer;
 }
 
+video-custom:hover .ActiveDot {
+  background: green;
+  display: block;
+}
+
 video-custom video {
   width: 100%;
   height: 100%;

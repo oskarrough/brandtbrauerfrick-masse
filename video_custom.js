@@ -26,7 +26,7 @@ export class VideoCustom extends HTMLElement {
 		if (src) {
 			return this.html`
 				<span class="ActiveDot"></span>
-				<video src=${src} preload="auto" poster=${urlPoster}></video>
+				<video src=${src} preload="auto"></video>
 			`
 		}
 

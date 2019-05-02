@@ -4,6 +4,7 @@
 
 html {
   font-family: minion-3, minion pro, minion, serif;
+	color: #666;
 }
 
 body {
@@ -18,7 +19,12 @@ video {
 }
 
 a {
-  color: black;
+  color: #666;
+	transition: color 150ms;
+}
+
+a:hover {
+	color: black;
 }
 
 .LoadingText {
@@ -38,6 +44,7 @@ h1 {
   font-weight: normal;
   line-height: 1;
   margin-bottom: 1rem;
+	color: black;
 }
 
 h2 {
@@ -51,6 +58,7 @@ p {
 }
 
 .Link {
+	color: black;
 }
 
 .mb0 {
@@ -270,6 +278,15 @@ video-custom.is-active .ActiveDot {
 
 .SocialLinks a {
   padding: 0.2em;
+}
+
+.SocialLinks img {
+	opacity: 0.5;
+	transition: opacity 150ms;
+}
+
+.SocialLinks a:hover img {
+  opacity: 1;
 }
 
 /* Credits page */

@@ -71,7 +71,7 @@ p {
 
 .GridOrchestra.is-inactive > *:not(.Presentation),
 .GridOrchestra.is-inactive > .Presentation p {
-  opacity: 0.2;
+  opacity: 0.1;
   transition: opacity 0.5s ease-in-out;
 }
 

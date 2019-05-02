@@ -187,11 +187,7 @@ video-custom {
   /* avoid cell overflow on Chrome */
   overflow: hidden;
   position: relative;
-  opacity: 0.5;
-}
-
-video-custom {
-  opacity: 1;
+  cursor: pointer;
 }
 
 video-custom video {

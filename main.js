@@ -66,7 +66,7 @@ class View {
     this.addActive(target)
     this.muteVideos()
     target.muted = false
-		this.syncVideos(target.currentTime)
+    this.syncVideos(target.currentTime)
     this.playVideos()
   }
 
@@ -82,28 +82,28 @@ class View {
     this.addActive(event.target)
     this.muteVideos()
     event.target.muted = false
-		const video = document.querySelector('video-custom.is-active video')
-		this.syncVideos(video.currentTime)
+    const video = document.querySelector('video-custom.is-active video')
+    this.syncVideos(video.currentTime)
   }
 
   /********* videos states ***********/
 
   syncVideos(currentTime) {
-		console.log(`syncing ${currentTime}`)
+    console.log(`syncing ${currentTime}`)
     // console.log(`setting currentTime ${currentTime}`)
     this.videos.forEach(video => {
-			let delay = video.currentTime - currentTime
-			// console.log({delay})
-			if (!video.parentNode.classList.contains('is-active')) {
-      	video.currentTime = currentTime 
-				let delayAfter = video.currentTime - currentTime
-				console.log('synced', {delay, delayAfter})
-			} 
+      let delay = video.currentTime - currentTime
+      // console.log({delay})
+      if (!video.parentNode.classList.contains('is-active')) {
+        video.currentTime = currentTime
+        let delayAfter = video.currentTime - currentTime
+        console.log('synced', {delay, delayAfter})
+      }
     })
   }
 
   playVideos(time) {
-		// if (time) this.syncVideos(time)
+    // if (time) this.syncVideos(time)
     console.log(`playing all`)
     this.videos.forEach(video => {
       video.play()
@@ -130,7 +130,7 @@ class View {
 
   removeActive() {
     this.videos.forEach(video => {
-			const el = video.parentNode
+      const el = video.parentNode
       if (el.classList.contains('is-active')) {
         el.classList.remove('is-active')
       }

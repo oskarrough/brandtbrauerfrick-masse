@@ -33,6 +33,7 @@ a:hover {
   font-size: 2.5rem;
   width: 100vw;
   text-align: center;
+	color: black;
 }
 
 .LoadingText.is-inactive {
@@ -55,10 +56,6 @@ h2 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-
-.Link {
-	color: black;
 }
 
 .mb0 {
@@ -199,7 +196,7 @@ video-custom {
 }
 
 video-custom:hover .ActiveDot {
-  background: green;
+  background: #57ff22;
   display: block;
 }
 
@@ -225,7 +222,7 @@ video-custom video {
 
 video-custom.is-active .ActiveDot {
   display: block;
-  background-color: red;
+  background-color: #ff0050;
 }
 
 /* play and refresh buttons */
@@ -294,4 +291,5 @@ video-custom.is-active .ActiveDot {
 .Page {
   margin: 2rem;
   max-width: 30rem;
+	color: black;
 }

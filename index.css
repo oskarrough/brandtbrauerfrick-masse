@@ -67,11 +67,11 @@ p {
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
-  opacity: 1;
 }
 
-.GridOrchestra.is-inactive {
-  opacity: 0.5;
+.GridOrchestra.is-inactive > *:not(.Presentation),
+.GridOrchestra.is-inactive > .Presentation p {
+  opacity: 0.2;
   transition: opacity 0.5s ease-in-out;
 }
 

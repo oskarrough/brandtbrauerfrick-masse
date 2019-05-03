@@ -149,6 +149,10 @@ video-custom.Trombone {
   margin-bottom: 4rem;
 }
 
+video-custom.Trombone video {
+	object-position: right;
+}
+
 video-custom.Cello {
   grid-column: 6/10;
   grid-row: 9/12;
@@ -250,7 +254,7 @@ video-custom.is-active .ActiveDot {
   border-radius: 50%;
   background: none;
   padding: 0;
-  transition: transform 100ms;
+  transition: transform 150ms;
 }
 
 .Controls-play svg {

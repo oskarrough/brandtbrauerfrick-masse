@@ -297,3 +297,11 @@ video-custom.is-active .ActiveDot {
   max-width: 30rem;
 	color: black;
 }
+
+.Debug {
+	background: black;
+	color: yellow;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}

@@ -8,6 +8,12 @@ export class VideoCustom extends HTMLElement {
 	}
 	connectedCallback() {
 		this.render()
+
+		const video = this.querySelector('video')
+		video.ontimeupdate = (event) => {
+			this.state.currentTime = event.target.currentTime
+			this.render()
+		}
 	}
 	render() {
 		const src = this.getAttribute('src')
@@ -22,10 +28,20 @@ export class VideoCustom extends HTMLElement {
 		const urlVP9 = baseURL + encodingVP9 + '/' + id + '.webm'
 		const urlAuto = baseURL + encodingAuto + '/' + id + '.mp4'
 
+		const masterVideo = document.querySelector('video-custom.Main video')
+		let delay = 0
+		if (masterVideo) {
+			delay = this.state.currentTime - masterVideo.currentTime
+			// console.log(this.state.currentTime, masterVideo.currentTime, delay)
+		}
+
 		// If present, prefer normal video src to Cloudinary id.
 		if (src) {
 			return this.html`
 				<span class="ActiveDot"></span>
+				<span class="Debug">
+					${delay.toFixed(4)}
+				</span>
 				<video src=${src} preload="auto"></video>
 			`
 		}

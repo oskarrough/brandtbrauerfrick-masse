@@ -4,14 +4,22 @@ const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
 
+const elements = {
+	mainVideo: document.querySelector(".Main > video"),
+	videos: document.querySelectorAll("video"),
+	loading: document.querySelector(".LoadingText"),
+	controls: document.querySelector(".Controls"),
+	controls_play: document.querySelector(".Controls-play"),
+	controls_refresh: document.querySelector(".Controls-refresh"),
+	grid: document.querySelector(".GridOrchestra")
+}
+
 class View {
   constructor() {
     this.amountReady = 0
-    this.videos = grid.querySelectorAll('video')
-    this.mainVideo = document.querySelector('.Main')
-    this.mainVideo.querySelector('video').addEventListener('ended', this.showRefresh.bind(this), false)
-    document.querySelector('.Controls-refresh').addEventListener('click', this.refresh.bind(this), false)
-    this.videos.forEach(video => {
+    elements.mainVideo.addEventListener('timeupdate', this.showRefresh.bind(this), false)
+    elements.controls_refresh.addEventListener('click', this.refresh.bind(this), false)
+    elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
@@ -20,30 +28,31 @@ class View {
   handleCanPlay() {
     this.amountReady += 1
 
-    document.querySelector('.LoadingText').textContent = `Loading ${this.amountReady} of ${this.videos.length} videos`
+    elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
 
-    if (this.amountReady === this.videos.length) {
-      document.querySelector('.LoadingText').classList.add('is-inactive')
-      document.querySelector('.Controls').classList.remove('is-inactive')
-      document.querySelector('.Controls-play').classList.remove('is-inactive')
-      document.querySelector('.Controls-play').addEventListener('click', this.handleFirstPlay.bind(this), false)
+    if (this.amountReady === elements.videos.length) {
+      elements.loading.classList.add('is-inactive')
+      elements.controls.classList.remove('is-inactive')
+      elements.controls_play.classList.remove('is-inactive')
+      elements.controls_play.addEventListener('click', this.handleFirstPlay.bind(this), false)
     }
   }
 
   handleFirstPlay() {
-    document.querySelector('.GridOrchestra').classList.remove('is-inactive')
-    document.querySelector('.Controls').classList.add('is-inactive')
-    document.querySelector('.Controls-play').classList.add('is-inactive')
+    elements.grid.classList.remove('is-inactive')
+    elements.controls.classList.add('is-inactive')
+    elements.controls_play.classList.add('is-inactive')
     // Trigger a "click" on the main video.
-    const mainVideo = this.mainVideo.querySelector('video')
-    this.handlePlayVideo(mainVideo)
+    this.handlePlayVideo(elements.mainVideo)
     setTimeout(this.syncVideos.bind(this), 500)
   }
 
   showRefresh() {
-    document.querySelector('.Controls').classList.remove('is-inactive')
-    document.querySelector('.Controls-refresh').classList.remove('is-inactive')
-    document.querySelector('.GridOrchestra').classList.add('is-inactive')
+	if (elements.mainVideo.currentTime > 286) {
+    		elements.controls.classList.remove('is-inactive')
+    		elements.controls_refresh.classList.remove('is-inactive')
+    		elements.grid.classList.add('is-inactive')
+	}
   }
 
   refresh() {
@@ -89,23 +98,23 @@ class View {
 
   /********* videos states ***********/
   syncVideos() {
-    const masterTime = this.mainVideo.querySelector('video').currentTime
+    const masterTime = elements.mainVideo.currentTime
     console.log(`all: syncing ${masterTime}`)
-    this.videos.forEach(video => {
+    elements.videos.forEach(video => {
       video.currentTime = masterTime
     })
   }
 
   playVideos(currentTime) {
     console.log(`all: play`)
-    this.videos.forEach(video => {
+    elements.videos.forEach(video => {
       video.play()
     })
   }
 
   pauseVideos() {
     console.log('all: pausing')
-    this.videos.forEach(video => {
+    elements.videos.forEach(video => {
       // console.log({readyState: video.readyState})
       if (video.readyState === 1) {
         return
@@ -116,7 +125,7 @@ class View {
 
   muteVideos() {
     console.log('all: muting')
-    this.videos.forEach(video => {
+    elements.videos.forEach(video => {
       video.muted = true
     })
   }
@@ -126,7 +135,7 @@ class View {
   }
 
   removeActive() {
-    this.videos.forEach(video => {
+    elements.videos.forEach(video => {
       const el = video.parentNode
       if (el.classList.contains('is-active')) {
         el.classList.remove('is-active')

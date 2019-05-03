@@ -4,7 +4,7 @@
 
 html {
   font-family: minion-3, minion pro, minion, serif;
-	color: #666;
+  color: #666;
 }
 
 body {
@@ -20,11 +20,11 @@ video {
 
 a {
   color: #666;
-	transition: color 150ms;
+  transition: color 150ms;
 }
 
 a:hover {
-	color: black;
+  color: black;
 }
 
 .LoadingText {
@@ -33,7 +33,7 @@ a:hover {
   font-size: 2.5rem;
   width: 100vw;
   text-align: center;
-	color: black;
+  color: black;
 }
 
 .LoadingText.is-inactive {
@@ -45,7 +45,7 @@ h1 {
   font-weight: normal;
   line-height: 1;
   margin-bottom: 1rem;
-	color: black;
+  color: black;
 }
 
 h2 {
@@ -150,7 +150,7 @@ video-custom.Trombone {
 }
 
 video-custom.Trombone video {
-	object-position: right;
+  object-position: right;
 }
 
 video-custom.Cello {
@@ -263,7 +263,8 @@ video-custom.is-active .ActiveDot {
   left: 0.5rem;
 }
 
-.Controls-refresh {}
+.Controls-refresh {
+}
 
 .Controls-play:hover,
 .Controls-refresh:hover {
@@ -282,8 +283,8 @@ video-custom.is-active .ActiveDot {
 }
 
 .SocialLinks img {
-	opacity: 0.5;
-	transition: opacity 150ms;
+  opacity: 0.5;
+  transition: opacity 150ms;
 }
 
 .SocialLinks a:hover img {
@@ -295,13 +296,13 @@ video-custom.is-active .ActiveDot {
 .Page {
   margin: 2rem;
   max-width: 30rem;
-	color: black;
+  color: black;
 }
 
 .Debug {
-	background: black;
-	color: yellow;
-	position: absolute;
-	bottom: 0;
-	right: 0;
+  background: black;
+  color: yellow;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

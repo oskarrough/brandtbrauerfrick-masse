@@ -102,8 +102,12 @@ class View {
   }
 
   pauseVideos() {
-    console.log('pausing')
+    console.log('all: pausing')
     this.videos.forEach(video => {
+      // console.log({readyState: video.readyState})
+      if (video.readyState === 1) {
+        return
+      }
       video.pause()
     })
   }

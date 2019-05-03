@@ -27,6 +27,14 @@ a:hover {
   color: black;
 }
 
+.App {
+	display:block;
+}
+
+.App.is-inactive {
+	display:none;
+}
+
 .LoadingText {
   position: fixed;
   top: 47vh;
@@ -241,7 +249,8 @@ video-custom.is-active .ActiveDot {
 
 .Controls.is-inactive,
 .Controls-play.is-inactive,
-.Controls-refresh.is-inactive {
+.Controls-refresh.is-inactive,
+.Presentation.is-inactive {
   display: none;
   border-color: transparent;
 }
@@ -263,13 +272,26 @@ video-custom.is-active .ActiveDot {
   left: 0.5rem;
 }
 
-.Controls-refresh {
-}
-
 .Controls-play:hover,
 .Controls-refresh:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+
+/********* restriction message ******/
+
+.DeviceSupportText {
+	display:block;
+	text-align:center;
+	position:absolute;
+	top:40%;
+	width:100%;
+	font-size:1.5rem;
+	padding: 0 2rem;
+}
+
+.DeviceSupportText.is-inactive {
+	display:none;
 }
 
 /********* social logos ******/

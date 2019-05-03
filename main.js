@@ -5,25 +5,49 @@ const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
 
 const elements = {
+	app: document.querySelector(".App"),
 	mainVideo: document.querySelector(".Main > video"),
 	videos: document.querySelectorAll("video"),
+	presentation: document.querySelector(".Presentation"),
 	loading: document.querySelector(".LoadingText"),
 	controls: document.querySelector(".Controls"),
-	controls_play: document.querySelector(".Controls-play"),
-	controls_refresh: document.querySelector(".Controls-refresh"),
-	grid: document.querySelector(".GridOrchestra")
+	controlsPlay: document.querySelector(".Controls-play"),
+	controlsRefresh: document.querySelector(".Controls-refresh"),
+	grid: document.querySelector(".GridOrchestra"),
+	deviceText: document.querySelector(".DeviceSupportText")
 }
 
 class View {
   constructor() {
     this.amountReady = 0
+    this.handleSmallScreen();
+    window.onresize = this.handleSmallScreen.bind(this);
     elements.mainVideo.addEventListener('timeupdate', this.showRefresh.bind(this), false)
-    elements.controls_refresh.addEventListener('click', this.refresh.bind(this), false)
+    elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
   }
+
+
+  handleSmallScreen() {
+	if (window.innerWidth <= 650) {
+		elements.app.className = "App is-inactive";	
+		elements.deviceText.className = "DeviceSupportText";
+		this.reloadVideos();
+	}
+	else {
+		elements.app.className = "App";
+		elements.deviceText.className = "DeviceSupportText is-inactive";
+	}
+  }
+
+  reloadVideos() {
+	elements.videos.forEach(video => {
+		video.load();
+	});
+  }	
 
   handleCanPlay() {
     this.amountReady += 1
@@ -33,15 +57,17 @@ class View {
     if (this.amountReady === elements.videos.length) {
       elements.loading.classList.add('is-inactive')
       elements.controls.classList.remove('is-inactive')
-      elements.controls_play.classList.remove('is-inactive')
-      elements.controls_play.addEventListener('click', this.handleFirstPlay.bind(this), false)
+      console.log(document.querySelector(".Controls-play"));
+      console.log(elements.controlsPlay);
+      elements.controlsPlay.classList.remove('is-inactive')
+      elements.controlsPlay.addEventListener('click', this.handleFirstPlay.bind(this), false)
     }
   }
 
   handleFirstPlay() {
     elements.grid.classList.remove('is-inactive')
     elements.controls.classList.add('is-inactive')
-    elements.controls_play.classList.add('is-inactive')
+    elements.controlsPlay.classList.add('is-inactive')
     // Trigger a "click" on the main video.
     this.handlePlayVideo(elements.mainVideo)
     setTimeout(this.syncVideos.bind(this), 500)
@@ -50,7 +76,7 @@ class View {
   showRefresh() {
 	if (elements.mainVideo.currentTime > 286) {
     		elements.controls.classList.remove('is-inactive')
-    		elements.controls_refresh.classList.remove('is-inactive')
+    		elements.controlsRefresh.classList.remove('is-inactive')
     		elements.grid.classList.add('is-inactive')
 	}
   }

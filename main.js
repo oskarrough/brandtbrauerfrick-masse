@@ -34,8 +34,10 @@ class View {
     document.querySelector('.GridOrchestra').classList.remove('is-inactive')
     document.querySelector('.Controls').classList.add('is-inactive')
     document.querySelector('.Controls-play').classList.add('is-inactive')
+    // Trigger a "click" on the main video.
     const mainVideo = this.mainVideo.querySelector('video')
     this.handlePlayVideo(mainVideo)
+    setTimeout(this.syncVideos.bind(this), 500)
   }
 
   showRefresh() {
@@ -66,37 +68,37 @@ class View {
     this.addActive(target)
     this.muteVideos()
     target.muted = false
-    this.playVideos(target.currentTime)
+    // this.syncVideos()
+    this.playVideos()
   }
 
   handlePauseVideo() {
-    // User pauses currently listened video.
     this.muteVideos()
     this.pauseVideos()
+    this.syncVideos()
   }
 
+  // While playing, if you tap an instrument that is muted
   handleSwitchVideo() {
-    /* while current instrument is played, user requests for another instrument */
     this.removeActive()
     this.addActive(event.target)
     this.muteVideos()
     event.target.muted = false
-
-    const time = event.target.currentTime
-
-    this.videos.forEach(video => {
-      if (!video.parentNode.classList.contains('is-active')) {
-        console.log('extra sync')
-        video.currentTime = time
-      }
-    })
+    // this.syncVideos()
   }
 
   /********* videos states ***********/
-  playVideos(currentTime) {
-    console.log(`setting currentTime ${currentTime}`)
+  syncVideos() {
+    const masterTime = this.mainVideo.querySelector('video').currentTime
+    console.log(`all: syncing ${masterTime}`)
     this.videos.forEach(video => {
-      video.currentTime = currentTime
+      video.currentTime = masterTime
+    })
+  }
+
+  playVideos(currentTime) {
+    console.log(`all: play`)
+    this.videos.forEach(video => {
       video.play()
     })
   }
@@ -113,7 +115,7 @@ class View {
   }
 
   muteVideos() {
-    console.log('muting')
+    console.log('all: muting')
     this.videos.forEach(video => {
       video.muted = true
     })

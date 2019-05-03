@@ -4,6 +4,7 @@
 
 html {
   font-family: minion-3, minion pro, minion, serif;
+  color: #666;
 }
 
 body {
@@ -18,6 +19,11 @@ video {
 }
 
 a {
+  color: #666;
+  transition: color 150ms;
+}
+
+a:hover {
   color: black;
 }
 
@@ -27,6 +33,7 @@ a {
   font-size: 2.5rem;
   width: 100vw;
   text-align: center;
+  color: black;
 }
 
 .LoadingText.is-inactive {
@@ -38,6 +45,7 @@ h1 {
   font-weight: normal;
   line-height: 1;
   margin-bottom: 1rem;
+  color: black;
 }
 
 h2 {
@@ -48,9 +56,6 @@ h2 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-}
-
-.Link {
 }
 
 .mb0 {
@@ -67,11 +72,11 @@ p {
   grid-template-rows: repeat(10, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
-  opacity: 1;
 }
 
-.GridOrchestra.is-inactive {
-  opacity: 0.5;
+.GridOrchestra.is-inactive > *:not(.Presentation),
+.GridOrchestra.is-inactive > .Presentation p {
+  opacity: 0.1;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -144,6 +149,10 @@ video-custom.Trombone {
   margin-bottom: 4rem;
 }
 
+video-custom.Trombone video {
+  object-position: right;
+}
+
 video-custom.Cello {
   grid-column: 6/10;
   grid-row: 9/12;
@@ -187,11 +196,12 @@ video-custom {
   /* avoid cell overflow on Chrome */
   overflow: hidden;
   position: relative;
-  opacity: 0.5;
+  cursor: pointer;
 }
 
-video-custom {
-  opacity: 1;
+video-custom:hover .ActiveDot {
+  background: #57ff22;
+  display: block;
 }
 
 video-custom video {
@@ -216,39 +226,49 @@ video-custom video {
 
 video-custom.is-active .ActiveDot {
   display: block;
-  background-color: red;
+  background-color: #ff0050;
 }
 
 /* play and refresh buttons */
 
 .Controls {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .Controls.is-inactive,
 .Controls-play.is-inactive,
 .Controls-refresh.is-inactive {
   display: none;
+  border-color: transparent;
 }
 
-.Controls-play,
-.Controls-refresh {
-  width: 12%;
-  margin-left: 7rem;
+.Controls button {
+  width: 7rem;
+  height: 7rem;
+  margin: auto;
+  border: 1px solid;
+  border-radius: 50%;
+  background: none;
+  padding: 0;
+  transition: transform 150ms;
+}
+
+.Controls-play svg {
+  width: 50%;
+  position: relative;
+  left: 0.5rem;
 }
 
 .Controls-refresh {
-  height: 27rem;
 }
 
 .Controls-play:hover,
 .Controls-refresh:hover {
+  transform: scale(1.1);
   cursor: pointer;
 }
 
@@ -262,9 +282,27 @@ video-custom.is-active .ActiveDot {
   padding: 0.2em;
 }
 
+.SocialLinks img {
+  opacity: 0.5;
+  transition: opacity 150ms;
+}
+
+.SocialLinks a:hover img {
+  opacity: 1;
+}
+
 /* Credits page */
 
 .Page {
   margin: 2rem;
   max-width: 30rem;
+  color: black;
+}
+
+.Debug {
+  background: black;
+  color: yellow;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

@@ -24,6 +24,7 @@ class View {
 
     if (this.amountReady === this.videos.length) {
       document.querySelector('.LoadingText').classList.add('is-inactive')
+      document.querySelector('.Controls').classList.remove('is-inactive')
       document.querySelector('.Controls-play').classList.remove('is-inactive')
       document.querySelector('.Controls-play').addEventListener('click', this.handleFirstPlay.bind(this), false)
     }
@@ -33,8 +34,10 @@ class View {
     document.querySelector('.GridOrchestra').classList.remove('is-inactive')
     document.querySelector('.Controls').classList.add('is-inactive')
     document.querySelector('.Controls-play').classList.add('is-inactive')
+    // Trigger a "click" on the main video.
     const mainVideo = this.mainVideo.querySelector('video')
     this.handlePlayVideo(mainVideo)
+    setTimeout(this.syncVideos.bind(this), 500)
   }
 
   showRefresh() {
@@ -65,41 +68,54 @@ class View {
     this.addActive(target)
     this.muteVideos()
     target.muted = false
-    this.playVideos(target.currentTime)
+    // this.syncVideos()
+    this.playVideos()
   }
 
   handlePauseVideo() {
-    // User pauses currently listened video.
     this.muteVideos()
     this.pauseVideos()
+    this.syncVideos()
   }
 
+  // While playing, if you tap an instrument that is muted
   handleSwitchVideo() {
-    /* while current instrument is played, user requests for another instrument */
     this.removeActive()
     this.addActive(event.target)
     this.muteVideos()
     event.target.muted = false
+    // this.syncVideos()
   }
 
   /********* videos states ***********/
-  playVideos(currentTime) {
-    console.log(`setting currentTime ${currentTime}`)
+  syncVideos() {
+    const masterTime = this.mainVideo.querySelector('video').currentTime
+    console.log(`all: syncing ${masterTime}`)
     this.videos.forEach(video => {
-      video.currentTime = currentTime
+      video.currentTime = masterTime
+    })
+  }
+
+  playVideos(currentTime) {
+    console.log(`all: play`)
+    this.videos.forEach(video => {
       video.play()
     })
   }
 
   pauseVideos() {
-    console.log('pausing')
+    console.log('all: pausing')
     this.videos.forEach(video => {
+      // console.log({readyState: video.readyState})
+      if (video.readyState === 1) {
+        return
+      }
       video.pause()
     })
   }
 
   muteVideos() {
-    console.log('muting')
+    console.log('all: muting')
     this.videos.forEach(video => {
       video.muted = true
     })
@@ -111,7 +127,7 @@ class View {
 
   removeActive() {
     this.videos.forEach(video => {
-			const el = video.parentNode
+      const el = video.parentNode
       if (el.classList.contains('is-active')) {
         el.classList.remove('is-active')
       }

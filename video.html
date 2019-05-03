@@ -1,57 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Brandt Brauer Frick - Masse</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
-    <meta name="description" content="Masse is taken from Brand Brauer Frick's Echo album, out on May 31st 2019" />
+	<head>
+		<title>Brandt Brauer Frick - Masse</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+		<meta name="description" content="Masse is taken from Brand Brauer Frick's Echo album, out on May 31st 2019" />
 		<link rel="stylesheet" href="https://use.typekit.net/wad5lzh.css">
-    <link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="index.css" />
 		<!-- polyfill for custom elements/web components -->
 		<script>this.customElements||document.write('<script src="//unpkg.com/document-register-element"><\x2fscript>');</script>
-  </head>
-  <body>
+	</head>
+	<body>
+
 		<div class="LoadingText">
 			Loading 0 of 11 videos
 		</div>
-		<div class="Controls">
-		<svg class="Controls-play is-inactive" viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg"> <path d="M.5 0v14l11-7-11-7z" fill="#000" fill-rule="evenodd"/> </svg>
-		<svg class="Controls-refresh is-inactive" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
-		  <path d="M12 0v2.25C6.504 2.762 2.187 7.371 2.187 13c0 2.934 1.165 5.582 3.063 7.531l2.719-2.437A7.17 7.17 0 0 1 5.844 13c0-3.61 2.68-6.602 6.156-7.094V8l6.406-4zm8.75 5.469l-2.688 2.437A7.15 7.15 0 0 1 20.157 13c0 3.613-2.676 6.574-6.156 7.063V18l-6.406 4L14 26v-2.25c5.496-.512 9.813-5.121 9.813-10.75 0-2.934-1.165-5.582-3.063-7.531z"/>
-		</svg>
+
+		<div class="Controls is-inactive">
+			<button class="Controls-play is-inactive">
+				<svg viewBox="0 0 13 14" xmlns="http://www.w3.org/2000/svg"> <path d="M.5 0v14l11-7-11-7z" fill="#000" fill-rule="evenodd"></svg>
+			</button>
+			<button class="Controls-refresh is-inactive">
+				<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+					<path d="M12 0v2.25C6.504 2.762 2.187 7.371 2.187 13c0 2.934 1.165 5.582 3.063 7.531l2.719-2.437A7.17 7.17 0 0 1 5.844 13c0-3.61 2.68-6.602 6.156-7.094V8l6.406-4zm8.75 5.469l-2.688 2.437A7.15 7.15 0 0 1 20.157 13c0 3.613-2.676 6.574-6.156 7.063V18l-6.406 4L14 26v-2.25c5.496-.512 9.813-5.121 9.813-10.75 0-2.934-1.165-5.582-3.063-7.531z"/>
+				</svg>
+			</button>
 		</div>
-	  <div class="GridOrchestra Loading is-inactive">
+
+		<div class="GridOrchestra Loading is-inactive">
 			<div class="GridOrchestra-box Presentation">
 				<h1>Brandt Brauer Frick<br><i>Masse</i></h1>
-				<p class="mb0">Select any clip to listen to solo voices</p>
+				<p class="mb0">Tap any clip to listen to solo voices</p>
 			</div>
-			<a target="_blank" class="GridOrchestra-box Credits Link" href="credits.html">Credits</a>
-  		<video-custom class="GridOrchestra-box Percussion" data-title="Percussion" id="percussion"></video-custom>
-  		<video-custom class="GridOrchestra-box Moog" data-title="Moog" id="moog"></video-custom>
-  		<video-custom class="GridOrchestra-box Drums" data-title="Drums" id="drums"></video-custom>
-  		<video-custom class="GridOrchestra-box Piano" data-title="Piano" id="piano"></video-custom>
-			<video-custom class="GridOrchestra-box Marimba" data-title="Marimba" id="marimba"></video-custom>
-			<video-custom class="GridOrchestra-box Main" data-title="Brand Brauer Frick's Masse" id="v1553870910/video2/roughcut-1-1"></video-custom>
-  		<video-custom class="GridOrchestra-box Trombone" data-title="Trombone" id="trombone"></video-custom>
-	    <video-custom class="GridOrchestra-box Harp" data-title="Harp" id="harp"></video-custom>
-  		<video-custom class="GridOrchestra-box Violin" data-title="Violin" id="violin"></video-custom>
-  		<video-custom class="GridOrchestra-box Cello" data-title="Cello" id="cello"></video-custom>
-			<video-custom class="GridOrchestra-box Tuba" data-title="Tuba" id="tuba"></video-custom>
+
+			<div class="GridOrchestra-box Credits">
+				<a target="_blank" href="credits.html">Credits</a>
+			</div>
+
+			<video-custom class="GridOrchestra-box Percussion"
+				data-title="Percussion"
+				cloudinary-id="percussion"
+				src="https://player.vimeo.com/external/333730307.sd.mp4?s=5b4fbe022d1c93fb90fdf8202bac45bda3d5fd69&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Moog"
+				data-title="Moog"
+				cloudinary-id="moog"
+				src="https://player.vimeo.com/external/333730158.sd.mp4?s=516c5a524087d3d5a2475560c56b5c38be334770&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Drums"
+				data-title="Drums"
+				cloudinary-id="drums"
+				src="https://player.vimeo.com/external/333730229.sd.mp4?s=a2aa00b065b41e0bbdb78ec92060ed66a99de4e1&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Piano"
+				data-title="Piano"
+				cloudinary-id="piano"
+				src="https://player.vimeo.com/external/333730400.sd.mp4?s=7932ae4eb3960e392bb67d7cb5a14f5df227afc3&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Marimba"
+				data-title="Marimba"
+				cloudinary-id="marimba"
+				src="https://player.vimeo.com/external/333730122.sd.mp4?s=9bfb5d749bedf21f316d6bd2592148152df5ebb0&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Main"
+				data-title="Brand Brauer Frick's Masse"
+				cloudinary-id="v1553870910/video2/roughcut-1-1"
+				src="https://player.vimeo.com/external/333730189.sd.mp4?s=b6930fdc98d29d870b1ad08b18464789373ead47&profile_id=164"
+				NONOsrc="https://player.vimeo.com/external/333730026.sd.mp4?s=de889ab80b90d37df5aafd7cd37bb7d8a315527b&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Trombone"
+				data-title="Trombone"
+				cloudinary-id="trombone"
+				src="https://player.vimeo.com/external/333730445.sd.mp4?s=41191bb9dbeb0eec48d8f4b041558e30272dcec4&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Harp"
+				data-title="Harp"
+				cloudinary-id="harp"
+				src="https://player.vimeo.com/external/333730076.sd.mp4?s=dda2d7780f1c4f3e2ea600b11ec899bbbae62a3c&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Violin"
+				data-title="Violin"
+				cloudinary-id="violin"
+				src="https://player.vimeo.com/external/333730356.sd.mp4?s=06ef8df945f9c67adec4d3bf11900b18a0d003b3&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Cello"
+				data-title="Cello"
+				cloudinary-id="cello"
+				src="https://player.vimeo.com/external/333730267.sd.mp4?s=2c65368f4c09af7f15c06390efbe066e52099be5&profile_id=164"
+			></video-custom>
+
+			<video-custom class="GridOrchestra-box Tuba"
+				data-title="Tuba"
+				cloudinary-id="tuba"
+				src="https://player.vimeo.com/external/333730497.sd.mp4?s=3bd74a37da81cfa7d9b818945d7f4596e4bf613d&profile_id=164"
+			></video-custom>
+
 			<div class="GridOrchestra-box Release">
-				<p>Taken from <i>Echo</i> out May 31st</p>
-				<p class="mb0"><a class="Link" href="http://smarturl.it/BBFrest" target="_blank" rel="noreferrer">Preorder/Stream</a></p>
+				<p class="mb0">Taken from <i>Echo</i> out June 7th</p>
+				<p class="mb0"><a href="http://smarturl.it/BBFrest" target="_blank" rel="noreferrer">Preorder/Stream</a></p>
 			</div>
+
 			<div class="GridOrchestra-box SocialLinks">
 				<a target="_blank" rel="noreferrer" class="SocialLinks-website" href="http://www.brandtbrauerfrick.de">brandtbrauerfrick.de</a>
 				<a target="_blank" rel="noreferrer" href="https://facebook.com/BrandtBrauerFrick"><img class="SocialLinks-icon" src="/assets/facebook.png" alt="Brandt Brauer Frick"></a>
 				<a target="_blank" rel="noreferrer" href="https://www.instagram.com/brandtbrauerfrick/"><img class="SocialLinks-icon" src="/assets/instagram.png" alt="Brandt Brauer Frick"></a>
 				<a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCgZ-pYOgfH0w8NjUbIrK8jg"><img class="SocialLinks-icon" src="/assets/youtube.png" alt="Brandt Brauer Frick"></a>
-				<a target="_blank" rel="noreferrer" href="https://soundcloud.com/brandtbrauerfrick"><img class="SocialLinks-icon" src="/assets/twitter.png" alt="Brandt Brauer Frick"></a>
-				<a target="_blank" rel="noreferrer" href="https://twitter.com/bbf_music"><img class="SocialLinks-icon" src="/assets/soundcloud.png" alt="Brandt Brauer Frick"></a>
+				<a target="_blank" rel="noreferrer" href="https://soundcloud.com/brandtbrauerfrick"><img class="SocialLinks-icon" src="/assets/soundcloud.png" alt="Brandt Brauer Frick"></a>
+				<a target="_blank" rel="noreferrer" href="https://twitter.com/bbf_music"><img class="SocialLinks-icon" src="/assets/twitter.png" alt="Brandt Brauer Frick"></a>
 				<a target="_blank" rel="noreferrer" href="http://www.because.tv"><img class="SocialLinks-icon" src="/assets/because-music.png" alt="Because Music"></a>
 			</div>
 		</div>
-    <script src="https://cdn.jsdelivr.net/npm/hyperhtml@2.25.5/min.js"></script>
-    <script type="module" async src="main.js"></script>
-  </body>
+
+		<script src="https://cdn.jsdelivr.net/npm/hyperhtml@2.25.5/min.js"></script>
+		<script type="module" async src="main.js"></script>
+
+	</body>
 </html>

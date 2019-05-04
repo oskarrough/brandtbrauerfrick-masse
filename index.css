@@ -325,6 +325,9 @@ video-custom.is-active .ActiveDot {
 /********* Mobile content ******/
 
 @media (max-width: 650px) {
+	.Presentation {
+		grid-column-end: 13;
+	}
 
 	.GridOrchestra > .SocialLinks {
 		grid-column:1/13;
@@ -339,7 +342,6 @@ video-custom.is-active .ActiveDot {
 	}
 
 	.MobileContent {
-		display:flex;
 		opacity:1;
 	}
 
@@ -349,8 +351,8 @@ video-custom.is-active .ActiveDot {
 		position:absolute;
 		top:40%;
 		width:100%;
-		font-size:1.5rem;
-		padding: 0 2rem;
+		font-size:1.4rem;
+		padding: 0 1rem;
 		color:black;
 	}
 }

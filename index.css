@@ -322,6 +322,8 @@ video-custom.is-active .ActiveDot {
 	.GridOrchestra.is-inactive > .SocialLinks {
 		display:flex;
 		opacity: 1;
+		grid-column:5/13;
+		grid-row:12/12;
 	}
 
 	.LoadingText,

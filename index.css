@@ -78,8 +78,8 @@ p {
   padding: 0.5rem;
 }
 
-/*.GridOrchestra.is-inactive > *:not(.Presentation),*/
-.DesktopContent,
+/*.GridOrchestra.is-inactive > *:not(.Presentation)*/
+.GridOrchestra.is-inactive > .DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
   opacity: 0.1;
   transition: opacity 0.5s ease-in-out;
@@ -276,7 +276,6 @@ video-custom.is-active .ActiveDot {
   cursor: pointer;
 }
 
-
 /********* social logos ******/
 
 .SocialLinks-icon {
@@ -320,9 +319,10 @@ video-custom.is-active .ActiveDot {
 
 @media (max-width: 650px) {
 
-	.SocialLinks {
+	.GridOrchestra > .SocialLinks {
 		grid-column:1/13;
 		grid-row:12/12;
+		opacity:1;
 	}
 	
 	.LoadingText,

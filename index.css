@@ -139,10 +139,10 @@ video-custom.Violin {
 }
 
 video-custom.Harp {
-  grid-column: 1/4;
-  grid-row: 5/10;
-  margin-left: 30%;
-  margin-bottom: 1rem;
+  grid-column: 6/10;
+  grid-row: 9/12;
+  /*margin-left: 30%;
+  margin-bottom: 1rem;*/
 }
 
 video-custom.Trombone {
@@ -155,8 +155,9 @@ video-custom.Trombone video {
 }
 
 video-custom.Cello {
-  grid-column: 6/10;
-  grid-row: 9/12;
+  grid-column: 1/4;
+  grid-row: 5/10;
+  margin-left:30%;
 }
 
 video-custom.Tuba {

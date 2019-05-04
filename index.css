@@ -57,6 +57,11 @@ h2 {
   font-weight: normal;
 }
 
+h3 {
+	font-size: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
 p {
   margin-top: 0;
   margin-bottom: 1rem;
@@ -299,7 +304,6 @@ video-custom.is-active .ActiveDot {
 
 .Page {
   margin: 2rem;
-  max-width: 30rem;
   color: black;
 }
 

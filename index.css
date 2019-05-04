@@ -306,6 +306,10 @@ video-custom.is-active .ActiveDot {
   color: black;
 }
 
+.Page pre {
+	font-family: inherit;
+}
+
 .Debug {
   background: black;
   color: yellow;

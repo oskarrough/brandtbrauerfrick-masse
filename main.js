@@ -20,8 +20,6 @@ const elements = {
 class View {
   constructor() {
     this.amountReady = 0
-    this.handleSmallScreen();
-    window.onresize = this.handleSmallScreen.bind(this);
     elements.mainVideo.addEventListener('timeupdate', this.showRefresh.bind(this), false)
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.videos.forEach(video => {
@@ -29,25 +27,6 @@ class View {
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
   }
-
-
-  handleSmallScreen() {
-	if (window.innerWidth <= 650) {
-		elements.app.className = "App is-inactive";	
-		elements.deviceText.className = "DeviceSupportText";
-		this.reloadVideos();
-	}
-	else {
-		elements.app.className = "App";
-		elements.deviceText.className = "DeviceSupportText is-inactive";
-	}
-  }
-
-  reloadVideos() {
-	elements.videos.forEach(video => {
-		video.load();
-	});
-  }	
 
   handleCanPlay() {
     this.amountReady += 1
@@ -57,8 +36,6 @@ class View {
     if (this.amountReady === elements.videos.length) {
       elements.loading.classList.add('is-inactive')
       elements.controls.classList.remove('is-inactive')
-      console.log(document.querySelector(".Controls-play"));
-      console.log(elements.controlsPlay);
       elements.controlsPlay.classList.remove('is-inactive')
       elements.controlsPlay.addEventListener('click', this.handleFirstPlay.bind(this), false)
     }

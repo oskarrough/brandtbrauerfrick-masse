@@ -342,5 +342,6 @@ video-custom.is-active .ActiveDot {
 		width:100%;
 		font-size:1.5rem;
 		padding: 0 2rem;
+		color:black;
 	}
 }

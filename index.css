@@ -117,10 +117,8 @@ video-custom.Drums {
 }
 
 video-custom.Marimba {
-  grid-column: 1/4;
-  grid-row: 2/5;
-  margin-top: 2rem;
-  margin-left: 2rem;
+  grid-column: 4/6;
+  grid-row: 6/12;
 }
 
 video-custom.Piano {
@@ -148,9 +146,9 @@ video-custom.Harp {
 }
 
 video-custom.Trombone {
-  grid-column: 4/6;
-  grid-row: 6/12;
-  margin-bottom: 4rem;
+  grid-column: 1/4;
+  grid-row: 2/6;
+  margin-bottom: 3.5rem;
 }
 
 video-custom.Trombone video {

@@ -64,7 +64,7 @@ p {
 
 .mb0 {
   margin-bottom: 0;
-  width:58%;
+  //width:58%;
 }
 
 /******** Grid  *********/
@@ -170,7 +170,7 @@ video-custom.Tuba {
 }
 
 .Release {
-  grid-column: 1/6;
+  grid-column: 1/4;
   grid-row: 10/12;
   /* content bottom aligned*/
   display: flex;

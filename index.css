@@ -118,7 +118,8 @@ video-custom.Drums {
 
 video-custom.Marimba {
   grid-column: 4/6;
-  grid-row: 6/12;
+  grid-row: 6/12; 
+  margin-bottom:1rem;
 }
 
 video-custom.Piano {

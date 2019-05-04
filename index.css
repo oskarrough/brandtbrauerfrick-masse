@@ -78,7 +78,8 @@ p {
   padding: 0.5rem;
 }
 
-.GridOrchestra.is-inactive > *:not(.Presentation),
+/*.GridOrchestra.is-inactive > *:not(.Presentation)*/
+.GridOrchestra.is-inactive > .DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
   opacity: 0.1;
   transition: opacity 0.5s ease-in-out;
@@ -117,15 +118,15 @@ video-custom.Drums {
 }
 
 video-custom.Marimba {
-  grid-column: 1/4;
-  grid-row: 2/5;
-  margin-top: 2rem;
-  margin-left: 2rem;
+  grid-column: 4/6;
+  grid-row: 6/12; 
+  margin-bottom:1rem;
 }
 
 video-custom.Piano {
   grid-column: 4/6;
   grid-row: 2/6;
+  margin-top:1rem;
 }
 
 video-custom.Main {
@@ -141,16 +142,16 @@ video-custom.Violin {
 }
 
 video-custom.Harp {
-  grid-column: 1/4;
-  grid-row: 5/10;
-  margin-left: 30%;
-  margin-bottom: 1rem;
+  grid-column: 6/10;
+  grid-row: 9/12;
+  /*margin-left: 30%;
+  margin-bottom: 1rem;*/
 }
 
 video-custom.Trombone {
-  grid-column: 4/6;
-  grid-row: 6/12;
-  margin-bottom: 4rem;
+  grid-column: 1/4;
+  grid-row: 2/5; 
+  margin-left:0.9rem;
 }
 
 video-custom.Trombone video {
@@ -158,8 +159,9 @@ video-custom.Trombone video {
 }
 
 video-custom.Cello {
-  grid-column: 6/10;
-  grid-row: 9/12;
+  grid-column: 1/4;
+  grid-row: 5/10;
+  margin-left:40%;
 }
 
 video-custom.Tuba {
@@ -169,7 +171,7 @@ video-custom.Tuba {
 }
 
 .Release {
-  grid-column: 1/6;
+  grid-column: 1/4;
   grid-row: 10/12;
   /* content bottom aligned*/
   display: flex;
@@ -274,7 +276,6 @@ video-custom.is-active .ActiveDot {
   cursor: pointer;
 }
 
-
 /********* social logos ******/
 
 .SocialLinks-icon {
@@ -318,11 +319,12 @@ video-custom.is-active .ActiveDot {
 
 @media (max-width: 650px) {
 
-	.GridOrchestra.is-inactive > .SocialLinks {
-		display:flex;
-		opacity: 1;
+	.GridOrchestra > .SocialLinks {
+		grid-column:1/13;
+		grid-row:12/12;
+		opacity:1;
 	}
-
+	
 	.LoadingText,
 	.DesktopContent,
 	.Controls {
@@ -330,7 +332,7 @@ video-custom.is-active .ActiveDot {
 	}
 
 	.MobileContent {
-		display:block;
+		display:flex;
 		opacity:1;
 	}
 

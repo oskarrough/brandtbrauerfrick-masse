@@ -147,8 +147,7 @@ video-custom.Harp {
 
 video-custom.Trombone {
   grid-column: 1/4;
-  grid-row: 2/6;
-  margin-bottom: 3.5rem;
+  grid-row: 2/5;
 }
 
 video-custom.Trombone video {

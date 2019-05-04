@@ -64,7 +64,6 @@ p {
 
 .mb0 {
   margin-bottom: 0;
-  //width:58%;
 }
 
 /******** Grid  *********/
@@ -79,7 +78,8 @@ p {
   padding: 0.5rem;
 }
 
-.GridOrchestra.is-inactive > *:not(.Presentation),
+/*.GridOrchestra.is-inactive > *:not(.Presentation),*/
+.DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
   opacity: 0.1;
   transition: opacity 0.5s ease-in-out;
@@ -150,7 +150,8 @@ video-custom.Harp {
 
 video-custom.Trombone {
   grid-column: 1/4;
-  grid-row: 2/5;
+  grid-row: 2/5; 
+  margin-left:0.9rem;
 }
 
 video-custom.Trombone video {
@@ -319,13 +320,11 @@ video-custom.is-active .ActiveDot {
 
 @media (max-width: 650px) {
 
-	.GridOrchestra.is-inactive > .SocialLinks {
-		display:flex;
-		opacity: 1;
-		grid-column:5/13;
+	.SocialLinks {
+		grid-column:1/13;
 		grid-row:12/12;
 	}
-
+	
 	.LoadingText,
 	.DesktopContent,
 	.Controls {
@@ -333,7 +332,7 @@ video-custom.is-active .ActiveDot {
 	}
 
 	.MobileContent {
-		display:block;
+		display:flex;
 		opacity:1;
 	}
 

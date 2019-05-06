@@ -134,6 +134,10 @@ video-custom.Piano {
   grid-row: 2/6;
 }
 
+video-custom.Piano video {
+	object-position: left;
+}
+
 video-custom.Main {
   /* all videos */
   grid-column: 6/10;
@@ -156,10 +160,6 @@ video-custom.Harp {
 video-custom.Trombone {
   grid-column: 4/6;
   grid-row: 6/12; 
-}
-
-video-custom.Trombone video {
-  object-position: right;
 }
 
 video-custom.Cello {

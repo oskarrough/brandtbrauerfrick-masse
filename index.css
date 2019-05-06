@@ -162,6 +162,10 @@ video-custom.Trombone {
   grid-row: 6/12; 
 }
 
+video-custom.Trombone video {
+	object-position: 65%;
+}
+
 video-custom.Cello {
   grid-column: 1/4;
   grid-row: 5/10;

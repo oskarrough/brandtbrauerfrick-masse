@@ -20,7 +20,7 @@ const elements = {
 class View {
   constructor() {
     this.amountReady = 0
-    elements.mainVideo.addEventListener('timeupdate', this.showRefresh.bind(this), false)
+    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
@@ -51,11 +51,9 @@ class View {
   }
 
   showRefresh() {
-	if (elements.mainVideo.currentTime > 286) {
-    		elements.controls.classList.remove('is-inactive')
-    		elements.controlsRefresh.classList.remove('is-inactive')
-    		elements.grid.classList.add('is-inactive')
-	}
+	elements.controls.classList.remove('is-inactive')
+    	elements.controlsRefresh.classList.remove('is-inactive')
+  	elements.grid.classList.add('is-inactive')
   }
 
   refresh() {

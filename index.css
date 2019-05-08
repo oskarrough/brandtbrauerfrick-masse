@@ -342,7 +342,7 @@ video-custom.is-active .ActiveDot {
 }
 
 .CreditsOverlay {
-  opacity: 1;
+  opacity: 0.9;
   height: 100vh;
   position: absolute;
   right:0;

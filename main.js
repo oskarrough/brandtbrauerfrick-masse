@@ -21,6 +21,7 @@ class View {
   constructor() {
     this.amountReady = 0
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
+    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)

@@ -345,7 +345,7 @@ video-custom.is-active .ActiveDot {
   opacity: 0.9;
   height: 100vh;
   position: absolute;
-  right:0;
+  right:-1rem;
   z-index: 3;
   background-color: white;
   width:40%;

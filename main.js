@@ -14,12 +14,16 @@ const elements = {
 	controlsPlay: document.querySelector(".Controls-play"),
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
-	deviceText: document.querySelector(".DeviceSupportText")
+  deviceText: document.querySelector(".DeviceSupportText"),
+  credits: document.querySelector(".Credits"),
+  creditsOverlay: document.querySelector(".CreditsOverlay")
 }
 
 class View {
   constructor() {
     this.amountReady = 0
+    document.body.addEventListener("click", this.toggleCreditsOverlay.bind(this),false);
+    document.body.addEventListener("keydown", this.toggleCreditsOverlay.bind(this),false);
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
@@ -143,6 +147,15 @@ class View {
         el.classList.remove('is-active')
       }
     })
+  }
+
+  /********* show credits overlay ***********/
+  toggleCreditsOverlay(event) {
+    if (event.target === elements.credits) {
+      elements.creditsOverlay.className = "CreditsOverlay Page";
+      return;
+    }
+    elements.creditsOverlay.className = "CreditsOverlay Page is-inactive"; 
   }
 }
 

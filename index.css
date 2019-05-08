@@ -9,6 +9,7 @@ html {
 
 body {
   margin: 0;
+  height: 100vw;
 }
 
 img,
@@ -101,6 +102,11 @@ p {
   grid-row: 1/2;
   margin-top: 0.2rem;
   text-align: right;
+  text-decoration: underline;
+}
+
+.Credits:hover{
+  cursor: pointer;
 }
 
 video-custom.Percussion {
@@ -325,6 +331,26 @@ video-custom.is-active .ActiveDot {
 
 .DeviceSupportText {
 	display:none;
+}
+
+/********* Credits overlay ******/
+.CreditsOverlay.is-inactive {
+  height:0vh;
+  opacity:0;
+  transition:all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.CreditsOverlay {
+  opacity: 1;
+  height: 100vh;
+  position: absolute;
+  right:0;
+  z-index: 3;
+  background-color: white;
+  width:40%;
+  overflow: scroll;
+  padding-left:1rem;
 }
 
 /********* Mobile content ******/

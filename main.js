@@ -58,7 +58,7 @@ class View {
   }
 
   refresh() {
-    window.location = 'video.html'
+    window.location = '/'
   }
 
   handleVideoClick() {

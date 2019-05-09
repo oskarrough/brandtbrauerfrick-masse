@@ -354,6 +354,7 @@ video-custom.is-active .ActiveDot {
   height: 100vh;
   top:0;
   left:0;
+  background: hsla(0, 0%, 100%, 0.2);
 }
 
 .CreditsOverlay-content {

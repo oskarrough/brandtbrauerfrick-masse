@@ -1,4 +1,5 @@
 import {VideoCustom} from '/video_custom.js'
+export {elements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
@@ -15,21 +16,12 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
-  credits: document.querySelector(".Credits"),
-  creditsOverlay: document.querySelector(".CreditsOverlay"),
-  creditsOverlayBackdrop: document.querySelector(".CreditsOverlay-backdrop"),
-  closeOverlayBtn: document.querySelector(".CreditsOverlay-button"),
-  openOverlayBtn: document.querySelector(".Credits")
 }
 
 class View {
   constructor() {
     this.amountReady = 0
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    elements.openOverlayBtn.addEventListener("click", this.openCredits.bind(this),false);
-    elements.closeOverlayBtn.addEventListener("click", this.closeCredits.bind(this),false);
-    elements.creditsOverlayBackdrop.addEventListener("click",this.closeCredits.bind(this),false);
-
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
 
@@ -38,22 +30,6 @@ class View {
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
 
-  }
-  /* credits overlay logic */
-  closeCredits() {
-    elements.creditsOverlay.classList.remove("is-open");
-    document.removeEventListener("keydown", this.handleKeyDown);
-  }
-
-  openCredits() {
-    elements.creditsOverlay.classList.add("is-open");
-    document.addEventListener("keydown", this.handleKeyDown);
-  }
-
-  handleKeyDown(event) {
-    if (event.key === "Escape") {
-      this.closeCredits();
-    }
   }
 
   /* loading logic */

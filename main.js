@@ -16,23 +16,47 @@ const elements = {
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
   credits: document.querySelector(".Credits"),
-  creditsOverlay: document.querySelector(".CreditsOverlay-overlay")
+  creditsOverlay: document.querySelector(".CreditsOverlay"),
+  creditsOverlayBackdrop: document.querySelector(".CreditsOverlay-backdrop"),
+  closeOverlayBtn: document.querySelector(".CreditsOverlay-button"),
+  openOverlayBtn: document.querySelector(".Credits")
 }
 
 class View {
   constructor() {
     this.amountReady = 0
-    document.body.addEventListener("click", this.toggleCreditsOverlay.bind(this),false);
-    document.body.addEventListener("keydown", this.toggleCreditsOverlay.bind(this),false);
-    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
-    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    elements.openOverlayBtn.addEventListener("click", this.openCredits.bind(this),false);
+    elements.closeOverlayBtn.addEventListener("click", this.closeCredits.bind(this),false);
+    elements.creditsOverlayBackdrop.addEventListener("click",this.closeCredits.bind(this),false);
+
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
+    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
+
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
+
+  }
+  /* credits overlay logic */
+  closeCredits() {
+    elements.creditsOverlay.classList.remove("is-open");
+    document.removeEventListener("keydown", this.handleKeyDown);
   }
 
+  openCredits() {
+    elements.creditsOverlay.classList.add("is-open");
+    document.addEventListener("keydown", this.handleKeyDown);
+  }
+
+  handleKeyDown(event) {
+    if (event.key === "Escape") {
+      this.closeCredits();
+    }
+  }
+
+  /* loading logic */
   handleCanPlay() {
     this.amountReady += 1
 
@@ -46,15 +70,7 @@ class View {
     }
   }
 
-  handleFirstPlay() {
-    elements.grid.classList.remove('is-inactive')
-    elements.controls.classList.add('is-inactive')
-    elements.controlsPlay.classList.add('is-inactive')
-    // Trigger a "click" on the main video.
-    this.handlePlayVideo(elements.mainVideo)
-    setTimeout(this.syncVideos.bind(this), 500)
-  }
-
+  /* refresh logic */
   showRefresh() {
 	elements.controls.classList.remove('is-inactive')
     	elements.controlsRefresh.classList.remove('is-inactive')
@@ -63,6 +79,16 @@ class View {
 
   refresh() {
     window.location = '/'
+  }
+
+  /* play/ pause/ sync logic */
+  handleFirstPlay() {
+    elements.grid.classList.remove('is-inactive')
+    elements.controls.classList.add('is-inactive')
+    elements.controlsPlay.classList.add('is-inactive')
+    // Trigger a "click" on the main video.
+    this.handlePlayVideo(elements.mainVideo)
+    setTimeout(this.syncVideos.bind(this), 500)
   }
 
   handleVideoClick() {
@@ -75,10 +101,8 @@ class View {
     }
   }
 
-  /****** handle video state *******/
-
   handlePlayVideo(target) {
-    /* target is paused and requested by user */
+    // target is paused and requested by user
     this.removeActive()
     this.addActive(target)
     this.muteVideos()
@@ -102,7 +126,6 @@ class View {
     // this.syncVideos()
   }
 
-  /********* videos states ***********/
   syncVideos() {
     const masterTime = elements.mainVideo.currentTime
     console.log(`all: syncing ${masterTime}`)
@@ -147,15 +170,6 @@ class View {
         el.classList.remove('is-active')
       }
     })
-  }
-
-  /********* show credits overlay ***********/
-  toggleCreditsOverlay(event) {
-    if (event.target === elements.credits) {
-      elements.creditsOverlay.className = "CreditsOverlay Page";
-      return;
-    }
-    elements.creditsOverlay.className = "CreditsOverlay Page is-inactive"; 
   }
 }
 

@@ -100,6 +100,9 @@ p {
   grid-column: 12/13;
   grid-row: 1/2;
   margin-bottom: 6rem;
+}
+
+.Button {
   text-align: right;
   text-decoration: underline;
   border:0;
@@ -108,7 +111,8 @@ p {
   padding:0;
 }
 
-.Credits:hover{
+.Credits:hover,
+.CreditsOverlay-button {
   cursor: pointer;
 }
 
@@ -336,23 +340,40 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* Credits overlay ******/
-.CreditsOverlay.is-inactive {
-  height:0;
-  opacity:0;
-  transition:all 0.5s ease;
+.CreditsOverlay {
+  display: none;
 }
 
+.CreditsOverlay.is-open {
+  display: block;
+}
 
-.CreditsOverlay {
-  opacity: 0.9;
+.CreditsOverlay-backdrop {
+  position: fixed;
+  width:100vw;
   height: 100vh;
-  position: absolute;
+  top:0;
+  left:0;
+}
+
+.CreditsOverlay-content {
+  position: fixed;
   right:-1rem;
-  z-index: 3;
+  z-index: 2;
   background-color: white;
-  width:40%;
   overflow: scroll;
   padding-left:1rem;
+  width: 40%;
+  height:100%;
+  overflow: scroll;
+}
+
+.CreditsOverlay-button {
+  position: fixed;
+  right: 1rem;
+  top:1.4rem;
+  z-index: 3;
+
 }
 
 /********* Mobile content ******/

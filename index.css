@@ -83,7 +83,6 @@ p {
   padding: 0.5rem;
 }
 
-/*.GridOrchestra.is-inactive > *:not(.Presentation)*/
 .GridOrchestra.is-inactive > .DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
   opacity: 0.1;
@@ -108,6 +107,7 @@ p {
   border:0;
   background: transparent;
   font-size: 1rem;
+	font-family: inherit;
   padding:0;
 }
 
@@ -319,14 +319,6 @@ video-custom.is-active .ActiveDot {
 
 /* Credits page */
 
-.Page {
-  color: black;
-}
-
-.Page pre {
-	font-family: inherit;
-}
-
 .Debug {
   background: black;
   color: yellow;
@@ -354,27 +346,39 @@ video-custom.is-active .ActiveDot {
   height: 100vh;
   top:0;
   left:0;
-  background: hsla(0, 0%, 100%, 0.2);
-}
+	z-index: 1;
+	background: hsla(0, 0%, 100%, 0.8);
+}t m
 
 .CreditsOverlay-content {
   position: fixed;
-  right:-1rem;
+	top: 0;
+  right: 0;
   z-index: 2;
   background-color: white;
-  overflow: scroll;
-  padding-left:1rem;
+	color: black;
+  overflow: auto;
+  padding: 4rem 2rem 0;
   width: 40%;
   height:100%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .CreditsOverlay-button {
   position: fixed;
   right: 1rem;
-  top:1.4rem;
+  top: 1.3rem; 
   z-index: 3;
+}
 
+@media (max-width: 830px) {
+	.CreditsOverlay-button {
+		top: 2.6rem;
+	}
+}
+
+.CreditsOverlay-content p {
+	margin-left: 1em;
 }
 
 /********* Mobile content ******/

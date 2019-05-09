@@ -16,7 +16,7 @@ const elements = {
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
   credits: document.querySelector(".Credits"),
-  creditsOverlay: document.querySelector(".CreditsOverlay")
+  creditsOverlay: document.querySelector(".CreditsOverlay-overlay")
 }
 
 class View {

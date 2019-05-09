@@ -9,7 +9,6 @@ html {
 
 body {
   margin: 0;
-  height: 100vw;
 }
 
 img,
@@ -100,9 +99,13 @@ p {
 .Credits {
   grid-column: 12/13;
   grid-row: 1/2;
-  margin-top: 0.2rem;
+  margin-bottom: 6rem;
   text-align: right;
   text-decoration: underline;
+  border:0;
+  background: transparent;
+  font-size: 1rem;
+  padding:0;
 }
 
 .Credits:hover{
@@ -313,7 +316,6 @@ video-custom.is-active .ActiveDot {
 /* Credits page */
 
 .Page {
-  margin: 2rem;
   color: black;
 }
 
@@ -335,11 +337,11 @@ video-custom.is-active .ActiveDot {
 
 /********* Credits overlay ******/
 .CreditsOverlay.is-inactive {
-  height:0vh;
+  height:0;
   opacity:0;
   transition:all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
 }
+
 
 .CreditsOverlay {
   opacity: 0.9;

@@ -338,6 +338,7 @@ video-custom.is-active .ActiveDot {
 
 .CreditsOverlay.is-open {
   display: block;
+  opacity: 1;
 }
 
 .CreditsOverlay-backdrop {
@@ -348,7 +349,7 @@ video-custom.is-active .ActiveDot {
   left:0;
 	z-index: 1;
 	background: hsla(0, 0%, 100%, 0.8);
-}t m
+}
 
 .CreditsOverlay-content {
   position: fixed;

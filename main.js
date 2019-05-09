@@ -1,5 +1,5 @@
 import {VideoCustom} from '/video_custom.js'
-export {elements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
+export {creditsElements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
@@ -21,7 +21,6 @@ const elements = {
 class View {
   constructor() {
     this.amountReady = 0
-    this.handleKeyDown = this.handleKeyDown.bind(this);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
 

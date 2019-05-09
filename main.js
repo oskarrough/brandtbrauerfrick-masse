@@ -1,10 +1,11 @@
 import {VideoCustom} from '/video_custom.js'
-import {ShareButton} from '/share_button_custom.js'
+import {ShareDialog} from '/share_button_custom.js'
 export {elements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
+customElements.define("share-dialog", ShareDialog);
 
 const elements = {
 	app: document.querySelector(".App"),
@@ -17,6 +18,8 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
+  shareButton: document.querySelector(".ShareButton"),
+  shareDialog: document.querySelector("share-dialog")
 }
 
 class View {
@@ -25,11 +28,17 @@ class View {
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
 
+    elements.shareButton.addEventListener("click", this.showShareDialog.bind(this),false);
+
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
+  }
 
+  /* sharer custom element */
+  showShareDialog(){
+    elements.shareDialog.classList.add("is-open");
   }
 
   /* loading logic */

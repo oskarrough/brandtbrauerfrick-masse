@@ -205,6 +205,10 @@ video-custom.Tuba {
   margin-bottom: 0.5rem;
 }
 
+.Release-links {
+  display: flex;
+}
+
 .SocialLinks {
   grid-column: 10/13;
   grid-row: 11/12;
@@ -393,8 +397,38 @@ video-custom.is-active .ActiveDot {
   font-family: inherit;
 }
 
-.foo {
-  display: flex;
+
+share-dialog {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  width: 10rem;
+  height: 4rem;
+  border: 1px solid black;
+  bottom: 2.4rem;
+  left: 4.9rem;
+  background: white;
+  box-shadow: 0.1em 0.1em 0 0.1em black;
+}
+
+share-dialog.is-open {
+  display: block;
+  opacity: 1;
+}
+
+.ShareDialog,
+.ShareDialog-logos {
+  display:flex;
+}
+
+.ShareDialog {
+  flex-direction: column;
+  align-items: center;
+}
+
+.ShareDialog-logos img {
+  max-width:2rem;
+  max-height:2rem;
 }
 
 

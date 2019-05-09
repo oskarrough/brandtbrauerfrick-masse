@@ -338,7 +338,6 @@ video-custom.is-active .ActiveDot {
 
 .CreditsOverlay.is-open {
   display: block;
-  opacity: 1;
 }
 
 .CreditsOverlay-backdrop {

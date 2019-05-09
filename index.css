@@ -23,7 +23,8 @@ a {
   transition: color 150ms;
 }
 
-a:hover {
+a:hover,
+.ShareButton:hover {
   color: black;
 }
 
@@ -112,7 +113,8 @@ p {
 }
 
 .Credits:hover,
-.CreditsOverlay-button {
+.CreditsOverlay-button:hover,
+.ShareButton:hover {
   cursor: pointer;
 }
 
@@ -380,6 +382,21 @@ video-custom.is-active .ActiveDot {
 .CreditsOverlay-content p {
 	margin-left: 1em;
 }
+
+/********* share button ******/
+.ShareButton {
+  border:0;
+  background: 0;
+  text-decoration: underline;
+  color: #666;
+  font-size:1rem;
+  font-family: inherit;
+}
+
+.foo {
+  display: flex;
+}
+
 
 /********* Mobile content ******/
 

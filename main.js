@@ -1,5 +1,6 @@
 import {VideoCustom} from '/video_custom.js'
-export {creditsElements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
+import {ShareButton} from '/share_button_custom.js'
+export {elements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')

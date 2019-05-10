@@ -359,7 +359,8 @@ video-custom.is-active .ActiveDot {
 	color: black;
   overflow: auto;
   padding: 4rem 2rem 0;
-  width: 40%;
+	width: 30em;
+  max-width: 70%;
   height:100%;
   overflow: auto;
 }

@@ -1,4 +1,3 @@
-export {elements, closeCredits, openCredits, handleKeyDown};
 // credits overlay logic
 
 function closeCredits() {
@@ -18,7 +17,6 @@ function handleKeyDown(event) {
 }
 
 const elements = {
-  creditsBtn: document.querySelector(".Credits"),
   overlay: document.querySelector(".CreditsOverlay"),
   overlayBackdrop: document.querySelector(".CreditsOverlay-backdrop"),
   closeOverlayBtn: document.querySelector(".CreditsOverlay-button"),

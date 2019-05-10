@@ -18,7 +18,7 @@ export class ShareDialog extends HTMLElement {
     render() {
         this.html`  
             <div class="ShareDialog">
-                <p class="ShareDialog-text">Copy an share this </p>
+                <p class="ShareDialog-text">Copy an share this URL </p>
                 <input class="ShareDialog-input" readonly>
                 <div class="ShareDialog-logos">
                     <a href=${this.state.fbEndpoint}><img src="/assets/facebook.png"></a>

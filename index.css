@@ -402,6 +402,7 @@ share-dialog {
   display: none;
   opacity: 0;
   position: fixed;
+  z-index:2;
   width: 10rem;
   height: 4rem;
   border: 1px solid black;
@@ -409,6 +410,7 @@ share-dialog {
   left: 4.9rem;
   background: white;
   box-shadow: 0.1em 0.1em 0 0.1em black;
+  display: flex;
 }
 
 share-dialog.is-open {
@@ -424,6 +426,11 @@ share-dialog.is-open {
 .ShareDialog {
   flex-direction: column;
   align-items: center;
+}
+
+.ShareDialog > * {
+  max-width: 100%;
+
 }
 
 .ShareDialog-logos img {

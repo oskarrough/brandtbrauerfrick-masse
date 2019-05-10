@@ -24,19 +24,24 @@ a,
   transition: color 150ms;
 }
 
+.Button,
+input {
+  font-family: inherit;
+  font-size: 1rem;
+}
+
 a:hover,
 .Button:hover {
   color: black;
 }
 
 .Button {
-  text-align: right;
   text-decoration: underline;
   border:0;
   background: transparent;
+  padding:0;
   font-size: 1rem;
 	font-family: inherit;
-  padding:0;
 }
 
 .Button:hover {
@@ -121,6 +126,7 @@ p {
   grid-column: 12/13;
   grid-row: 1/2;
   margin-bottom: 6rem;
+  text-align: right;
 }
 
 video-custom.Percussion {
@@ -208,6 +214,14 @@ video-custom.Tuba {
   justify-content: flex-end;
   margin-left: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.Release-links {
+  display: flex;
+}
+
+.Release-links-preorder {
+  margin-right:0.5rem;
 }
 
 .SocialLinks {
@@ -383,6 +397,64 @@ video-custom.is-active .ActiveDot {
 	.CreditsOverlay-button {
 		top: 2.6rem;
 	}
+}
+
+/********* share button ******/
+.ShareDialog-box {
+  display: none;
+  position: fixed;
+  z-index:2;
+  border: 1px solid black;
+  bottom: 2.8rem;
+  left: 7.6rem;
+  background: white;
+  box-shadow: 0.1em 0.1em 0 0.1em black;
+	padding: 1rem 0.7rem 0.5rem;
+	min-width: 12em;
+}
+
+.ShareDialog-box > * {
+	margin: 0 0 0.5rem;
+  color:black;
+}
+
+.ShareDialog-box.is-open {
+  display: flex;
+  flex-direction: column;
+}
+
+.ShareDialog-box-text {
+  /* font-size: 0.8rem; */
+}
+
+.ShareDialog-box-input {
+	padding: 0.1em 0.3em;
+	font-style: italic;
+}
+
+.ShareDialog-logos {
+  display:flex;
+}
+
+.ShareDialog-box-logos img {
+  max-width:1.5rem;
+  max-height:1.5rem;
+}
+
+@media (max-width:976px) {
+
+  .ShareDialog-box {
+    width: 22%;
+  }
+
+  .ShareDialog-box-text {
+    font-size:0.8rem;
+  }
+
+  .ShareDialog-logos img {
+    max-width: 1rem;
+    max-height: 1rem;
+  }
 }
 
 /********* Mobile content ******/

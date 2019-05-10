@@ -1,9 +1,11 @@
 import {VideoCustom} from '/video_custom.js'
+import {ShareDialog} from '/share-dialog.js'
 import '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
+customElements.define("share-dialog", ShareDialog);
 
 const elements = {
 	app: document.querySelector(".App"),
@@ -23,20 +25,16 @@ class View {
     this.amountReady = 0
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
-
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
-
   }
 
   /* loading logic */
   handleCanPlay() {
     this.amountReady += 1
-
     elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
-
     if (this.amountReady === elements.videos.length) {
       elements.loading.classList.add('is-inactive')
       elements.controls.classList.remove('is-inactive')
@@ -47,8 +45,8 @@ class View {
 
   /* refresh logic */
   showRefresh() {
-	elements.controls.classList.remove('is-inactive')
-    	elements.controlsRefresh.classList.remove('is-inactive')
+	  elements.controls.classList.remove('is-inactive')
+    elements.controlsRefresh.classList.remove('is-inactive')
   	elements.grid.classList.add('is-inactive')
   }
 

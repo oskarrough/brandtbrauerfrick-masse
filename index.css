@@ -111,8 +111,7 @@ p {
   padding:0;
 }
 
-.Credits:hover,
-.CreditsOverlay-button {
+.Button:hover {
   cursor: pointer;
 }
 
@@ -359,7 +358,7 @@ video-custom.is-active .ActiveDot {
 	color: black;
   overflow: auto;
   padding: 4rem 2rem 0;
-	width: 30em;
+	width: 36em;
   max-width: 70%;
   height:100%;
   overflow: auto;
@@ -369,17 +368,13 @@ video-custom.is-active .ActiveDot {
   position: fixed;
   right: 1rem;
   top: 1.3rem; 
-  z-index: 3;
+  z-index: 4;
 }
 
 @media (max-width: 830px) {
 	.CreditsOverlay-button {
 		top: 2.6rem;
 	}
-}
-
-.CreditsOverlay-content p {
-	margin-left: 1em;
 }
 
 /********* Mobile content ******/

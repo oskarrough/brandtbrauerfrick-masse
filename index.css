@@ -18,13 +18,29 @@ video {
   vertical-align: top;
 }
 
-a {
+a,
+.Button {
   color: #666;
   transition: color 150ms;
 }
 
-a:hover {
+a:hover,
+.Button:hover {
   color: black;
+}
+
+.Button {
+  text-align: right;
+  text-decoration: underline;
+  border:0;
+  background: transparent;
+  font-size: 1rem;
+	font-family: inherit;
+  padding:0;
+}
+
+.Button:hover {
+  cursor: pointer;
 }
 
 .App {
@@ -99,20 +115,6 @@ p {
   grid-column: 12/13;
   grid-row: 1/2;
   margin-bottom: 6rem;
-}
-
-.Button {
-  text-align: right;
-  text-decoration: underline;
-  border:0;
-  background: transparent;
-  font-size: 1rem;
-	font-family: inherit;
-  padding:0;
-}
-
-.Button:hover {
-  cursor: pointer;
 }
 
 video-custom.Percussion {

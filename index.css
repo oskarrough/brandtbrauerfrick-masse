@@ -18,14 +18,30 @@ video {
   vertical-align: top;
 }
 
-a {
+a,
+.Button {
   color: #666;
   transition: color 150ms;
 }
 
 a:hover,
-.ShareButton:hover {
+.ShareButton:hover,
+.Button:hover {
   color: black;
+}
+
+.Button {
+  text-align: right;
+  text-decoration: underline;
+  border:0;
+  background: transparent;
+  font-size: 1rem;
+	font-family: inherit;
+  padding:0;
+}
+
+.Button:hover {
+  cursor: pointer;
 }
 
 .App {
@@ -112,8 +128,7 @@ p {
   padding:0;
 }
 
-.Credits:hover,
-.CreditsOverlay-button:hover,
+.Button:hover,
 .ShareButton:hover {
   cursor: pointer;
 }
@@ -352,7 +367,7 @@ video-custom.is-active .ActiveDot {
   height: 100vh;
   top:0;
   left:0;
-	z-index: 1;
+	z-index: 3;
 	background: hsla(0, 0%, 100%, 0.8);
 }
 
@@ -360,12 +375,13 @@ video-custom.is-active .ActiveDot {
   position: fixed;
 	top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   background-color: white;
 	color: black;
   overflow: auto;
   padding: 4rem 2rem 0;
-  width: 40%;
+	width: 36em;
+  max-width: 70%;
   height:100%;
   overflow: auto;
 }
@@ -374,17 +390,13 @@ video-custom.is-active .ActiveDot {
   position: fixed;
   right: 1rem;
   top: 1.3rem; 
-  z-index: 3;
+  z-index: 4;
 }
 
 @media (max-width: 830px) {
 	.CreditsOverlay-button {
 		top: 2.6rem;
 	}
-}
-
-.CreditsOverlay-content p {
-	margin-left: 1em;
 }
 
 /********* share button ******/
@@ -430,7 +442,6 @@ share-dialog.is-open {
   max-width:2rem;
   max-height:2rem;
 }
-
 
 /********* Mobile content ******/
 

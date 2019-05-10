@@ -433,6 +433,10 @@ video-custom.is-active .ActiveDot {
   margin:0.3rem;
 }
 
+.ShareDialog-box-text{
+  font-size: 0.9rem;
+}
+
 .ShareDialog-box-input {
   margin-right: 1rem;
 }
@@ -449,7 +453,7 @@ video-custom.is-active .ActiveDot {
 @media (max-width:976px) {
 
   .ShareDialog-box {
-    width: 21%;
+    width: 22%;
   }
 
   .ShareDialog-box-text {

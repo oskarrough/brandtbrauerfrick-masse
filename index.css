@@ -31,17 +31,17 @@ input {
 }
 
 a:hover,
-.ShareButton:hover,
 .Button:hover {
   color: black;
 }
 
 .Button {
-  text-align: right;
   text-decoration: underline;
   border:0;
   background: transparent;
   padding:0;
+  font-size: 1rem;
+	font-family: inherit;
 }
 
 .Button:hover {
@@ -120,21 +120,7 @@ p {
   grid-column: 12/13;
   grid-row: 1/2;
   margin-bottom: 6rem;
-}
-
-.Button {
   text-align: right;
-  text-decoration: underline;
-  border:0;
-  background: transparent;
-  font-size: 1rem;
-	font-family: inherit;
-  padding:0;
-}
-
-.Button:hover,
-.ShareButton:hover {
-  cursor: pointer;
 }
 
 video-custom.Percussion {
@@ -408,11 +394,6 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* share button ******/
-.ShareButton {
-  color: #666;
-  font-size:1rem;
-}
-
 .ShareDialog-box {
   display: none;
   position: fixed;

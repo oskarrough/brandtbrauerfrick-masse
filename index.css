@@ -420,11 +420,10 @@ video-custom.is-active .ActiveDot {
   left: 4.9rem;
   background: white;
   box-shadow: 0.1em 0.1em 0 0.1em black;
-  transition: all 0.2s ease-in-out;
 }
 
 .ShareDialog-box.is-open {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
 }
 

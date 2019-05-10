@@ -1,5 +1,5 @@
 import {VideoCustom} from '/video_custom.js'
-import {ShareDialog} from '/share_button_custom.js'
+import {ShareDialog} from '/share-dialog.js'
 import '/credits.js'
 
 const hyper = window.hyperHTML
@@ -18,8 +18,6 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
-  shareButton: document.querySelector(".ShareButton"),
-  shareDialog: document.querySelector("share-dialog")
 }
 
 class View {
@@ -27,26 +25,16 @@ class View {
     this.amountReady = 0
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
-
-    elements.shareButton.addEventListener("click", this.showShareDialog.bind(this),false);
-
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
   }
 
-  /* sharer custom element */
-  showShareDialog(){
-    elements.shareDialog.classList.add("is-open");
-  }
-
   /* loading logic */
   handleCanPlay() {
     this.amountReady += 1
-
     elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
-
     if (this.amountReady === elements.videos.length) {
       elements.loading.classList.add('is-inactive')
       elements.controls.classList.remove('is-inactive')
@@ -57,8 +45,8 @@ class View {
 
   /* refresh logic */
   showRefresh() {
-	elements.controls.classList.remove('is-inactive')
-    	elements.controlsRefresh.classList.remove('is-inactive')
+	  elements.controls.classList.remove('is-inactive')
+    elements.controlsRefresh.classList.remove('is-inactive')
   	elements.grid.classList.add('is-inactive')
   }
 

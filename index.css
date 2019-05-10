@@ -404,6 +404,7 @@ video-custom.is-active .ActiveDot {
   background: white;
   box-shadow: 0.1em 0.1em 0 0.1em black;
 	padding: 1rem 0.7rem 0.5rem;
+	min-width: 12em;
 }
 
 .ShareDialog-box > * {

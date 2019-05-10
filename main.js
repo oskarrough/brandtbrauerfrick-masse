@@ -1,5 +1,5 @@
 import {VideoCustom} from '/video_custom.js'
-export {creditsElements, closeCredits, openCredits, handleKeyDown} from '/credits.js'
+import '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')

@@ -26,8 +26,8 @@ export class ShareDialog extends HTMLElement {
                 <p class="ShareDialog-box-text">Copy an share this URL </p>
                 <input class="ShareDialog-box-input" value=${this.getAttribute("url")} readonly>
                 <div class="ShareDialog-box-logos">
-                    <a href=${this.state.fbEndpoint}><img src="/assets/facebook.png"></a>
-                    <a href=${this.state.twitterEndpoint}><img src="/assets/twitter.png"></a>
+                    <a href=${this.state.fbEndpoint} target="_blank"><img src="/assets/facebook.png"></a>
+                    <a href=${this.state.twitterEndpoint} target="_blank"><img src="/assets/twitter.png"></a>
                 </div>
             </div>
         `;

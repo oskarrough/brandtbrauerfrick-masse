@@ -346,7 +346,7 @@ video-custom.is-active .ActiveDot {
   height: 100vh;
   top:0;
   left:0;
-	z-index: 1;
+	z-index: 3;
 	background: hsla(0, 0%, 100%, 0.8);
 }
 
@@ -354,12 +354,13 @@ video-custom.is-active .ActiveDot {
   position: fixed;
 	top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 4;
   background-color: white;
 	color: black;
   overflow: auto;
   padding: 4rem 2rem 0;
-  width: 40%;
+	width: 30em;
+  max-width: 70%;
   height:100%;
   overflow: auto;
 }

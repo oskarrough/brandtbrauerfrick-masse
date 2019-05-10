@@ -428,6 +428,7 @@ video-custom.is-active .ActiveDot {
 
 .ShareDialog-box > * {
   margin:0.1rem;
+  color:black;
 }
 
 .ShareDialog-box.is-open {

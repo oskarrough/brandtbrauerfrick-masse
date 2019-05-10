@@ -12,10 +12,15 @@ export class ShareDialog extends HTMLElement {
         this.state.fbEndpoint = `https://www.facebook.com/sharer/sharer.php?u=${url}`
         this.state.twitterEndpoint = `https://twitter.com/intent/tweet?text=via%20${this.getAttribute("username")}&amp;url=${url}`;
         this.render();
-        this.querySelector(".ShareDialog-button").addEventListener("click", this.showDialogBox.bind(this),false);
+        this.querySelector(".ShareDialog-button").addEventListener("click", this.toggleDialogBox.bind(this),false);
     }
 
-    showDialogBox() {
+    toggleDialogBox() {
+        const dialogBox = this.querySelector(".ShareDialog-box");
+        if (dialogBox.classList.contains("is-open")) {
+            dialogBox.classList.remove("is-open");
+            return;
+        }
        this.querySelector(".ShareDialog-box").classList.add("is-open"); 
     }
 

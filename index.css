@@ -18,13 +18,29 @@ video {
   vertical-align: top;
 }
 
-a {
+a,
+.Button {
   color: #666;
   transition: color 150ms;
 }
 
-a:hover {
+a:hover,
+.Button:hover {
   color: black;
+}
+
+.Button {
+  text-align: right;
+  text-decoration: underline;
+  border:0;
+  background: transparent;
+  font-size: 1rem;
+	font-family: inherit;
+  padding:0;
+}
+
+.Button:hover {
+  cursor: pointer;
 }
 
 .App {
@@ -83,7 +99,6 @@ p {
   padding: 0.5rem;
 }
 
-/*.GridOrchestra.is-inactive > *:not(.Presentation)*/
 .GridOrchestra.is-inactive > .DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
   opacity: 0.1;
@@ -99,8 +114,7 @@ p {
 .Credits {
   grid-column: 12/13;
   grid-row: 1/2;
-  margin-top: 0.2rem;
-  text-align: right;
+  margin-bottom: 6rem;
 }
 
 video-custom.Percussion {
@@ -127,6 +141,7 @@ video-custom.Marimba {
   grid-column: 1/4;
   grid-row: 2/5; 
   grid-row: 2/5; 
+  margin-left:1rem;
 }
 
 video-custom.Piano {
@@ -305,15 +320,6 @@ video-custom.is-active .ActiveDot {
 
 /* Credits page */
 
-.Page {
-  margin: 2rem;
-  color: black;
-}
-
-.Page pre {
-	font-family: inherit;
-}
-
 .Debug {
   background: black;
   color: yellow;
@@ -324,6 +330,53 @@ video-custom.is-active .ActiveDot {
 
 .DeviceSupportText {
 	display:none;
+}
+
+/********* Credits overlay ******/
+.CreditsOverlay {
+  display: none;
+}
+
+.CreditsOverlay.is-open {
+  display: block;
+}
+
+.CreditsOverlay-backdrop {
+  position: fixed;
+  width:100vw;
+  height: 100vh;
+  top:0;
+  left:0;
+	z-index: 3;
+	background: hsla(0, 0%, 100%, 0.8);
+}
+
+.CreditsOverlay-content {
+  position: fixed;
+	top: 0;
+  right: 0;
+  z-index: 4;
+  background-color: white;
+	color: black;
+  overflow: auto;
+  padding: 4rem 2rem 0;
+	width: 36em;
+  max-width: 70%;
+  height:100%;
+  overflow: auto;
+}
+
+.CreditsOverlay-button {
+  position: fixed;
+  right: 1rem;
+  top: 1.3rem; 
+  z-index: 4;
+}
+
+@media (max-width: 830px) {
+	.CreditsOverlay-button {
+		top: 2.6rem;
+	}
 }
 
 /********* Mobile content ******/

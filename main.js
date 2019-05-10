@@ -1,4 +1,5 @@
 import {VideoCustom} from '/video_custom.js'
+import '/credits.js'
 
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
@@ -14,20 +15,23 @@ const elements = {
 	controlsPlay: document.querySelector(".Controls-play"),
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
-	deviceText: document.querySelector(".DeviceSupportText")
+  deviceText: document.querySelector(".DeviceSupportText"),
 }
 
 class View {
   constructor() {
     this.amountReady = 0
-    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
+    elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
+
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
+
   }
 
+  /* loading logic */
   handleCanPlay() {
     this.amountReady += 1
 
@@ -41,15 +45,7 @@ class View {
     }
   }
 
-  handleFirstPlay() {
-    elements.grid.classList.remove('is-inactive')
-    elements.controls.classList.add('is-inactive')
-    elements.controlsPlay.classList.add('is-inactive')
-    // Trigger a "click" on the main video.
-    this.handlePlayVideo(elements.mainVideo)
-    setTimeout(this.syncVideos.bind(this), 500)
-  }
-
+  /* refresh logic */
   showRefresh() {
 	elements.controls.classList.remove('is-inactive')
     	elements.controlsRefresh.classList.remove('is-inactive')
@@ -58,6 +54,16 @@ class View {
 
   refresh() {
     window.location = '/'
+  }
+
+  /* play/ pause/ sync logic */
+  handleFirstPlay() {
+    elements.grid.classList.remove('is-inactive')
+    elements.controls.classList.add('is-inactive')
+    elements.controlsPlay.classList.add('is-inactive')
+    // Trigger a "click" on the main video.
+    this.handlePlayVideo(elements.mainVideo)
+    setTimeout(this.syncVideos.bind(this), 500)
   }
 
   handleVideoClick() {
@@ -70,10 +76,8 @@ class View {
     }
   }
 
-  /****** handle video state *******/
-
   handlePlayVideo(target) {
-    /* target is paused and requested by user */
+    // target is paused and requested by user
     this.removeActive()
     this.addActive(target)
     this.muteVideos()
@@ -97,7 +101,6 @@ class View {
     // this.syncVideos()
   }
 
-  /********* videos states ***********/
   syncVideos() {
     const masterTime = elements.mainVideo.currentTime
     console.log(`all: syncing ${masterTime}`)

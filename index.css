@@ -374,7 +374,8 @@ video-custom.is-active .ActiveDot {
 .CreditsOverlay-content {
   position: fixed;
 	top: 0;
-  right: 0;
+  animation: hideContent 0.3s ease-in-out;
+  animation-fill-mode: forwards;
   z-index: 4;
   background-color: white;
 	color: black;
@@ -384,6 +385,33 @@ video-custom.is-active .ActiveDot {
   max-width: 70%;
   height:100%;
   overflow: auto;
+}
+
+.CreditsOverlay-content.is-active {
+  animation: showContent 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hideContent {
+  0% {
+    right: 0rem;
+  }
+  100% {
+    right:-36rem;
+  }
+}
+
+@keyframes showContent {
+  0% {
+    right: -36rem;
+  }
+  100% {
+    right:0;
+  }
+}
+
+.CreditsOverlay-content.is-open {
+  
 }
 
 .CreditsOverlay-button {

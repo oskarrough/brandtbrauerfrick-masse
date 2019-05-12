@@ -3,11 +3,13 @@
 function closeCredits() {
     elements.overlay.classList.remove("is-open");
     elements.overlayContent.classList.remove("is-active");
+    elements.overlayContent.classList.add("is-inactive");
     document.removeEventListener("keydown", handleKeyDown);
 }
 
 function openCredits() {
     elements.overlay.classList.add("is-open");
+    elements.overlayContent.classList.remove("is-inactive");
     elements.overlayContent.classList.add("is-active");
     document.addEventListener("keydown", handleKeyDown);
 }

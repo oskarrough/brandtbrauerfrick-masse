@@ -18,17 +18,59 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
+  videosMapping: {
+    0: document.querySelector(".Percussion video"),
+    1: document.querySelector(".Moog video"),
+    2: document.querySelector(".Drums video"),
+    3: document.querySelector(".Piano video"),
+    4: document.querySelector(".Marimba video"),
+    5: document.querySelector(".Main video "),
+    6: document.querySelector(".Trombone video "),
+    7: document.querySelector(".Harp video "),
+    8: document.querySelector(".Violin video"),
+    9: document.querySelector(".Cello video"),
+    10: document.querySelector(".Tuba video")
+  } 
 }
 
 class View {
   constructor() {
-    this.amountReady = 0
+    this.amountReady = 0;
+    this.keyQ = [];
+    this.handleVideoClick = this.handleVideoClick.bind(this);
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.videos.forEach(video => {
-      video.addEventListener('click', this.handleVideoClick.bind(this), false)
+      video.addEventListener('click', (event) => {
+        this.handleVideoClick(event.target);
+      });
+      //video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
+
+    document.body.addEventListener("keydown", this.handleShortCut.bind(this),false);
+  }
+
+  handleShortCut(event) {
+    const key = event.key;
+    let shortcut = 0;
+
+    if (this.keyQ.length === 0) {
+      this.keyQ.push(key);
+      shortcut = key;
+    }
+    else if (this.keyQ[0] == 1 && key == 0) {
+      this.keyQ.push(10);
+      shortcut = 10;
+    }
+
+    else {
+      this.keyQ.length = 0;
+      this.keyQ.push(key);
+      shortcut = key;
+    }
+
+    this.handleVideoClick(elements.videosMapping[shortcut]);
   }
 
   /* loading logic */
@@ -64,15 +106,16 @@ class View {
     setTimeout(this.syncVideos.bind(this), 500)
   }
 
-  handleVideoClick() {
-    if (event.target.paused) {
-      this.handlePlayVideo(event.target)
-    } else if (!event.target.paused && event.target.muted) {
-      this.handleSwitchVideo()
+  handleVideoClick(target) {
+    if (target.paused) {
+      this.handlePlayVideo(target)
+    } else if (!target.paused && target.muted) {
+      this.handleSwitchVideo(target)
     } else {
       this.handlePauseVideo()
     }
   }
+
 
   handlePlayVideo(target) {
     // target is paused and requested by user
@@ -91,11 +134,11 @@ class View {
   }
 
   // While playing, if you tap an instrument that is muted
-  handleSwitchVideo() {
+  handleSwitchVideo(target) {
     this.removeActive()
-    this.addActive(event.target)
+    this.addActive(target)
     this.muteVideos()
-    event.target.muted = false
+    target.muted = false
     // this.syncVideos()
   }
 

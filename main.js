@@ -52,17 +52,15 @@ class View {
     const key = event.key;
     let shortcut = 0;
 
-
-    if (this.keyQ.length === 0) {
+    if (this.keyQ.length === 0) { // does not request "10 video"
       this.keyQ.push(key);
       shortcut = key;
     }
-    else if (this.keyQ[0] == 1 && key == 0) {
+    else if (this.keyQ[0] == 1 && key == 0) { // request "10" video
       this.keyQ.length = 0;
       shortcut = 10;
     }
-
-    else {
+    else { // does not request "10" video
       this.keyQ.length = 0;
       this.keyQ.push(key);
       shortcut = key;

@@ -365,7 +365,7 @@ video-custom.is-active .ActiveDot {
   animation-fill-mode: forwards;
 }
 
-.CreditsOverlay-backdrop.is-active {
+.CreditsOverlay.is-active .CreditsOverlay-backdrop {
   animation: showBackdrop 0.3s ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -387,7 +387,7 @@ video-custom.is-active .ActiveDot {
   animation-fill-mode: forwards; 
 }
 
-.CreditsOverlay-content.is-active {
+.CreditsOverlay.is-active .CreditsOverlay-content {
   animation: showContent 0.3s ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -396,7 +396,7 @@ video-custom.is-active .ActiveDot {
   display: none;
 }
 
-.CreditsOverlay-button.is-active {
+.CreditsOverlay.is-active .CreditsOverlay-button {
   display: block;
 }
 
@@ -462,14 +462,14 @@ video-custom.is-active .ActiveDot {
   box-shadow: 0.1em 0.1em 0 0.1em black;
 	padding: 1rem 0.7rem 0.5rem;
   min-width: 12em;
-  animation: hideDialog 0.3s ease-in-out;
+  animation: hideDialog 0.15s ease-in-out;
   animation-fill-mode: forwards;
 }
 
 .ShareDialog-box.is-open {
   display: flex;
   flex-direction: column;
-  animation: showDialog 0.3s ease-in-out;
+  animation: showDialog 0.15s ease-in-out;
   animation-fill-mode: forwards;
 }
 

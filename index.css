@@ -451,9 +451,8 @@ video-custom.is-active .ActiveDot {
 	}
 }
 
-/********* share button ******/
+/********* share dialog ******/
 .ShareDialog-box {
-  display: none;
   position: fixed;
   z-index:2;
   border: 1px solid black;
@@ -462,7 +461,42 @@ video-custom.is-active .ActiveDot {
   background: white;
   box-shadow: 0.1em 0.1em 0 0.1em black;
 	padding: 1rem 0.7rem 0.5rem;
-	min-width: 12em;
+  min-width: 12em;
+  animation: hideDialog 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.ShareDialog-box.is-open {
+  display: flex;
+  flex-direction: column;
+  animation: showDialog 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+/* functions for show/hide dialog */
+
+@keyframes hideDialog {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes showDialog {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
 }
 
 .ShareDialog-box > * {
@@ -470,14 +504,6 @@ video-custom.is-active .ActiveDot {
   color:black;
 }
 
-.ShareDialog-box.is-open {
-  display: flex;
-  flex-direction: column;
-}
-
-.ShareDialog-box-text {
-  /* font-size: 0.8rem; */
-}
 
 .ShareDialog-box-input {
 	padding: 0.1em 0.3em;

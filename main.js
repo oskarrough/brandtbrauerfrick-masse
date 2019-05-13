@@ -41,10 +41,7 @@ class View {
     elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.videos.forEach(video => {
-      video.addEventListener('click', (event) => {
-        this.handleVideoClick(event.target);
-      });
-      //video.addEventListener('click', this.handleVideoClick.bind(this), false)
+      video.addEventListener('click', (event) => { this.handleVideoClick(event.target); });
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
 
@@ -70,7 +67,6 @@ class View {
       this.keyQ.push(key);
       shortcut = key;
     }
-
     this.handleVideoClick(elements.videosMapping[shortcut]);
   }
 

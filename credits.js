@@ -3,14 +3,16 @@
 function closeCredits() {
     elements.overlay.classList.remove("is-open");
     elements.overlayContent.classList.remove("is-active");
-    elements.overlayContent.classList.add("is-inactive");
+    elements.overlayBackdrop.classList.remove("is-active");
+    elements.closeOverlayBtn.classList.remove("is-active");
     document.removeEventListener("keydown", handleKeyDown);
 }
 
 function openCredits() {
     elements.overlay.classList.add("is-open");
-    elements.overlayContent.classList.remove("is-inactive");
     elements.overlayContent.classList.add("is-active");
+    elements.overlayBackdrop.classList.add("is-active");
+    elements.closeOverlayBtn.classList.add("is-active");
     document.addEventListener("keydown", handleKeyDown);
 }
 

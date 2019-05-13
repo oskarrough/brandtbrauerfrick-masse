@@ -361,19 +361,20 @@ video-custom.is-active .ActiveDot {
   top:0;
 	z-index: 3;
   background: hsla(0, 0%, 100%, 0.8);
-  animation: hideBackdrop 0.3s ease-in-out;
-  animation-fill-mode: forwards;
+  /*animation: hideBackdrop 0.3s ease-in-out;*/
+  left: 150rem;
+  transition: left 0.3s ease-in-out;
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-backdrop {
-  animation: showBackdrop 0.3s ease-in-out;
-  animation-fill-mode: forwards;
+  left:0;
 }
 
 .CreditsOverlay-content {
   position: fixed;
   top: 0;
-  right:0;
+  right:-36rem;
+  transition: right 0.3s ease-in-out;
   z-index: 4;
   background-color: white;
 	color: black;
@@ -383,13 +384,10 @@ video-custom.is-active .ActiveDot {
   max-width: 70%;
   height:100%;
   overflow: auto;
-  animation: hideContent 0.3s ease-in-out;
-  animation-fill-mode: forwards; 
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-content {
-  animation: showContent 0.3s ease-in-out;
-  animation-fill-mode: forwards;
+  right:0;
 }
 
 .CreditsOverlay-button {
@@ -402,41 +400,6 @@ video-custom.is-active .ActiveDot {
 
 /* functions to show/hid backdrop and credits' content */
 
-@keyframes hideBackdrop {
-  0% {
-    left:0;
-  }
-  100% {
-    left: 150rem;
-  }
-}
-
-@keyframes showBackdrop {
-  0% {
-    left:150rem;
-  }
-  100% {
-    left: 0;
-  }
-}
-
-@keyframes hideContent {
-  0% {
-    right: 0;
-  }
-  100% {
-    right:-36rem;
-  }
-}
-
-@keyframes showContent {
-  0% {
-    right: -36rem;
-  }
-  100% {
-    right:0;
-  }
-}
 
 .CreditsOverlay-button {
   position: fixed;

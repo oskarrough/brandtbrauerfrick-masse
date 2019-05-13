@@ -55,12 +55,13 @@ class View {
     const key = event.key;
     let shortcut = 0;
 
+
     if (this.keyQ.length === 0) {
       this.keyQ.push(key);
       shortcut = key;
     }
     else if (this.keyQ[0] == 1 && key == 0) {
-      this.keyQ.push(10);
+      this.keyQ.length = 0;
       shortcut = 10;
     }
 

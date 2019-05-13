@@ -36,7 +36,7 @@ export class VideoCustom extends HTMLElement {
 		// If present, prefer normal video src to Cloudinary id.
 		if (src) {
 			return this.html`
-				<span class="ActiveDot"></span>
+				<span class="ActiveDot">${this.id}</span>
 				<video src=${src} preload="auto"></video>
 			`
 		}

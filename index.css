@@ -249,7 +249,8 @@ video-custom {
 }
 
 video-custom:hover .ActiveDot {
-  background: #57ff22;
+ color: #57ff22;
+ /*background: #57ff22;*/
   display: block;
 }
 
@@ -264,18 +265,22 @@ video-custom video {
 .ActiveDot {
   position: absolute;
   z-index: 2;
-  width: 0.5rem;
+  /*width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background-color: white;
+  background-color: white;*/
   left: 0.4rem;
   top: 0.4rem;
-  display: none;
+  /*display: none;*/
+  font-family: inherit;
+  font-size:1rem;
+  color:white;
 }
 
 video-custom.is-active .ActiveDot {
   display: block;
-  background-color: #ff0050;
+  /*background-color: #ff0050;*/
+  color: #ff0050;
 }
 
 /* play and refresh buttons */

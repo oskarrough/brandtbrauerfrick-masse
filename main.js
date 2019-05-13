@@ -18,17 +18,23 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
+  fullScreenBtn: document.querySelector(".FullScreenBtn")
 }
 
 class View {
   constructor() {
     this.amountReady = 0
-    elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
+    elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false);
+    elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this),false);
     elements.mainVideo.addEventListener("ended", this.showRefresh.bind(this),false);
     elements.videos.forEach(video => {
       video.addEventListener('click', this.handleVideoClick.bind(this), false)
       video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
     })
+  }
+
+  showFullScreen() {
+    document.documentElement.requestFullscreen();
   }
 
   /* loading logic */

@@ -2,6 +2,7 @@ import {VideoCustom} from '/video_custom.js'
 import {ShareDialog} from '/share-dialog.js'
 import '/credits.js'
 
+const parser = new UAParser();
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
@@ -43,7 +44,9 @@ class View {
     elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
     if (this.amountReady === elements.videos.length) {
       elements.loading.classList.add('is-inactive')
-      elements.controls.classList.remove('is-inactive')
+      if (elements.controls.style.display !== "none") { // do not override work in toggleMediaContent()
+        elements.controls.classList.remove('is-inactive')
+      }
       elements.controlsPlay.classList.remove('is-inactive')
       elements.controlsPlay.addEventListener('click', this.handleFirstPlay.bind(this), false)
     }
@@ -148,6 +151,34 @@ class View {
       if (el.classList.contains('is-active')) {
         el.classList.remove('is-active')
       }
+    })
+  }
+}
+
+if (matchMedia) {
+  const mediaQ = window.matchMedia("(max-width: 650px)");
+  mediaQ.addListener(toggleMediaContent);
+  toggleMediaContent(mediaQ);  
+}
+
+function toggleMediaContent(mediaQ) {
+  const desktopContent = document.querySelectorAll(".DesktopContent");
+  const deviceText = document.querySelector(".DeviceSupportText");
+  const controls = document.querySelector(".Controls");
+  if (mediaQ.matches || parser.getBrowser().name === "Safari") {
+
+    desktopContent.forEach( content => {
+      content.style.display = "none";
+      deviceText.classList.remove("is-inactive");
+      controls.style.display = "none";
+    })
+  }
+
+  else {
+    desktopContent.forEach( content => {
+      content.style.display = "block";
+      deviceText.classList.add("is-inactive");
+      controls.style.display = "flex";
     })
   }
 }

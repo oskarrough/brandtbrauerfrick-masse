@@ -416,6 +416,7 @@ video-custom.is-active .ActiveDot {
 
 /********* share dialog ******/
 .ShareDialog-box {
+  display: none;
   position: fixed;
   z-index:2;
   border: 1px solid black;

@@ -21,7 +21,7 @@ export class ShareDialog extends HTMLElement {
             dialogBox.classList.remove("is-open");
             return;
         }
-       this.querySelector(".ShareDialog-box").classList.add("is-open"); 
+        dialogBox.classList.add("is-open");
     }
 
     render() {

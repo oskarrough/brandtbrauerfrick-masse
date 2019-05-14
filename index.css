@@ -500,9 +500,7 @@ video-custom.is-active .ActiveDot {
 
 /********* Mobile content ******/
 
-.BlockUsageMode .DesktopContent,
-.BlockUsageMode .LoadingText,
-.BlockUsageMode .Controls  {
+.BlockUsageMode .DesktopContent {
   display: none;
 }
 

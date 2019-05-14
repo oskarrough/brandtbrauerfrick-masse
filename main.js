@@ -43,6 +43,7 @@ class View {
     this.amountReady += 1
     elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
     if (this.amountReady === elements.videos.length) {
+      document.body.classList.add("ready");
       elements.loading.classList.add('is-inactive')
       if (elements.controls.style.display !== "none") { // do not override work in toggleMediaContent()
         elements.controls.classList.remove('is-inactive')
@@ -165,12 +166,14 @@ function toggleMediaContent(mediaQ) {
   const desktopContent = document.querySelectorAll(".DesktopContent");
   const deviceText = document.querySelector(".DeviceSupportText");
   const controls = document.querySelector(".Controls");
+  const loading = document.querySelector(".LoadingText");
   if (mediaQ.matches || parser.getBrowser().name === "Safari") {
 
     desktopContent.forEach( content => {
       content.style.display = "none";
       deviceText.classList.remove("is-inactive");
       controls.style.display = "none";
+      loading.classList.add("is-inactive");
     })
   }
 
@@ -179,8 +182,14 @@ function toggleMediaContent(mediaQ) {
       content.style.display = "block";
       deviceText.classList.add("is-inactive");
       controls.style.display = "flex";
+      if (document.body.classList.contains("ready")) {
+        loading.classList.add("is-inactive");
+      }
+      else {
+        loading.classList.remove("is-inactive");
+      }
     })
   }
 }
 
-window.onload = new View()
+window.onload = new View();

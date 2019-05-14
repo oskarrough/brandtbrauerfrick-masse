@@ -164,7 +164,6 @@ function toggleMediaContent(mediaQ) {
     document.body.classList.add("BlockUsageMode");
   }
   else {
-    //document.querySelector(".ShareDialog-box").style.display = "none";
     document.body.classList.remove("BlockUsageMode");
   }
 }

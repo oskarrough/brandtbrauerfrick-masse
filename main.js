@@ -2,6 +2,7 @@ import {VideoCustom} from '/video_custom.js'
 import {ShareDialog} from '/share-dialog.js'
 import '/credits.js'
 
+const parser = new UAParser();
 const hyper = window.hyperHTML
 const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
@@ -152,4 +153,19 @@ class View {
   }
 }
 
-window.onload = new View()
+if (matchMedia) {
+  const mediaQ = window.matchMedia("(max-width: 650px)");
+  mediaQ.addListener(toggleMediaContent);
+  toggleMediaContent(mediaQ);  
+}
+
+function toggleMediaContent(mediaQ) {
+  if (mediaQ.matches || parser.getBrowser().name === "Safari") {
+    document.body.classList.add("BlockUsageMode");
+  }
+  else {
+    document.body.classList.remove("BlockUsageMode");
+  }
+}
+
+window.onload = new View();

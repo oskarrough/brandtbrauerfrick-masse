@@ -416,6 +416,7 @@ video-custom.is-active .ActiveDot {
 
 /********* share dialog ******/
 .ShareDialog-box {
+  display: none;
   position: fixed;
   z-index:2;
   border: 1px solid black;
@@ -500,35 +501,27 @@ video-custom.is-active .ActiveDot {
 
 /********* Mobile content ******/
 
-@media (max-width: 650px) {
-	.Presentation {
-		grid-column-end: 13;
-	}
+.BlockUsageMode .DesktopContent {
+  display: none;
+}
 
-	.GridOrchestra > .SocialLinks {
-		grid-column:1/13;
-		grid-row:12/12;
-		opacity:1;
-	}
-	
-	.LoadingText,
-	.DesktopContent,
-	.Controls {
-		display:none;
-	}
+.BlockUsageMode .DeviceSupportText {
+  display:block;
+  text-align:center;
+  position:absolute;
+  top:40%;
+  width:100%;
+  font-size:1.4rem;
+  padding: 0 1rem;
+  color:black; 
+}
 
-	.MobileContent {
-		opacity:1;
-	}
+.BlockUsageMode .Presentation {
+  grid-column-end: 13;
+}
 
-	.DeviceSupportText {
-		display:block;
-		text-align:center;
-		position:absolute;
-		top:40%;
-		width:100%;
-		font-size:1.4rem;
-		padding: 0 1rem;
-		color:black;
-	}
+.BlockUsageMode .SocialLinks {
+  grid-column:1/13;
+  grid-row:12/12;
+  opacity:1;
 }

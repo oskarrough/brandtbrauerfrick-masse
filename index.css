@@ -338,16 +338,6 @@ video-custom.is-active .ActiveDot {
   opacity: 1;
 }
 
-/* Credits page */
-
-.Debug {
-  background: black;
-  color: yellow;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 .DeviceSupportText {
 	display:none;
 }

@@ -1,30 +1,26 @@
 // credits overlay logic
 
-function closeCredits() {
-    elements.overlay.classList.remove("is-active");
-    elements.closeOverlayBtn.classList.remove("is-active");
-    document.removeEventListener("keydown", handleKeyDown);
-}
-
-function openCredits() {
-    elements.overlay.classList.add("is-active");
-    elements.closeOverlayBtn.classList.add("is-active");
-    document.addEventListener("keydown", handleKeyDown);
+function toggleCredits() {
+  const isActive = elements.overlay.classList.contains('is-active')
+  elements.overlay.classList.toggle('is-active')
+  if (isActive) {
+    document.removeEventListener('keydown', handleKeyDown)
+  } else {
+    document.addEventListener('keydown', handleKeyDown)
+  }
 }
 
 function handleKeyDown(event) {
-    if (event.key === "Escape") {
-        closeCredits();
-    }
+  if (event.key === 'Escape') {
+    toggleCredits()
+  }
 }
 
 const elements = {
-  overlay: document.querySelector(".CreditsOverlay"),
-  overlayBackdrop: document.querySelector(".CreditsOverlay-backdrop"),
-  closeOverlayBtn: document.querySelector(".CreditsOverlay-button"),
-  openOverlayBtn: document.querySelector(".Credits")
+  overlay: document.querySelector('.CreditsOverlay'),
+  overlayBackdrop: document.querySelector('.CreditsOverlay-backdrop'),
+  openOverlayBtn: document.querySelector('.Credits')
 }
 
-elements.openOverlayBtn.addEventListener("click", openCredits.bind(this),false);
-elements.closeOverlayBtn.addEventListener("click",closeCredits.bind(this),false);
-elements.overlayBackdrop.addEventListener("click",closeCredits.bind(this),false);
+elements.openOverlayBtn.addEventListener('click', toggleCredits)
+elements.overlayBackdrop.addEventListener('click', toggleCredits)

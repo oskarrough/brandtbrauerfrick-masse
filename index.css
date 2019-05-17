@@ -127,6 +127,8 @@ p {
   grid-row: 1/2;
   margin-bottom: 6rem;
   text-align: right;
+	position: relative;
+	z-index: 5;
 }
 
 video-custom.Percussion {
@@ -338,80 +340,48 @@ video-custom.is-active .ActiveDot {
   opacity: 1;
 }
 
-/* Credits page */
-
-.Debug {
-  background: black;
-  color: yellow;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
-
 .DeviceSupportText {
 	display:none;
 }
 
 /********* Credits overlay ******/
 
+.CreditsOverlay {}
+
 .CreditsOverlay-backdrop {
   position: fixed;
-  width:100vw;
-  height: 100vh;
-  top:0;
+  top: 0;
+	right: 0;	
 	z-index: 3;
-  background: hsla(0, 0%, 100%, 0.8);
-  /*animation: hideBackdrop 0.3s ease-in-out;*/
-  left: 150rem;
-  transition: left 0.3s ease-in-out;
-}
-
-.CreditsOverlay.is-active .CreditsOverlay-backdrop {
-  left:0;
+  width: 100%;
+	height: 100%;
+	transform: translateX(100%);
+  transition: transform 200ms ease-in-out;
+  background: hsla(0, 0%, 90%, 0.5);
 }
 
 .CreditsOverlay-content {
   position: fixed;
   top: 0;
-  right:-36rem;
-  transition: right 0.3s ease-in-out;
+	right: 0;
   z-index: 4;
-  background-color: white;
-	color: black;
-  overflow: auto;
-  padding: 4rem 2rem 0;
 	width: 36em;
   max-width: 70%;
   height:100%;
   overflow: auto;
+  padding: 4rem 2rem 0;
+  background-color: white;
+	color: black;
+	transform: translateX(100%);
+  transition: transform 150ms 50ms ease-in-out;
+}
+
+.CreditsOverlay.is-active .CreditsOverlay-backdrop {
+	transform: translateX(0);
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-content {
-  right:0;
-}
-
-.CreditsOverlay-button {
-  display: none;
-}
-
-.CreditsOverlay.is-active .CreditsOverlay-button {
-  display: block;
-}
-
-/* functions to show/hid backdrop and credits' content */
-
-
-.CreditsOverlay-button {
-  position: fixed;
-  right: 1rem;
-  top: 1.3rem; 
-  z-index: 4;
-}
-
-@media (max-width: 830px) {
-	.CreditsOverlay-button {
-		top: 2.6rem;
-	}
+	transform: translateX(0);
 }
 
 /********* share dialog ******/

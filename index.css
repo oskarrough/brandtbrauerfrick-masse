@@ -406,7 +406,7 @@ tour-dates {
 .TourdatesOverlay tour-dates {
   left:0;
   transform: translateX(-100%);
-  width:25rem;
+  width:29rem;
 }
 
 .TourdatesOverlay.is-active .TourdatesOverlay-content {
@@ -415,6 +415,10 @@ tour-dates {
 
 .Calendar-event {
   margin-bottom:2rem;
+}
+
+.Calendar-event > * {
+  margin:0.5rem;
 }
 
 /********* share dialog ******/

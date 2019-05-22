@@ -66,7 +66,7 @@ class View {
   }
 
   refresh() {
-    window.location = '/'
+    window.location = '/';
   }
 
   /* play/ pause/ sync logic */
@@ -95,7 +95,6 @@ class View {
     this.addActive(target)
     this.muteVideos()
     target.muted = false
-    // this.syncVideos()
     this.playVideos()
   }
 
@@ -111,26 +110,25 @@ class View {
     this.addActive(event.target)
     this.muteVideos()
     event.target.muted = false
-    // this.syncVideos()
   }
 
   syncVideos() {
     const masterTime = elements.mainVideo.currentTime
-    console.log(`all: syncing ${masterTime}`)
+    /*console.log(`all: syncing ${masterTime}`)*/
     elements.videos.forEach(video => {
       video.currentTime = masterTime
     })
   }
 
   playVideos(currentTime) {
-    console.log(`all: play`)
+    /*console.log(`all: play`)*/
     elements.videos.forEach(video => {
       video.play()
     })
   }
 
   pauseVideos() {
-    console.log('all: pausing')
+    /*console.log('all: pausing')*/
     elements.videos.forEach(video => {
       // console.log({readyState: video.readyState})
       if (video.readyState === 1) {
@@ -141,7 +139,7 @@ class View {
   }
 
   muteVideos() {
-    console.log('all: muting')
+    /*console.log('all: muting')*/
     elements.videos.forEach(video => {
       video.muted = true
     })

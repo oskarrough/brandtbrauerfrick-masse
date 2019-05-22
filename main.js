@@ -160,7 +160,7 @@ if (matchMedia) {
 }
 
 function toggleMediaContent(mediaQ) {
-  if (mediaQ.matches || parser.getBrowser().name === "Safari") {
+  if (mediaQ.matches || parser.getBrowser().name === "Safari" || parser.getOS().name === 'iOS') {
     document.body.classList.add("BlockUsageMode");
   }
   else {

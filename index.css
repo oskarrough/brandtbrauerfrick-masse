@@ -397,6 +397,12 @@ video-custom.is-active .ActiveDot {
  	transform: translateX(0);
 }
 
+tour-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .TourdatesOverlay tour-dates {
   left:0;
   transform: translateX(-100%);
@@ -408,7 +414,7 @@ video-custom.is-active .ActiveDot {
 }
 
 .Calendar-event {
-  margin-bottom:1rem;
+  margin-bottom:2rem;
 }
 
 /********* share dialog ******/

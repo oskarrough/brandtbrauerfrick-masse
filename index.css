@@ -380,6 +380,11 @@ video-custom.is-active .ActiveDot {
   transition: transform 150ms 50ms ease-in-out;
 }
 
+.TourdatesOverlay-content > * {
+  /* align tour dates' elements with tour button */
+  margin-left: -1.5rem;
+}
+
 .CreditsOverlay.is-active .CreditsOverlay-content {
 	transform: translateX(0);
 }

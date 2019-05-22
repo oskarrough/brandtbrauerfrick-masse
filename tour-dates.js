@@ -14,23 +14,23 @@ export class TourDates extends HTMLElement {
         this.model = data;
     }
 
-    createEventElement(event) {
+    createEventElement(eventObject) {
         return hyper()` 
             <div class="Calendar-event"> 
-               ${Object.keys(event).map(propertyName => {
+               ${Object.keys(eventObject).map(propertyName => {
                    if (propertyName === "date") {
                        return hyper()` 
-                            <p class="${`Calendar-event-${propertyName}`}"><b>${event[propertyName]}</b></p> 
+                            <p class="${`Calendar-event-${propertyName}`}"><b>${eventObject[propertyName]}</b></p> 
                        `;
                     }
-                    else if (propertyName === "link" && event[propertyName] !== "") {
+                    else if (propertyName === "link" && eventObject[propertyName] !== "") {
                         return hyper()` 
-                            <a href=${event[propertyName]} class="${`Calendar-event-${propertyName}`}" target="_blank"><b>${event[propertyName]}</b></a> 
+                            <a href=${eventObject[propertyName]} class="${`Calendar-event-${propertyName}`}" target="_blank"><b>${eventObject[propertyName]}</b></a> 
                        `;
                     }
                     else {
                         return hyper()` 
-                            <p class="${`Calendar-event-${propertyName}`}">${event[propertyName]}</p> 
+                            <p class="${`Calendar-event-${propertyName}`}">${eventObject[propertyName]}</p> 
                         `;
                     }
                })} 

@@ -18,10 +18,16 @@ export class TourDates extends HTMLElement {
         return hyper()` 
             <div class="Calendar-event"> 
                ${Object.keys(event).map(propertyName => {
-                    console.log(event[propertyName]);
-                    return hyper()` 
-                        <p class="Calendar-event-detail">${event[propertyName]}</p> 
-                    `;
+                   if (propertyName === "date") {
+                       return hyper()` 
+                            <p class="Calendar-event-detail"><b>${event[propertyName]}</b></p> 
+                       `;
+                    }
+                    else {
+                        return hyper()` 
+                            <p class="Calendar-event-detail">${event[propertyName]}</p> 
+                        `;
+                    }
                })} 
             </div>
         `;

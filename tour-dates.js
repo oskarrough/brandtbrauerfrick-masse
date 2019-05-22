@@ -18,21 +18,23 @@ export class TourDates extends HTMLElement {
         return hyper()` 
             <div class="Calendar-event"> 
                ${Object.keys(eventObject).map(propertyName => {
-                   if (propertyName === "date") {
+
+                   if (propertyName === "date") { // bold for location 
                        return hyper()` 
                             <p class="${`Calendar-event-${propertyName}`}"><b>${eventObject[propertyName]}</b></p> 
                        `;
                     }
-                    else if (propertyName === "link" && eventObject[propertyName] !== "") {
+                    else if (propertyName === "link" && eventObject[propertyName] !== "") { // a tag for link 
                         return hyper()` 
                             <a href=${eventObject[propertyName]} class="${`Calendar-event-${propertyName}`}" target="_blank"><b>${eventObject[propertyName]}</b></a> 
                        `;
                     }
-                    else {
+                    else { // default for location
                         return hyper()` 
                             <p class="${`Calendar-event-${propertyName}`}">${eventObject[propertyName]}</p> 
                         `;
                     }
+
                })} 
             </div>
         `;

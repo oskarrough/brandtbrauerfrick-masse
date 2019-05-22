@@ -169,7 +169,6 @@ video-custom.Piano video {
 }
 
 video-custom.Main {
-  /* all videos */
   grid-column: 6/10;
   grid-row: 4/9;
 }
@@ -183,8 +182,6 @@ video-custom.Violin {
 video-custom.Harp {
   grid-column: 6/10;
  grid-row: 9/12;
-  /*margin-left: 30%;
-  margin-bottom: 1rem;*/
 }
 
 video-custom.Trombone {
@@ -347,8 +344,6 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* Credits overlay ******/
-
-/*.CreditsOverlay-backdrop,*/
 .OverlayBackdrop {
   position: fixed;
   top: 0;
@@ -365,7 +360,6 @@ video-custom.is-active .ActiveDot {
 	transform: translateX(0);
 }
 
-/*.CreditsOverlay-content,*/
 .OverlayContent {
   position: fixed;
   top: 0;

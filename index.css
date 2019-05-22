@@ -41,7 +41,8 @@ a:hover,
   background: transparent;
   padding:0;
   font-size: 1rem;
-	font-family: inherit;
+  font-family: inherit;
+  z-index: 5;
 }
 
 .Button:hover {
@@ -347,9 +348,8 @@ video-custom.is-active .ActiveDot {
 
 /********* Credits overlay ******/
 
-.CreditsOverlay {}
-
-.CreditsOverlay-backdrop {
+/*.CreditsOverlay-backdrop,*/
+.OverlayBackdrop {
   position: fixed;
   top: 0;
 	right: 0;	
@@ -361,12 +361,17 @@ video-custom.is-active .ActiveDot {
   background: hsla(0, 0%, 90%, 0.5);
 }
 
-.CreditsOverlay-content {
+.CreditsOverlay.is-active .CreditsOverlay-backdrop {
+	transform: translateX(0);
+}
+
+/*.CreditsOverlay-content,*/
+.OverlayContent {
   position: fixed;
   top: 0;
 	right: 0;
   z-index: 4;
-	width: 36em;
+	/*width: 36em;*/
   max-width: 70%;
   height:100%;
   overflow: auto;
@@ -377,12 +382,29 @@ video-custom.is-active .ActiveDot {
   transition: transform 150ms 50ms ease-in-out;
 }
 
-.CreditsOverlay.is-active .CreditsOverlay-backdrop {
+.CreditsOverlay.is-active .CreditsOverlay-content {
 	transform: translateX(0);
 }
 
-.CreditsOverlay.is-active .CreditsOverlay-content {
-	transform: translateX(0);
+/********* Tour dates overlay ******/
+
+.TourdatesOverlay-backdrop {
+  left:0;
+  transform: translateX(-100%);
+}
+
+.TourdatesOverlay.is-active .TourdatesOverlay-backdrop {
+ 	transform: translateX(0);
+}
+
+.TourdatesOverlay tour-dates {
+  left:0;
+  transform: translateX(-100%);
+  width:25rem;
+}
+
+.TourdatesOverlay.is-active .TourdatesOverlay-content {
+  transform:translateX(0);
 }
 
 /********* share dialog ******/

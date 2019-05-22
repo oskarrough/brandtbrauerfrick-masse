@@ -1,6 +1,9 @@
 import {VideoCustom} from '/video_custom.js'
 import {ShareDialog} from '/share-dialog.js'
-import '/credits.js'
+import {TourDates} from '/tour-dates.js'
+import '/overlays.js'
+import './model.js'
+import {tourData} from './model.js';
 
 const parser = new UAParser();
 const hyper = window.hyperHTML
@@ -19,8 +22,13 @@ const elements = {
 	controlsRefresh: document.querySelector(".Controls-refresh"),
 	grid: document.querySelector(".GridOrchestra"),
   deviceText: document.querySelector(".DeviceSupportText"),
-  fullScreenBtn: document.querySelector(".FullScreenBtn")
+  fullScreenBtn: document.querySelector(".FullScreenBtn"),
+  tourDates: document.querySelector("tour-dates")
 }
+
+// feed tour date custom element with data
+elements.tourDates.model = tourData;
+customElements.define("tour-dates", TourDates);
 
 class View {
   constructor() {

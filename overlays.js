@@ -31,7 +31,7 @@ const elements = {
   creditsBtn: document.querySelector('.Credits'),
   tourOverlay: document.querySelector('.TourdatesOverlay'),
   tourOverlayBackdrop: document.querySelector('.TourdatesOverlay-backdrop'),
-  tourBtn: document.querySelector('.TourButton')
+  tourBtn: document.querySelector('.TourButton'),
 }
 
 elements.creditsBtn.addEventListener('click', toggleOverlay);

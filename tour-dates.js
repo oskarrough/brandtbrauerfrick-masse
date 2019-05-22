@@ -45,7 +45,6 @@ export class TourDates extends HTMLElement {
             ${Object.keys(this.model).map(eventkey => {
                 return this.createEventElement(this.model[eventkey]);
             })}
-        
         `;
     }
 }

@@ -225,6 +225,10 @@ video-custom.Tuba {
   margin-right:0.5rem;
 }
 
+.TourButton {
+  text-align: left;
+}
+
 .SocialLinks {
   grid-column: 10/13;
   grid-row: 11/12;
@@ -382,6 +386,12 @@ video-custom.is-active .ActiveDot {
 
 /********* Tour dates overlay ******/
 
+tour-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .TourdatesOverlay-backdrop {
   left:0;
   transform: translateX(-100%);
@@ -389,12 +399,6 @@ video-custom.is-active .ActiveDot {
 
 .TourdatesOverlay.is-active .TourdatesOverlay-backdrop {
  	transform: translateX(0);
-}
-
-tour-dates {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .TourdatesOverlay tour-dates {

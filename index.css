@@ -218,11 +218,12 @@ video-custom.Tuba {
   margin-bottom: 0.5rem;
 }
 
-.Release-links {
+.Release-items {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.Release-links-preorder {
+.Release-items-preorder {
   margin-right:0.5rem;
 }
 
@@ -385,6 +386,11 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* share dialog ******/
+
+share-dialog {
+  margin-right: 0.5rem;
+}
+
 .ShareDialog-box {
   display: none;
   position: fixed;

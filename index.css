@@ -407,6 +407,10 @@ video-custom.is-active .ActiveDot {
   transform:translateX(0);
 }
 
+.Calendar-event {
+  margin-bottom:1rem;
+}
+
 /********* share dialog ******/
 
 share-dialog {

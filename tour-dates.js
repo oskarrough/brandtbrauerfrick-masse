@@ -24,7 +24,6 @@ export class TourDates extends HTMLElement {
                        `;
                     }
                     else if (propertyName === "link" && event[propertyName] !== "") {
-                        console.log(event);
                         return hyper()` 
                             <a href=${event[propertyName]} class="${`Calendar-event-${propertyName}`}" target="_blank"><b>${event[propertyName]}</b></a> 
                        `;

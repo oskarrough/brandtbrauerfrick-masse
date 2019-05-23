@@ -374,6 +374,7 @@ video-custom.is-active .ActiveDot {
   height:100%;
   overflow: auto;
   padding: 4rem 2rem 0;
+  padding-bottom: 5rem;
   background-color: white;
 	color: black;
 	transform: translateX(100%);
@@ -382,7 +383,7 @@ video-custom.is-active .ActiveDot {
 
 .TourdatesOverlay-content > * {
   /* align tour dates' elements with tour button */
-  margin-left: -1.5rem;
+  margin-bottom:1rem;
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-content {
@@ -395,6 +396,10 @@ tour-dates {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.TourHeadline {
+  margin-bottom: 1.1rem;
 }
 
 .TourdatesOverlay-backdrop {
@@ -417,11 +422,11 @@ tour-dates {
 }
 
 .Calendar-event {
-  margin-bottom:2rem;
+  /*margin-bottom:2rem;*/
+  margin-left: 0.4rem;
 }
-
-.Calendar-event > * {
-  margin:0.5rem;
+.Calendar-event-date {
+  margin:0;
 }
 
 /********* share dialog ******/

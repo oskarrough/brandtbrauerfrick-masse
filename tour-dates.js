@@ -17,10 +17,16 @@ export class TourDates extends HTMLElement {
     createEventElement(eventObject) {
         return hyper()` 
             <div class="Calendar-event"> 
-                    <a href=${eventObject["link"]} class="${`Calendar-event-link`}" target="__blank"><p class="${`Calendar-event-date`}"><b>${eventObject["date"]}</b></p></a>
-                    <p class="${`Calendar-event-location`}">${eventObject["location"]}</p> 
+                <p class="${`Calendar-event-date`}">
+                    <b>${eventObject['date']}</b>
+                </p>
+                <p class="${`Calendar-event-location`}">
+                    <a href=${eventObject['link']} class="${`Calendar-event-link`}" target="__blank">
+                        ${eventObject['location']}
+                    </a>
+                </p> 
             </div>
-            `;
+            `
         }
 
         render() {

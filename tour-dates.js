@@ -17,33 +17,17 @@ export class TourDates extends HTMLElement {
     createEventElement(eventObject) {
         return hyper()` 
             <div class="Calendar-event"> 
-               ${Object.keys(eventObject).map(propertyName => {
-
-                   if (propertyName === "date") { // bold for location 
-                       return hyper()` 
-                            <p class="${`Calendar-event-${propertyName}`}"><b>${eventObject[propertyName]}</b></p> 
-                       `;
-                    }
-                    else if (propertyName === "link" && eventObject[propertyName] !== "") { // a tag for link 
-                        return hyper()` 
-                            <a href=${eventObject[propertyName]} class="${`Calendar-event-${propertyName}`}" target="_blank"><b>${eventObject[propertyName]}</b></a> 
-                       `;
-                    }
-                    else { // default for location
-                        return hyper()` 
-                            <p class="${`Calendar-event-${propertyName}`}">${eventObject[propertyName]}</p> 
-                        `;
-                    }
-
-               })} 
+                <p class="${`Calendar-event-date`}"><b>${eventObject["date"]}</b></p> 
+                <p class="${`Calendar-event-location`}">${eventObject["location"]}</p> 
+                <a href=${eventObject["link"]} class="${`Calendar-event-link`}" target="_blank"><b>${eventObject["link"]}</b></a> 
             </div>
         `;
     }
 
     render() {
         this.html`
-            ${Object.keys(this.model).map(eventkey => {
-                return this.createEventElement(this.model[eventkey]);
+            ${this.model.map(eventObject => {
+                return this.createEventElement(eventObject);
             })}
         `;
     }

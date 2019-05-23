@@ -3,8 +3,9 @@
 function toggleOverlay(event) {
 
   let isActive = elements.creditsOverlay.classList.contains('is-active');
+  const targetOverlay = event.target.getAttribute("data-target");
 
-  if (event.target == elements.tourBtn || event.target == elements.tourOverlayBackdrop) {
+  if (targetOverlay === "TourOverlay") {
     isActive = elements.tourOverlay.classList.contains("is-active");
     elements.tourOverlay.classList.toggle("is-active");
   }

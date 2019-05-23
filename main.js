@@ -26,7 +26,7 @@ const elements = {
   tourDates: document.querySelector("tour-dates")
 }
 
-// feed tour date custom element with data
+// feed tour-date with data
 elements.tourDates.model = tourData;
 customElements.define("tour-dates", TourDates);
 

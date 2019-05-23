@@ -403,6 +403,7 @@ tour-dates {
 }
 
 .TourdatesOverlay-backdrop {
+  z-index: 6;
   left:0;
   transform: translateX(-100%);
 }
@@ -412,6 +413,7 @@ tour-dates {
 }
 
 .TourdatesOverlay tour-dates {
+  z-index: 7;
   left:0;
   transform: translateX(-100%);
   width:29rem;

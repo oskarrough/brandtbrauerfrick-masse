@@ -399,7 +399,7 @@ tour-dates {
 }
 
 .TourHeadline {
-  margin-bottom: 1.1rem;
+  margin-bottom: 2rem;
 }
 
 .TourdatesOverlay-backdrop {
@@ -429,6 +429,9 @@ tour-dates {
 }
 .Calendar-event-date {
   margin:0;
+}
+.Calendar-event-link {
+  color: black;
 }
 
 /********* share dialog ******/

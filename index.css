@@ -41,7 +41,8 @@ a:hover,
   background: transparent;
   padding:0;
   font-size: 1rem;
-	font-family: inherit;
+  font-family: inherit;
+  z-index: 5;
 }
 
 .Button:hover {
@@ -168,7 +169,6 @@ video-custom.Piano video {
 }
 
 video-custom.Main {
-  /* all videos */
   grid-column: 6/10;
   grid-row: 4/9;
 }
@@ -182,8 +182,6 @@ video-custom.Violin {
 video-custom.Harp {
   grid-column: 6/10;
  grid-row: 9/12;
-  /*margin-left: 30%;
-  margin-bottom: 1rem;*/
 }
 
 video-custom.Trombone {
@@ -215,15 +213,20 @@ video-custom.Tuba {
   flex-flow: column nowrap;
   justify-content: flex-end;
   margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: -0.2rem;
 }
 
-.Release-links {
+.Release-items {
   display: flex;
+  flex-wrap: wrap;
 }
 
-.Release-links-preorder {
+.Release-items-preorder {
   margin-right:0.5rem;
+}
+
+.TourButton {
+  text-align: left;
 }
 
 .SocialLinks {
@@ -345,10 +348,7 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* Credits overlay ******/
-
-.CreditsOverlay {}
-
-.CreditsOverlay-backdrop {
+.OverlayBackdrop {
   position: fixed;
   top: 0;
 	right: 0;	
@@ -360,7 +360,11 @@ video-custom.is-active .ActiveDot {
   background: hsla(0, 0%, 90%, 0.5);
 }
 
-.CreditsOverlay-content {
+.CreditsOverlay.is-active .CreditsOverlay-backdrop {
+	transform: translateX(0);
+}
+
+.OverlayContent {
   position: fixed;
   top: 0;
 	right: 0;
@@ -370,21 +374,72 @@ video-custom.is-active .ActiveDot {
   height:100%;
   overflow: auto;
   padding: 4rem 2rem 0;
+  padding-bottom: 5rem;
   background-color: white;
 	color: black;
 	transform: translateX(100%);
   transition: transform 150ms 50ms ease-in-out;
 }
 
-.CreditsOverlay.is-active .CreditsOverlay-backdrop {
-	transform: translateX(0);
+.TourdatesOverlay-content > * {
+  /* align tour dates' elements with tour button */
+  margin-bottom:1rem;
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-content {
 	transform: translateX(0);
 }
 
+/********* Tour dates overlay ******/
+
+tour-dates {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.TourHeadline {
+  margin-bottom: 2rem;
+}
+
+.TourdatesOverlay-backdrop {
+  z-index: 6;
+  left:0;
+  transform: translateX(-100%);
+}
+
+.TourdatesOverlay.is-active .TourdatesOverlay-backdrop {
+ 	transform: translateX(0);
+}
+
+.TourdatesOverlay tour-dates {
+  z-index: 7;
+  left:0;
+  transform: translateX(-100%);
+  width:29rem;
+}
+
+.TourdatesOverlay.is-active .TourdatesOverlay-content {
+  transform:translateX(0);
+}
+
+.Calendar-event {
+  /*margin-bottom:2rem;*/
+  margin-left: 0.4rem;
+}
+.Calendar-event-date {
+  margin:0;
+}
+.Calendar-event-link {
+  color: black;
+}
+
 /********* share dialog ******/
+
+share-dialog {
+  margin-right: 0.5rem;
+}
+
 .ShareDialog-box {
   display: none;
   position: fixed;

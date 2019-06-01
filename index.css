@@ -123,7 +123,7 @@ p {
 	margin-left: 1rem;
 }
 
-.Credits {
+.CreditsButton {
 	grid-column: 12/13;
 	grid-row: 1/2;
 	margin-bottom: 6rem;
@@ -239,7 +239,7 @@ video-custom.Tuba {
 	flex-wrap: wrap;
 }
 
-.Credits,
+.CreditsButton,
 .SocialLinks {
 	padding-right: 0.5rem;
 }
@@ -348,7 +348,7 @@ video-custom.is-active .ActiveDot {
 }
 
 /********* Credits overlay ******/
-.OverlayBackdrop {
+.Overlay-backdrop {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -360,11 +360,11 @@ video-custom.is-active .ActiveDot {
 	background: hsla(0, 0%, 90%, 0.5);
 }
 
-.CreditsOverlay.is-active .CreditsOverlay-backdrop {
+.CreditsOverlay.is-active .Overlay-backdrop {
 	transform: translateX(0);
 }
 
-.OverlayContent {
+.Overlay-content {
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -381,12 +381,12 @@ video-custom.is-active .ActiveDot {
 	transition: transform 150ms 50ms ease-in-out;
 }
 
-.TourdatesOverlay-content > * {
+.TourOverlay .Overlay-content > * {
 	/* align tour dates' elements with tour button */
 	margin-bottom: 1rem;
 }
 
-.CreditsOverlay.is-active .CreditsOverlay-content {
+.CreditsOverlay.is-active .Overlay-content {
 	transform: translateX(0);
 }
 
@@ -402,24 +402,24 @@ tour-dates {
 	margin-bottom: 2rem;
 }
 
-.TourdatesOverlay-backdrop {
+.TourOverlay .Overlay-backdrop {
 	z-index: 6;
 	left: 0;
 	transform: translateX(-100%);
 }
 
-.TourdatesOverlay.is-active .TourdatesOverlay-backdrop {
+.TourOverlay.is-active .Overlay-backdrop {
 	transform: translateX(0);
 }
 
-.TourdatesOverlay tour-dates {
+.TourOverlay tour-dates {
 	z-index: 7;
 	left: 0;
 	transform: translateX(-100%);
 	width: 29rem;
 }
 
-.TourdatesOverlay.is-active .TourdatesOverlay-content {
+.TourOverlay.is-active .Overlay-content {
 	transform: translateX(0);
 }
 

@@ -42,7 +42,6 @@ class View {
 		document.documentElement.requestFullscreen()
 	}
 
-	/* loading logic */
 	handleCanPlay() {
 		this.amountReady += 1
 		elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
@@ -54,7 +53,6 @@ class View {
 		}
 	}
 
-	/* refresh logic */
 	showRefresh() {
 		elements.controls.classList.remove('is-inactive')
 		elements.controlsRefresh.classList.remove('is-inactive')

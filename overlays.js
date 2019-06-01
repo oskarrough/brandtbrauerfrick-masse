@@ -1,15 +1,11 @@
-// credits and tour dates's overlays logic
+// Overlay helper.
 
 function toggleOverlay(event) {
-	let isActive = elements.creditsOverlay.classList.contains('is-active')
-	const targetOverlay = event.target.getAttribute('data-target')
+	const targetOverlay = event.target.getAttribute('data-overlay-target')
+	const overlay = document.querySelector(`.${targetOverlay}`)
 
-	if (targetOverlay === 'TourOverlay') {
-		isActive = elements.tourOverlay.classList.contains('is-active')
-		elements.tourOverlay.classList.toggle('is-active')
-	} else {
-		elements.creditsOverlay.classList.toggle('is-active')
-	}
+	const isActive = overlay.classList.contains('is-active')
+	overlay.classList.toggle('is-active')
 
 	if (isActive) {
 		document.removeEventListener('keydown', handleKeyDown)
@@ -24,16 +20,7 @@ function handleKeyDown(event) {
 	}
 }
 
-const elements = {
-	creditsOverlay: document.querySelector('.CreditsOverlay'),
-	creditsOverlayBackdrop: document.querySelector('.CreditsOverlay-backdrop'),
-	creditsBtn: document.querySelector('.Credits'),
-	tourOverlay: document.querySelector('.TourdatesOverlay'),
-	tourOverlayBackdrop: document.querySelector('.TourdatesOverlay-backdrop'),
-	tourBtn: document.querySelector('.TourButton')
-}
-
-elements.creditsBtn.addEventListener('click', toggleOverlay)
-elements.creditsOverlayBackdrop.addEventListener('click', toggleOverlay)
-elements.tourBtn.addEventListener('click', toggleOverlay)
-elements.tourOverlayBackdrop.addEventListener('click', toggleOverlay)
+const buttons = document.querySelectorAll('[data-overlay-target]')
+buttons.forEach(button => {
+	button.addEventListener('click', toggleOverlay)
+})

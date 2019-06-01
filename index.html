@@ -44,8 +44,8 @@
 		</div>
 
 		<div class="CreditsOverlay Overlay DesktopContent">
-			<div data-target="CreditsOverlay" class="CreditsOverlay-backdrop OverlayBackdrop"></div>
-			<div class="CreditsOverlay-content Page OverlayContent">
+			<div data-overlay-target="CreditsOverlay" class="Overlay-backdrop"></div>
+			<div class="Overlay-content">
 				<h3>Video</h3>
 				<p>
 				Directed by <a href="https://www.eternalsomething.com/" target="_blank">Daniel Brandt</a> & <a href="http://maxparovsky.com/" target="_blank">Max Parovsky</a><br>
@@ -131,9 +131,9 @@
 			</div>
 		</div>
 
-		<div class="TourdatesOverlay Overlay DesktopContent">
-			<div data-target="TourOverlay" class="TourdatesOverlay-backdrop OverlayBackdrop"></div>
-			<tour-dates class="TourdatesOverlay-content OverlayContent"></tour-dates>
+		<div class="TourOverlay Overlay DesktopContent">
+			<div data-overlay-target="TourOverlay" class="Overlay-backdrop"></div>
+			<tour-dates class="Overlay-content"></tour-dates>
 			</div>
 		</div>
 
@@ -144,7 +144,9 @@
 				<p class="mb0 DesktopContent"><button class="Button FullScreenBtn mb0 DesktopContent">Go fullscreen</button></p>
 			</div>
 
-			<button data-target="CreditsOverlay" class="GridOrchestra-box Credits Button DesktopContent">Credits</button>
+			<button class="GridOrchestra-box CreditsButton Button DesktopContent" data-overlay-target="CreditsOverlay">
+				Credits
+			</button>
 
 			<video-custom class="GridOrchestra-box Percussion DesktopContent"
 				data-title="Percussion"
@@ -207,7 +209,7 @@
 					<p class="mb0 Release-items-preorder"><a href="https://becausemusic.lnk.to/BBFEcho" target="_blank" rel="noreferrer">Preorder/Stream</a></p>
 					<share-dialog username="@bbf_music" url="https://masse.video"></share-dialog>
 				</div>
-				<button data-target="TourOverlay" class="mb0 GridOrchestra-box Button TourButton DesktopContent">Tour dates</button>
+				<button data-overlay-target="TourOverlay" class="mb0 GridOrchestra-box Button TourButton DesktopContent">Tour dates</button>
 			</div>
 
 			<div class="GridOrchestra-box SocialLinks MobileContent">

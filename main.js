@@ -10,7 +10,7 @@ customElements.define('share-dialog', ShareDialog)
 customElements.define('tour-dates', TourDates)
 
 // feed tour-date with data
-elements.tourDates.dates = tourData
+document.querySelector('tour-dates').dates = tourData
 
 const elements = {
 	app: document.querySelector('.App'),
@@ -23,8 +23,7 @@ const elements = {
 	controlsRefresh: document.querySelector('.Controls-refresh'),
 	grid: document.querySelector('.GridOrchestra'),
 	deviceText: document.querySelector('.DeviceSupportText'),
-	fullScreenBtn: document.querySelector('.FullScreenBtn'),
-	tourDates: document.querySelector('tour-dates')
+	fullScreenBtn: document.querySelector('.FullScreenBtn')
 }
 
 class View {

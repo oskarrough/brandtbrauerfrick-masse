@@ -9,6 +9,7 @@ const parser = new window.UAParser()
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
+customElements.define('tour-dates', TourDates)
 
 const elements = {
 	app: document.querySelector('.App'),
@@ -26,8 +27,7 @@ const elements = {
 }
 
 // feed tour-date with data
-elements.tourDates.model = tourData
-customElements.define('tour-dates', TourDates)
+elements.tourDates.dates = tourData
 
 class View {
 	constructor() {

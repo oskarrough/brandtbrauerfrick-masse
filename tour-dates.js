@@ -6,23 +6,20 @@ export class TourDates extends HTMLElement {
 		this.html = hyper(this)
 	}
 
-	connectedCallback() {
-		this.render()
-	}
-
-	set model(data) {
+	set dates(data) {
 		this.model = data
+		this.render()
 	}
 
 	createEventElement(eventObject) {
 		return hyper()` 
 			<div class="Calendar-event"> 
 				<p class="${`Calendar-event-date`}">
-					<b>${eventObject['date']}</b>
+					<b>${eventObject.date}</b>
 				</p>
 				<p class="${`Calendar-event-location`}">
-					<a href=${eventObject['link']} class="${`Calendar-event-link`}" target="__blank">
-						${eventObject['location']}
+					<a href=${eventObject.link} class="${`Calendar-event-link`}" target="_blank">
+						${eventObject.location}
 					</a>
 				</p> 
 			</div>

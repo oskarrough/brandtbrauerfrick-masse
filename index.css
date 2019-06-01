@@ -1,61 +1,61 @@
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-  font-family: minion-3, minion pro, minion, serif;
-  color: #666;
+	font-family: minion-3, minion pro, minion, serif;
+	color: #666;
 }
 
 body {
-  margin: 0;
+	margin: 0;
 }
 
 img,
 audio,
 video {
-  max-width: 100%;
-  vertical-align: top;
+	max-width: 100%;
+	vertical-align: top;
 }
 
 a,
 .Button {
-  color: #666;
-  transition: color 150ms;
+	color: #666;
+	transition: color 150ms;
 }
 
 .Button,
 input {
-  font-family: inherit;
-  font-size: 1rem;
+	font-family: inherit;
+	font-size: 1rem;
 }
 
 a:hover,
 .Button:hover {
-  color: black;
+	color: black;
 }
 
 .Button {
-  text-decoration: underline;
-  border:0;
-  background: transparent;
-  padding:0;
-  font-size: 1rem;
-  font-family: inherit;
-  z-index: 5;
+	text-decoration: underline;
+	border: 0;
+	background: transparent;
+	padding: 0;
+	font-size: 1rem;
+	font-family: inherit;
+	z-index: 5;
 }
 
 .Button:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .App {
-	display:block;
+	display: block;
 }
 
 .LoadingText {
-  position: fixed;
-  width: 100%;
+	position: fixed;
+	width: 100%;
 	height: 100%;
 	z-index: 5;
 
@@ -63,26 +63,26 @@ a:hover,
 	place-items: center;
 	place-content: center;
 
-  font-size: 2.5rem;
-  text-align: center;
-  color: black;
+	font-size: 2.5rem;
+	text-align: center;
+	color: black;
 }
 
 .LoadingText.is-inactive {
-  display: none;
+	display: none;
 }
 
 h1 {
-  font-size: 2.5rem;
-  font-weight: normal;
-  line-height: 1;
-  margin-bottom: 1rem;
-  color: black;
+	font-size: 2.5rem;
+	font-weight: normal;
+	line-height: 1;
+	margin-bottom: 1rem;
+	color: black;
 }
 
 h2 {
-  font-size: 1.2rem;
-  font-weight: normal;
+	font-size: 1.2rem;
+	font-weight: normal;
 }
 
 h3 {
@@ -91,77 +91,77 @@ h3 {
 }
 
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+	margin-top: 0;
+	margin-bottom: 1rem;
 }
 
 .mb0 {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 /******** Grid  *********/
 
 .GridOrchestra {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 0.5rem;
-  padding: 0.5rem;
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-gap: 0.5rem;
+	padding: 0.5rem;
 }
 
 .GridOrchestra.is-inactive > .DesktopContent,
 .GridOrchestra.is-inactive > .Presentation p {
-  opacity: 0.1;
-  transition: opacity 0.5s ease-in-out;
+	opacity: 0.1;
+	transition: opacity 0.5s ease-in-out;
 }
 
 .Presentation {
-  grid-column: 1/6;
-  grid-row: 1/2;
-  margin-left: 1rem;
+	grid-column: 1/6;
+	grid-row: 1/2;
+	margin-left: 1rem;
 }
 
 .Credits {
-  grid-column: 12/13;
-  grid-row: 1/2;
-  margin-bottom: 6rem;
-  text-align: right;
+	grid-column: 12/13;
+	grid-row: 1/2;
+	margin-bottom: 6rem;
+	text-align: right;
 	position: relative;
 	z-index: 5;
 }
 
 video-custom.Percussion {
-  grid-column: 6/8;
-  grid-row: 1/4;
-  margin-top: 2rem;
+	grid-column: 6/8;
+	grid-row: 1/4;
+	margin-top: 2rem;
 }
 
 video-custom.Moog {
-  grid-column: 8/10;
-  grid-row: 1/4;
-  margin-top: 4rem;
+	grid-column: 8/10;
+	grid-row: 1/4;
+	margin-top: 4rem;
 }
 
 video-custom.Drums {
-  grid-column: 10/13;
-  grid-row: 1/4;
-  margin-right: 3rem;
-  margin-top: 5rem;
+	grid-column: 10/13;
+	grid-row: 1/4;
+	margin-right: 3rem;
+	margin-top: 5rem;
 }
 
 video-custom.Marimba {
-  grid-column: 1/4;
-  grid-column: 1/4;
-  grid-row: 2/5; 
-  grid-row: 2/5; 
-  margin-left:1rem;
+	grid-column: 1/4;
+	grid-column: 1/4;
+	grid-row: 2/5;
+	grid-row: 2/5;
+	margin-left: 1rem;
 }
 
 video-custom.Piano {
-  grid-column: 4/6;
-  grid-row: 2/6;
+	grid-column: 4/6;
+	grid-row: 2/6;
 }
 
 video-custom.Piano video {
@@ -169,24 +169,24 @@ video-custom.Piano video {
 }
 
 video-custom.Main {
-  grid-column: 6/10;
-  grid-row: 4/9;
+	grid-column: 6/10;
+	grid-row: 4/9;
 }
 
 video-custom.Violin {
-  grid-column: 10/13;
-  grid-row: 4/8;
-  margin-right: 1rem;
+	grid-column: 10/13;
+	grid-row: 4/8;
+	margin-right: 1rem;
 }
 
 video-custom.Harp {
-  grid-column: 6/10;
- grid-row: 9/12;
+	grid-column: 6/10;
+	grid-row: 9/12;
 }
 
 video-custom.Trombone {
-  grid-column: 4/6;
-  grid-row: 6/12; 
+	grid-column: 4/6;
+	grid-row: 6/12;
 }
 
 video-custom.Trombone video {
@@ -194,170 +194,170 @@ video-custom.Trombone video {
 }
 
 video-custom.Cello {
-  grid-column: 1/4;
-  grid-row: 5/10;
-  margin-left:40%;
+	grid-column: 1/4;
+	grid-row: 5/10;
+	margin-left: 40%;
 }
 
 video-custom.Tuba {
-  grid-column: 10/13;
-  grid-row: 8/11;
-  margin-right: 3rem;
+	grid-column: 10/13;
+	grid-row: 8/11;
+	margin-right: 3rem;
 }
 
 .Release {
-  grid-column: 1/4;
-  grid-row: 10/12;
-  /* content bottom aligned*/
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-  margin-left: 0.5rem;
-  margin-bottom: -0.2rem;
+	grid-column: 1/4;
+	grid-row: 10/12;
+	/* content bottom aligned*/
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-end;
+	margin-left: 0.5rem;
+	margin-bottom: -0.2rem;
 }
 
 .Release-items {
-  display: flex;
-  flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .Release-items-preorder {
-  margin-right:0.5rem;
+	margin-right: 0.5rem;
 }
 
 .TourButton {
-  text-align: left;
+	text-align: left;
 }
 
 .SocialLinks {
-  grid-column: 10/13;
-  grid-row: 11/12;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding-top: 1rem;
-  flex-wrap: wrap;
+	grid-column: 10/13;
+	grid-row: 11/12;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	padding-top: 1rem;
+	flex-wrap: wrap;
 }
 
 .Credits,
 .SocialLinks {
-  padding-right: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 /******** Videos *********/
 
 video-custom {
-  /* avoid cell overflow on Chrome */
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
+	/* avoid cell overflow on Chrome */
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
 }
 
 video-custom:hover .ActiveDot {
-  background: #57ff22;
-  display: block;
+	background: #57ff22;
+	display: block;
 }
 
 video-custom video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 0.1rem solid transparent;
-  border-radius: 1px;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border: 0.1rem solid transparent;
+	border-radius: 1px;
 }
 
 .ActiveDot {
-  position: absolute;
-  z-index: 2;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-  background-color: white;
-  left: 0.4rem;
-  top: 0.4rem;
-  display: none;
+	position: absolute;
+	z-index: 2;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: white;
+	left: 0.4rem;
+	top: 0.4rem;
+	display: none;
 }
 
 video-custom.is-active .ActiveDot {
-  display: block;
-  background-color: #ff0050;
+	display: block;
+	background-color: #ff0050;
 }
 
 /* play and refresh buttons */
 
 .Controls {
-  position: fixed;
-  z-index: 2;
-  display: flex;
-  width: 100%;
-  height: 100%;
+	position: fixed;
+	z-index: 2;
+	display: flex;
+	width: 100%;
+	height: 100%;
 }
 
 .Controls.is-inactive,
 .Controls-play.is-inactive,
 .Controls-refresh.is-inactive,
 .Presentation.is-inactive {
-  display: none;
-  border-color: transparent;
+	display: none;
+	border-color: transparent;
 }
 
 .Controls button {
-  width: 7rem;
-  height: 7rem;
-  margin: auto;
-  border: 1px solid;
-  border-radius: 50%;
-  background: none;
-  padding: 0;
-  transition: transform 150ms;
+	width: 7rem;
+	height: 7rem;
+	margin: auto;
+	border: 1px solid;
+	border-radius: 50%;
+	background: none;
+	padding: 0;
+	transition: transform 150ms;
 }
 
 .Controls-play svg {
-  width: 50%;
-  position: relative;
-  left: 0.5rem;
+	width: 50%;
+	position: relative;
+	left: 0.5rem;
 }
 
 .Controls-play:hover,
 .Controls-refresh:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 /********* social logos ******/
 
 .SocialLinks-icon {
-  width: 1.2rem;
+	width: 1.2rem;
 }
 
 .SocialLinks a {
-  padding: 0.2em;
+	padding: 0.2em;
 }
 
 .SocialLinks img {
-  opacity: 0.5;
-  transition: opacity 150ms;
+	opacity: 0.5;
+	transition: opacity 150ms;
 }
 
 .SocialLinks a:hover img {
-  opacity: 1;
+	opacity: 1;
 }
 
 .DeviceSupportText {
-	display:none;
+	display: none;
 }
 
 /********* Credits overlay ******/
 .OverlayBackdrop {
-  position: fixed;
-  top: 0;
-	right: 0;	
+	position: fixed;
+	top: 0;
+	right: 0;
 	z-index: 3;
-  width: 100%;
+	width: 100%;
 	height: 100%;
 	transform: translateX(100%);
-  transition: transform 200ms ease-in-out;
-  background: hsla(0, 0%, 90%, 0.5);
+	transition: transform 200ms ease-in-out;
+	background: hsla(0, 0%, 90%, 0.5);
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-backdrop {
@@ -365,25 +365,25 @@ video-custom.is-active .ActiveDot {
 }
 
 .OverlayContent {
-  position: fixed;
-  top: 0;
+	position: fixed;
+	top: 0;
 	right: 0;
-  z-index: 4;
+	z-index: 4;
 	width: 36em;
-  max-width: 70%;
-  height:100%;
-  overflow: auto;
-  padding: 4rem 2rem 0;
-  padding-bottom: 5rem;
-  background-color: white;
+	max-width: 70%;
+	height: 100%;
+	overflow: auto;
+	padding: 4rem 2rem 0;
+	padding-bottom: 5rem;
+	background-color: white;
 	color: black;
 	transform: translateX(100%);
-  transition: transform 150ms 50ms ease-in-out;
+	transition: transform 150ms 50ms ease-in-out;
 }
 
 .TourdatesOverlay-content > * {
-  /* align tour dates' elements with tour button */
-  margin-bottom:1rem;
+	/* align tour dates' elements with tour button */
+	margin-bottom: 1rem;
 }
 
 .CreditsOverlay.is-active .CreditsOverlay-content {
@@ -393,106 +393,105 @@ video-custom.is-active .ActiveDot {
 /********* Tour dates overlay ******/
 
 tour-dates {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .TourHeadline {
-  margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .TourdatesOverlay-backdrop {
-  z-index: 6;
-  left:0;
-  transform: translateX(-100%);
+	z-index: 6;
+	left: 0;
+	transform: translateX(-100%);
 }
 
 .TourdatesOverlay.is-active .TourdatesOverlay-backdrop {
- 	transform: translateX(0);
+	transform: translateX(0);
 }
 
 .TourdatesOverlay tour-dates {
-  z-index: 7;
-  left:0;
-  transform: translateX(-100%);
-  width:29rem;
+	z-index: 7;
+	left: 0;
+	transform: translateX(-100%);
+	width: 29rem;
 }
 
 .TourdatesOverlay.is-active .TourdatesOverlay-content {
-  transform:translateX(0);
+	transform: translateX(0);
 }
 
 .Calendar-event {
-  /*margin-bottom:2rem;*/
-  margin-left: 0.4rem;
+	/*margin-bottom:2rem;*/
+	margin-left: 0.4rem;
 }
 .Calendar-event-date {
-  margin:0;
+	margin: 0;
 }
 .Calendar-event-link {
-  color: black;
+	color: black;
 }
 
 /********* share dialog ******/
 
 share-dialog {
-  margin-right: 0.5rem;
+	margin-right: 0.5rem;
 }
 
 .ShareDialog-box {
-  display: none;
-  position: fixed;
-  z-index:2;
-  border: 1px solid black;
-  bottom: 2.8rem;
-  left: 7.6rem;
-  background: white;
-  box-shadow: 0.1em 0.1em 0 0.1em black;
+	display: none;
+	position: fixed;
+	z-index: 2;
+	border: 1px solid black;
+	bottom: 2.8rem;
+	left: 7.6rem;
+	background: white;
+	box-shadow: 0.1em 0.1em 0 0.1em black;
 	padding: 1rem 0.7rem 0.5rem;
-  min-width: 12em;
-  animation: hideDialog 0.15s ease-in-out;
-  animation-fill-mode: forwards;
+	min-width: 12em;
+	animation: hideDialog 0.15s ease-in-out;
+	animation-fill-mode: forwards;
 }
 
 .ShareDialog-box.is-open {
-  display: flex;
-  flex-direction: column;
-  animation: showDialog 0.15s ease-in-out;
-  animation-fill-mode: forwards;
+	display: flex;
+	flex-direction: column;
+	animation: showDialog 0.15s ease-in-out;
+	animation-fill-mode: forwards;
 }
 
 /* functions for show/hide dialog */
 
 @keyframes hideDialog {
-  0% {
-    visibility: visible;
-    opacity: 1;
-  }
+	0% {
+		visibility: visible;
+		opacity: 1;
+	}
 
-  100% {
-    visibility: hidden;
-    opacity: 0;
-  }
+	100% {
+		visibility: hidden;
+		opacity: 0;
+	}
 }
 
 @keyframes showDialog {
-  0% {
-    visibility: hidden;
-    opacity: 0;
-  }
+	0% {
+		visibility: hidden;
+		opacity: 0;
+	}
 
-  100% {
-    visibility: visible;
-    opacity: 1;
-  }
+	100% {
+		visibility: visible;
+		opacity: 1;
+	}
 }
 
 .ShareDialog-box > * {
 	margin: 0 0 0.5rem;
-  color:black;
+	color: black;
 }
-
 
 .ShareDialog-box-input {
 	padding: 0.1em 0.3em;
@@ -500,53 +499,52 @@ share-dialog {
 }
 
 .ShareDialog-logos {
-  display:flex;
+	display: flex;
 }
 
 .ShareDialog-box-logos img {
-  max-width:1.5rem;
-  max-height:1.5rem;
+	max-width: 1.5rem;
+	max-height: 1.5rem;
 }
 
-@media (max-width:976px) {
+@media (max-width: 976px) {
+	.ShareDialog-box {
+		width: 22%;
+	}
 
-  .ShareDialog-box {
-    width: 22%;
-  }
+	.ShareDialog-box-text {
+		font-size: 0.8rem;
+	}
 
-  .ShareDialog-box-text {
-    font-size:0.8rem;
-  }
-
-  .ShareDialog-logos img {
-    max-width: 1rem;
-    max-height: 1rem;
-  }
+	.ShareDialog-logos img {
+		max-width: 1rem;
+		max-height: 1rem;
+	}
 }
 
 /********* Mobile content ******/
 
 .BlockUsageMode .DesktopContent {
-  display: none;
+	display: none;
 }
 
 .BlockUsageMode .DeviceSupportText {
-  display:block;
-  text-align:center;
-  position:absolute;
-  top:40%;
-  width:100%;
-  font-size:1.4rem;
-  padding: 0 1rem;
-  color:black; 
+	display: block;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	font-size: 1.4rem;
+	padding: 0 1rem;
+	color: black;
 }
 
 .BlockUsageMode .Presentation {
-  grid-column-end: 13;
+	grid-column-end: 13;
 }
 
 .BlockUsageMode .SocialLinks {
-  grid-column:1/13;
-  grid-row:12/12;
-  opacity:1;
+	grid-column: 1/13;
+	grid-row: 12/12;
+	opacity: 1;
 }

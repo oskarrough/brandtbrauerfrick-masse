@@ -2,22 +2,22 @@
   "name": "brandtbrauerfrick-masse",
   "version": "1.0.0",
   "description": "Website for the song \"Masse\" by Brandt Brauer Frick.",
-  "dependencies": {
-    "browser-sync": "^2.26.5"
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.26.5",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.17.1"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "browser-sync . --watch --single",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write '*.css' '*.js'",
+    "test": "eslint ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oskarrough/brandtbrauerfrick-masse.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oskarrough/brandtbrauerfrick-masse/issues"
-  },
-  "homepage": "https://github.com/oskarrough/brandtbrauerfrick-masse#readme"
+  "license": "ISC"
 }

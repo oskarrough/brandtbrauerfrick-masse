@@ -1,14 +1,16 @@
 import {VideoCustom} from '/video_custom.js'
 import {ShareDialog} from '/share-dialog.js'
 import {TourDates} from '/tour-dates.js'
-import '/overlays.js'
-import './model.js'
-import './ua-blocker.js'
 import {tourData} from './model.js'
+import './overlays.js'
+import './ua-blocker.js'
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
 customElements.define('tour-dates', TourDates)
+
+// feed tour-date with data
+elements.tourDates.dates = tourData
 
 const elements = {
 	app: document.querySelector('.App'),
@@ -24,9 +26,6 @@ const elements = {
 	fullScreenBtn: document.querySelector('.FullScreenBtn'),
 	tourDates: document.querySelector('tour-dates')
 }
-
-// feed tour-date with data
-elements.tourDates.dates = tourData
 
 class View {
 	constructor() {

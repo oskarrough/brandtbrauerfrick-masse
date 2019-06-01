@@ -5,9 +5,8 @@ import '/overlays.js'
 import './model.js'
 import {tourData} from './model.js'
 
-const parser = new UAParser()
-const hyper = window.hyperHTML
-const grid = document.querySelector('.GridOrchestra')
+const parser = new window.UAParser()
+
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
 
@@ -120,7 +119,7 @@ class View {
 		})
 	}
 
-	playVideos(currentTime) {
+	playVideos() {
 		/*console.log(`all: play`)*/
 		elements.videos.forEach(video => {
 			video.play()

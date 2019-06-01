@@ -16,7 +16,7 @@ function toggleOverlay(event) {
 
 function handleKeyDown(event) {
 	if (event.key === 'Escape') {
-		toggleOverlay()
+		toggleOverlay(event)
 	}
 }
 

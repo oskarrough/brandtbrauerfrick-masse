@@ -3,9 +3,8 @@ import {ShareDialog} from '/share-dialog.js'
 import {TourDates} from '/tour-dates.js'
 import '/overlays.js'
 import './model.js'
+import './ua-blocker.js'
 import {tourData} from './model.js'
-
-const parser = new window.UAParser()
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
@@ -155,20 +154,6 @@ class View {
 				el.classList.remove('is-active')
 			}
 		})
-	}
-}
-
-if (matchMedia) {
-	const mediaQ = window.matchMedia('(max-width: 650px)')
-	mediaQ.addListener(toggleMediaContent)
-	toggleMediaContent(mediaQ)
-}
-
-function toggleMediaContent(mediaQ) {
-	if (mediaQ.matches || parser.getBrowser().name === 'Safari' || parser.getOS().name === 'iOS') {
-		document.body.classList.add('BlockUsageMode')
-	} else {
-		document.body.classList.remove('BlockUsageMode')
 	}
 }
 

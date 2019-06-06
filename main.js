@@ -1,6 +1,6 @@
-import {VideoCustom} from '/video_custom.js'
-import {ShareDialog} from '/share-dialog.js'
-import {TourDates} from '/tour-dates.js'
+import {VideoCustom} from './video_custom.js'
+import {ShareDialog} from './share-dialog.js'
+import {TourDates} from './tour-dates.js'
 import {tourData} from './model.js'
 import './overlays.js'
 import './ua-blocker.js'
@@ -13,16 +13,13 @@ customElements.define('tour-dates', TourDates)
 document.querySelector('tour-dates').dates = tourData
 
 const elements = {
-	app: document.querySelector('.App'),
 	mainVideo: document.querySelector('.Main > video'),
 	videos: document.querySelectorAll('video'),
-	presentation: document.querySelector('.Presentation'),
 	loading: document.querySelector('.LoadingText'),
 	controls: document.querySelector('.Controls'),
 	controlsPlay: document.querySelector('.Controls-play'),
 	controlsRefresh: document.querySelector('.Controls-refresh'),
 	grid: document.querySelector('.GridOrchestra'),
-	deviceText: document.querySelector('.DeviceSupportText'),
 	fullScreenBtn: document.querySelector('.FullScreenBtn')
 }
 

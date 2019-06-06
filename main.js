@@ -1,15 +1,16 @@
 import {VideoCustom} from '/video_custom.js'
 import {ShareDialog} from '/share-dialog.js'
 import {TourDates} from '/tour-dates.js'
-import '/overlays.js'
-import './model.js'
 import {tourData} from './model.js'
+import './overlays.js'
+import './ua-blocker.js'
 
-const parser = new UAParser()
-const hyper = window.hyperHTML
-const grid = document.querySelector('.GridOrchestra')
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
+customElements.define('tour-dates', TourDates)
+
+// feed tour-date with data
+document.querySelector('tour-dates').dates = tourData
 
 const elements = {
 	app: document.querySelector('.App'),
@@ -22,13 +23,8 @@ const elements = {
 	controlsRefresh: document.querySelector('.Controls-refresh'),
 	grid: document.querySelector('.GridOrchestra'),
 	deviceText: document.querySelector('.DeviceSupportText'),
-	fullScreenBtn: document.querySelector('.FullScreenBtn'),
-	tourDates: document.querySelector('tour-dates')
+	fullScreenBtn: document.querySelector('.FullScreenBtn')
 }
-
-// feed tour-date with data
-elements.tourDates.model = tourData
-customElements.define('tour-dates', TourDates)
 
 class View {
 	constructor() {
@@ -120,7 +116,7 @@ class View {
 		})
 	}
 
-	playVideos(currentTime) {
+	playVideos() {
 		/*console.log(`all: play`)*/
 		elements.videos.forEach(video => {
 			video.play()
@@ -156,20 +152,6 @@ class View {
 				el.classList.remove('is-active')
 			}
 		})
-	}
-}
-
-if (matchMedia) {
-	const mediaQ = window.matchMedia('(max-width: 650px)')
-	mediaQ.addListener(toggleMediaContent)
-	toggleMediaContent(mediaQ)
-}
-
-function toggleMediaContent(mediaQ) {
-	if (mediaQ.matches || parser.getBrowser().name === 'Safari' || parser.getOS().name === 'iOS') {
-		document.body.classList.add('BlockUsageMode')
-	} else {
-		document.body.classList.remove('BlockUsageMode')
 	}
 }
 

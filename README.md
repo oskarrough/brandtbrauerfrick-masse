@@ -9,7 +9,7 @@ There's a bit more code for two overlays with credits and tour dates as well as 
 
 ## Developing
 
-> Web components and ES modules all the way. No build.
+Web components and ES modules all the way. No build.
 
 - `yarn start`s a local development server on http://localhost:3000
 - `yarn prettier` formats all css and javascript using prettier

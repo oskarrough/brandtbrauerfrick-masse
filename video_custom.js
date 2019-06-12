@@ -13,7 +13,7 @@ export class VideoCustom extends HTMLElement {
 		const src = this.getAttribute('src')
 		this.html`
 			<span class="ActiveDot"></span>
-			<video src=${src} preload="auto"></video>
+			<video src=${src}></video>
 		`
 	}
 }

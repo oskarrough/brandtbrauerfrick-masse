@@ -1,4 +1,5 @@
 // Overlay helper.
+// the bodyScrollLock stuff is for issues with Safari and iOS
 
 function toggleOverlay(event) {
 	const targetOverlay = event.target.getAttribute('data-overlay-target')
@@ -12,7 +13,6 @@ function toggleOverlay(event) {
 		bodyScrollLock.enableBodyScroll(overlay)
 	} else {
 		document.addEventListener('keydown', handleKeyDown)
-		// 2. ...in some event handler after showing the target element...disable body scroll
 		bodyScrollLock.disableBodyScroll(overlay)
 	}
 }
@@ -28,6 +28,3 @@ buttons.forEach(button => {
 	button.addEventListener('click', toggleOverlay)
 })
 
-// 4. Useful if we have called disableBodyScroll for multiple target elements,
-// and we just want a kill-switch to undo all that.
-// bodyScrollLock.clearAllBodyScrollLocks();

@@ -40,7 +40,7 @@ a:hover,
 	border: 0;
 	background: transparent;
 	padding: 0;
-	font-size: 1rem;
+	font-size: inherit;
 	font-family: inherit;
 	z-index: 5;
 }
@@ -381,26 +381,13 @@ video-custom.is-active .ActiveDot {
 	transition: transform 150ms 50ms ease-in-out;
 }
 
-.TourOverlay .Overlay-content > * {
-	/* align tour dates' elements with tour button */
-	margin-bottom: 1rem;
-}
-
 .CreditsOverlay.is-active .Overlay-content {
 	transform: translateX(0);
 }
 
 /********* Tour dates overlay ******/
 
-tour-dates {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.TourHeadline {
-	margin-bottom: 2rem;
-}
+tour-dates {}
 
 .TourOverlay .Overlay-backdrop {
 	z-index: 6;

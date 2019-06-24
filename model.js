@@ -30,9 +30,16 @@ export const tourData = [
 	},
 
 	{
+		date: 'October 17th',
+		location: 'Point Ephémère - Paris, FR',
+		link: 'https://web.digitick.com/brandt-brauer-frick-concert-point-ephemere-paris-17-octobre-2019-css5-supermonamour-pg101-ri6309517.html'
+	},
+
+	{
 		date: 'October 18th',
 		location: 'L’Aéronef (30th Anniversary) - Lille, FR',
 		link: 'http://aeronef.fr/'
+		
 	},
 
 	{

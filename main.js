@@ -26,41 +26,71 @@ const elements = {
 class View {
 	constructor() {
 		this.amountReady = 0
-		elements.controlsRefresh.addEventListener('click', this.refresh.bind(this), false)
-		elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this), false)
-		elements.mainVideo.addEventListener('ended', this.showRefresh.bind(this), false)
-		elements.videos.forEach(video => {
-			video.addEventListener('click', this.handleVideoClick.bind(this), false)
-			video.addEventListener('canplay', this.handleCanPlay.bind(this), false)
-		})
-	}
+		this.metadata = 0
 
-	showFullScreen() {
-		document.documentElement.requestFullscreen()
+		elements.controlsRefresh.addEventListener('click', this.refresh.bind(this))
+		elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this))
+		elements.mainVideo.addEventListener('ended', this.showRefresh.bind(this))
+
+		// Store a reference to the method so we can remove it again.
+		this.canPlayHandler = this.handleCanPlay.bind(this)
+
+		elements.videos.forEach(video => {
+			console.log(video.src)
+			const src = video.getAttribute('data-src')
+			fetch(src)
+				.then(ok => {
+					console.log({ok})
+					fetch(ok.url)
+					video.addEventListener('click', this.handleVideoClick.bind(this))
+					video.addEventListener('canplay', this.canPlayHandler)
+					video.addEventListener('loadedmetadata', () => {
+						this.metadata += 1
+
+						if (video.buffered.length === 0) {
+							console.log(this.metadata, 'not ready to play')
+							return
+						}
+
+						var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0)
+						console.log(this.metadata, bufferedSeconds + ' seconds of video are ready to play')
+					})
+				})
+				.catch(err => {
+					console.log({err})
+				})
+		})
+
+		elements.videos[0].parentElement.loadVideo()
 	}
 
 	handleCanPlay() {
+		let status
 		this.amountReady += 1
-		elements.loading.textContent = `Loading ${this.amountReady} of ${elements.videos.length} videos`
+
+		if (this.amountReady === 0) {
+			status = `Preparing videos, please wait...`
+		} else {
+			status = `Loaded ${this.amountReady} of ${elements.videos.length} videos`
+		}
+
+		elements.loading.textContent = status
+		console.log(this.amountReady, status)
+
 		if (this.amountReady === elements.videos.length) {
+			elements.videos.forEach(video => {
+				video.removeEventListener('canplay', this.canPlayHandler)
+			})
 			elements.loading.classList.add('is-inactive')
 			elements.controls.classList.remove('is-inactive')
 			elements.controlsPlay.classList.remove('is-inactive')
 			elements.controlsPlay.addEventListener('click', this.handleFirstPlay.bind(this), false)
+			return
 		}
+
+		elements.videos[this.amountReady].parentElement.loadVideo()
 	}
 
-	showRefresh() {
-		elements.controls.classList.remove('is-inactive')
-		elements.controlsRefresh.classList.remove('is-inactive')
-		elements.grid.classList.add('is-inactive')
-	}
-
-	refresh() {
-		window.location = '/'
-	}
-
-	/* play/ pause/ sync logic */
 	handleFirstPlay() {
 		elements.grid.classList.remove('is-inactive')
 		elements.controls.classList.add('is-inactive')
@@ -70,7 +100,8 @@ class View {
 		setTimeout(this.syncVideos.bind(this), 500)
 	}
 
-	handleVideoClick() {
+	handleVideoClick(event) {
+		event.preventDefault()
 		if (event.target.paused) {
 			this.handlePlayVideo(event.target)
 		} else if (!event.target.paused && event.target.muted) {
@@ -105,23 +136,23 @@ class View {
 
 	syncVideos() {
 		const masterTime = elements.mainVideo.currentTime
-		/*console.log(`all: syncing ${masterTime}`)*/
+		console.log(`all: syncing ${masterTime}`)
 		elements.videos.forEach(video => {
 			video.currentTime = masterTime
 		})
 	}
 
 	playVideos() {
-		/*console.log(`all: play`)*/
+		console.log(`all: play`)
 		elements.videos.forEach(video => {
 			video.play()
 		})
 	}
 
 	pauseVideos() {
-		/*console.log('all: pausing')*/
+		console.log('all: pausing')
 		elements.videos.forEach(video => {
-			// console.log({readyState: video.readyState})
+			console.log({readyState: video.readyState})
 			if (video.readyState === 1) {
 				return
 			}
@@ -130,7 +161,7 @@ class View {
 	}
 
 	muteVideos() {
-		/*console.log('all: muting')*/
+		console.log('all: muting')
 		elements.videos.forEach(video => {
 			video.muted = true
 		})
@@ -148,6 +179,21 @@ class View {
 			}
 		})
 	}
+
+	showRefresh() {
+		elements.controls.classList.remove('is-inactive')
+		elements.controlsRefresh.classList.remove('is-inactive')
+		elements.grid.classList.add('is-inactive')
+	}
+
+	refresh() {
+		window.location = '/'
+	}
+
+	showFullScreen() {
+		document.documentElement.requestFullscreen()
+	}
+
 }
 
 window.onload = new View()

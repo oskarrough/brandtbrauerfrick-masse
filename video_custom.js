@@ -17,12 +17,13 @@ export class VideoCustom extends HTMLElement {
 		// <iframe src=${vimeoSrc} width="640" height="360" frameborder="0" allow="autoplay"></iframe>
 		this.html`
 			<span class="ActiveDot"></span>
-			<video title=${title} data-src=${src}></video>
+			<video muted title=${title} src=${src}></video>
 		`
 	}
 
 	loadVideo() {
 		const video = this.querySelector('video')
-		video.src = video.getAttribute('data-src')
+		const src = video.getAttribute('data-src')
+		if (src) video.src = src
 	}
 }

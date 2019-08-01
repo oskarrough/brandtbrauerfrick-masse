@@ -43,11 +43,11 @@ export class VideoCustom extends HTMLElement {
 	getCloudinaryUrls(id) {
 		const base = 'https://res.cloudinary.com/bbf/video/upload/'
 		return {
-			poster: `${base}f_auto,q_auto/${id}.jpg`,
 			clean: `${base}/${id}`,
-			h265: `${base}vc_h265,w_1280,c_limit/${id}.mp4`,
-			vp9: `${base}vc_vp9,w_1280,c_limit/${id}.webm`,
-			auto: `${base}vc_auto,w_1280,c_limit/${id}.mp4`
+			poster: `${base}f_auto,q_auto/${id}.jpg`,
+			h265: `${base}vc_h265,w_1280,c_fill/${id}.mp4`,
+			vp9: `${base}vc_vp9,w_1280,c_fill/${id}.webm`,
+			auto: `${base}vc_auto,w_1280,c_fill/${id}.mp4`
 		}
 	}
 	loadVideo() {

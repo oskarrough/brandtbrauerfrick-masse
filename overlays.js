@@ -27,4 +27,3 @@ const buttons = document.querySelectorAll('[data-overlay-target]')
 buttons.forEach(button => {
 	button.addEventListener('click', toggleOverlay)
 })
-

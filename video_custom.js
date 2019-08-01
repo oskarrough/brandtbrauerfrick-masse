@@ -27,7 +27,7 @@ export class VideoCustom extends HTMLElement {
 			const {clean, poster, h265, vp9, auto} = this.getCloudinaryUrls(cloudinaryId)
 			return this.html`
 				<span class="ActiveDot"></span>
-				<video preload="auto" pposter=${poster}>
+				<video poster=${poster}>
 					<source src=${h265} type="video/mp4; codecs=hvc1">
 					<source src=${vp9} type="video/webm; codecs=vp9">
 					<source src=${auto} type="video/mp4">

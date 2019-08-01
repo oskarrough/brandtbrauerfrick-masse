@@ -42,31 +42,31 @@ class View {
 			// 	.then(ok => {
 			// 		console.log({ok})
 			// 		fetch(ok.url)
-					video.addEventListener('click', this.handleVideoClick.bind(this))
-					video.addEventListener('canplay', this.canPlayHandler)
-					video.addEventListener('loadedmetadata', () => {
-						this.metadata += 1
+			video.addEventListener('click', this.handleVideoClick.bind(this))
+			video.addEventListener('canplay', this.canPlayHandler)
+			video.addEventListener('loadedmetadata', () => {
+				this.metadata += 1
 
-						if (video.buffered.length === 0) {
-							console.log(this.metadata, 'not ready to play, forcing buffer?')
-							// console.log(this.src)
-							// video.muted = true
-							// video.play().then(() => {
-							// setTimeout(() => {
-							// 	video.pause()
-							// 	console.log('stop')
-							// }, 500)
-							// })
-							return
-						}
+				if (video.buffered.length === 0) {
+					console.log(this.metadata, 'not ready to play, forcing buffer?')
+					// console.log(this.src)
+					// video.muted = true
+					// video.play().then(() => {
+					// setTimeout(() => {
+					// 	video.pause()
+					// 	console.log('stop')
+					// }, 500)
+					// })
+					return
+				}
 
-						var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0)
-						console.log(this.metadata, bufferedSeconds + ' seconds of video are ready to play')
-					})
-				// })
-				// .catch(err => {
-				// 	console.log({err})
-				// })
+				var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0)
+				console.log(this.metadata, bufferedSeconds + ' seconds of video are ready to play')
+			})
+			// })
+			// .catch(err => {
+			// 	console.log({err})
+			// })
 		})
 
 		elements.videos[0].parentElement.loadVideo()
@@ -201,7 +201,6 @@ class View {
 	showFullScreen() {
 		document.documentElement.requestFullscreen()
 	}
-
 }
 
 window.onload = new View()

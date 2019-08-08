@@ -30,6 +30,12 @@ export const tourData = [
 	},
 
 	{
+		date: 'September 7th',
+		location: 'Riviera Festival - Offenbach, DE',
+		link: 'http://www.riviera-offenbach.de/'
+	},
+	
+	{
 		date: 'October 17th',
 		location: 'Point Ephémère - Paris, FR',
 		link:
@@ -43,7 +49,7 @@ export const tourData = [
 	},
 
 	{
-		date: 'October 25th',
+		date: 'October 24th',
 		location: 'Kaltern Pop - Kaltern, IT',
 		link: 'https://kalternpop.de/tickets-2019/'
 	},

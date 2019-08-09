@@ -37,11 +37,6 @@ class View {
 
 		elements.videos.forEach(video => {
 			console.log(video.src)
-			const src = video.getAttribute('data-src')
-			// fetch(src)
-			// 	.then(ok => {
-			// 		console.log({ok})
-			// 		fetch(ok.url)
 			video.addEventListener('click', this.handleVideoClick.bind(this))
 			video.addEventListener('canplay', this.canPlayHandler)
 			video.addEventListener('loadedmetadata', () => {
@@ -49,24 +44,12 @@ class View {
 
 				if (video.buffered.length === 0) {
 					console.log(this.metadata, 'not ready to play, forcing buffer?')
-					// console.log(this.src)
-					// video.muted = true
-					// video.play().then(() => {
-					// setTimeout(() => {
-					// 	video.pause()
-					// 	console.log('stop')
-					// }, 500)
-					// })
 					return
 				}
 
 				var bufferedSeconds = video.buffered.end(0) - video.buffered.start(0)
 				console.log(this.metadata, bufferedSeconds + ' seconds of video are ready to play')
 			})
-			// })
-			// .catch(err => {
-			// 	console.log({err})
-			// })
 		})
 
 		elements.videos[0].parentElement.loadVideo()

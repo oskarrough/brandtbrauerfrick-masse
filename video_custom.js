@@ -24,10 +24,10 @@ export class VideoCustom extends HTMLElement {
 
 		// If present, prefer cloudinary to normal src.
 		if (cloudinaryId) {
-			const {clean, poster, h265, vp9, auto} = this.getCloudinaryUrls(cloudinaryId)
+			const {poster, h265, vp9, auto} = this.getCloudinaryUrls(cloudinaryId)
 			return this.html`
 				<span class="ActiveDot"></span>
-				<video poster=${poster}>
+				<video>
 					<source src=${h265} type="video/mp4; codecs=hvc1">
 					<source src=${vp9} type="video/webm; codecs=vp9">
 					<source src=${auto} type="video/mp4">
@@ -42,12 +42,12 @@ export class VideoCustom extends HTMLElement {
 	}
 	getCloudinaryUrls(id) {
 		const base = 'https://res.cloudinary.com/bbf/video/upload/'
+		const video = `c_fill,q_auto:eco,w_720`
 		return {
-			clean: `${base}/${id}`,
 			poster: `${base}f_auto,q_auto/${id}.jpg`,
-			h265: `${base}vc_h265,w_1280,c_fill/${id}.mp4`,
-			vp9: `${base}vc_vp9,w_1280,c_fill/${id}.webm`,
-			auto: `${base}vc_auto,w_1280,c_fill/${id}.mp4`
+			h265: `${base}${video},vc_h265/${id}.mp4`,
+			vp9: `${base}${video},vc_vp9/${id}.webm`,
+			auto: `${base}${video},vc_auto/${id}.mp4`
 		}
 	}
 	loadVideo() {

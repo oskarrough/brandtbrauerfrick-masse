@@ -93,6 +93,7 @@ class View {
 
 	handleVideoClick(event) {
 		event.preventDefault()
+		this.syncVideos()
 		if (event.target.paused) {
 			this.handlePlayVideo(event.target)
 		} else if (!event.target.paused && event.target.muted) {

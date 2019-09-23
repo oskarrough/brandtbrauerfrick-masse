@@ -1,39 +1,4 @@
 export const tourData = [
-	{
-		date: 'June 14th',
-		location: 'Cinemateca - Bogota, CO',
-		link: 'https://www.goethe.de/prj/hya/es/ver.cfm?fuseaction=events.detail&event_id=21590345'
-	},
-
-	{
-		date: 'June 16th',
-		location: 'El Dragon De Barranco - Lima, PE',
-		link: 'https://www.goethe.de/prj/hya/es/ver.cfm?fuseaction=events.detail&event_id=21590395'
-	},
-
-	{
-		date: 'July 19th',
-		location: 'Somerset House - London, UK',
-		link: 'https://www.somersethouse.org.uk/whats-on/somerset-house-summer-series/cut-copy'
-	},
-
-	{
-		date: 'July 27th',
-		location: 'Heimspiel Knyphausen - Eltville, DE',
-		link: 'http://www.heimspiel-knyphausen.de/'
-	},
-
-	{
-		date: 'August 10th',
-		location: 'Haldern Pop Festival - Haldern, DE',
-		link: 'http://haldernpop.com/band/brandt-brauer-frick-de/'
-	},
-
-	{
-		date: 'September 7th',
-		location: 'Riviera Festival - Offenbach, DE',
-		link: 'http://www.riviera-offenbach.de/'
-	},
 	
 	{
 		date: 'October 17th',

@@ -1,14 +1,14 @@
+import {tourData} from "./model.js";
+
 const hyper = window.hyperHTML
 
 export class TourDates extends HTMLElement {
 	constructor() {
 		super()
 		this.html = hyper(this)
-	}
-
-	set dates(data) {
-		this.model = data
-		this.render()
+	        this.state = {};
+	        this.state.model = tourData;
+	        this.render();
 	}
 
 	createEventElement(eventObject) {
@@ -28,8 +28,12 @@ export class TourDates extends HTMLElement {
 
 	render() {
 		this.html`
-			<h1 class="TourHeadline"><b>Tour Dates</b></h1>
-			${this.model.map(eventObject => this.createEventElement(eventObject))}
+		  <div class="tour-list">
+		    <h1 class="TourHeadline"><b>Tour Dates</b></h1>
+		    ${this.state.model.map(eventObject => this.createEventElement(eventObject))}
+		  </div>
 		`
 	}
 }
+
+customElements.define("tour-dates", TourDates);

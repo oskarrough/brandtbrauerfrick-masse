@@ -1,16 +1,11 @@
 import {VideoCustom} from './video_custom.js'
 import {ShareDialog} from './share-dialog.js'
-import {TourDates} from './tour-dates.js'
-import {tourData} from './model.js'
 import './overlays.js'
 import './ua-blocker.js'
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
-customElements.define('tour-dates', TourDates)
 
-// feed tour-date with data
-document.querySelector('tour-dates').dates = tourData
 
 const elements = {
 	mainVideo: document.querySelector('.Main > video'),

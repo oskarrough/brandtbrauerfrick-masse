@@ -1,0 +1,25 @@
+
+html {
+  font-family: minion-3, minion pro, minion, serif;
+  color: #666
+}
+
+.tour-list,
+.tour-list > *,
+.BackBlock-textWrapper {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+.BackBlock {
+  position: sticky;
+  top: 0px;
+  display: flex;
+}
+.BackBlock-arrow {
+  font-size:3rem;
+  color:black;
+  text-decoration:none;
+}
+

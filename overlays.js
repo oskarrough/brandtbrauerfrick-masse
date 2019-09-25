@@ -4,16 +4,16 @@
 function toggleOverlay(event) {
 	const targetOverlay = event.target.getAttribute('data-overlay-target')
 	const overlay = document.querySelector(`.${targetOverlay}`)
-
-	const isActive = overlay.classList.contains('is-active')
+    
 	overlay.classList.toggle('is-active')
+	const isActive = overlay.classList.contains('is-active')
 
 	if (isActive) {
 		document.removeEventListener('keydown', handleKeyDown)
 		bodyScrollLock.enableBodyScroll(overlay)
 	} else {
 		document.addEventListener('keydown', handleKeyDown)
-		bodyScrollLock.disableBodyScroll(overlay)
+		//bodyScrollLock.disableBodyScroll(overlay)
 	}
 }
 

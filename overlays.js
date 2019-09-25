@@ -13,7 +13,7 @@ function toggleOverlay(event) {
 		bodyScrollLock.enableBodyScroll(overlay)
 	} else {
 		document.addEventListener('keydown', handleKeyDown)
-		//bodyScrollLock.disableBodyScroll(overlay)
+		bodyScrollLock.disableBodyScroll(overlay)
 	}
 }
 

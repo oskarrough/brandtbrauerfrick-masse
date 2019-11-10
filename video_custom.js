@@ -1,6 +1,8 @@
 import {hyper} from './web_modules/hyperhtml.js'
 // const hyper = window.hyperHTML
 
+const offlineMode = true
+
 export class VideoCustom extends HTMLElement {
 	constructor() {
 		super()
@@ -11,7 +13,7 @@ export class VideoCustom extends HTMLElement {
 		this.render()
 	}
 	render() {
-		const src = this.getAttribute('src')
+		let src = this.getAttribute('src')
 		const title = this.getAttribute('data-title')
 		const cloudinaryId = this.getAttribute('cloudinary-id')
 
@@ -22,6 +24,15 @@ export class VideoCustom extends HTMLElement {
 		// 		<iframe src=${vimeoSrc} width="640" height="360" frameborder="0" allow="autoplay"></iframe>
 		// 	`
 		// }
+
+		// Prefer offline mode.
+		if (cloudinaryId && offlineMode) {
+			src = `/videos/${cloudinaryId}.webm`
+			return this.html`
+				<span class="ActiveDot"></span>
+				<video muted title=${title} src=${src}></video>
+			`
+		}
 
 		// If present, prefer cloudinary to normal src.
 		if (cloudinaryId) {

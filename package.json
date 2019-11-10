@@ -2,7 +2,11 @@
   "name": "brandtbrauerfrick-masse",
   "version": "1.0.0",
   "description": "Website for the song \"Masse\" by Brandt Brauer Frick.",
-  "dependencies": {},
+  "dependencies": {
+    "body-scroll-lock": "^2.6.4",
+    "hyperhtml": "^2.31.1",
+    "ua-parser-js": "^0.7.20"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.5",
     "eslint": "^5.16.0",

@@ -1,5 +1,4 @@
 export const tourData = [
-	
 	{
 		date: 'October 17th',
 		location: 'Point Ephémère - Paris, FR',

@@ -4,7 +4,7 @@
 function toggleOverlay(event) {
 	const targetOverlay = event.target.getAttribute('data-overlay-target')
 	const overlay = document.querySelector(`.${targetOverlay}`)
-    
+
 	overlay.classList.toggle('is-active')
 	const isActive = overlay.classList.contains('is-active')
 

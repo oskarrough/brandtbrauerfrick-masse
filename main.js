@@ -29,7 +29,7 @@ class View {
 		this.metadata = 0
 
 		elements.controlsRefresh.addEventListener('click', this.refresh.bind(this))
-		elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this))
+		// elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this))
 		elements.mainVideo.addEventListener('ended', this.showRefresh.bind(this))
 
 		// Store a reference to the method so we can remove it again.

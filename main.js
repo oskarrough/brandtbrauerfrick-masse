@@ -187,3 +187,11 @@ class View {
 }
 
 window.onload = new View()
+
+// Disable links in overlays.
+const links = document.querySelectorAll('.Overlay a')
+links.forEach(link => {
+	link.addEventListener('click', event => {
+		event.preventDefault()
+	})
+})

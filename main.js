@@ -3,7 +3,7 @@ import {ShareDialog} from './share-dialog.js'
 import {TourDates} from './tour-dates.js'
 import {tourData} from './model.js'
 import './overlays.js'
-import './ua-blocker.js'
+//import './ua-blocker.js'
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)

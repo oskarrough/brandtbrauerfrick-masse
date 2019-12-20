@@ -3,7 +3,7 @@ export const tourData = [
 		date: 'January 31st',
 		location: 'Sala Simón Bolívar (w/ El Sistema Orchestra) - Caracas, VE',
 		link:
-			'https://sistemaglobal.org/'
+			''
 	},
 
 {

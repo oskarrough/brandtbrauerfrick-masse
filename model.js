@@ -5,6 +5,13 @@ export const tourData = [
 		link:
 			''
 	},
+	
+		{
+		date: 'February 15th',
+		location: 'Fields - Moscow, RU',
+		link:
+			'https://fields55.ticketscloud.org/?fbclid=IwAR3d3wgBpLIMPhsgkiRQSbw8AsLUukYBiCW8J4DZX2sepvknBbBJPbKE8TM'
+	},
 
 {
 		date: 'May 8th',

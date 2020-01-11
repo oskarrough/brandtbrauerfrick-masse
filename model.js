@@ -38,7 +38,7 @@ export const tourData = [
 		date: 'May 16th',
 		location: 'RWTH (Ensemble Show) - Aachen, DE',
 		link:
-			''
+			'http://www.kulturfestival-x.de'
 	},
 
 {

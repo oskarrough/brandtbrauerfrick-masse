@@ -40,6 +40,13 @@ export const tourData = [
 		link:
 			'http://www.kulturfestival-x.de'
 	},
+	
+	{
+		date: 'May 30th',
+		location: 'Open Ohr Festival - Mainz, DE',
+		link:
+			'https://www.adticket.de/Open-Ohr-Festival.html'
+	},
 
 {
 		date: 'August 1st',

@@ -1,5 +1,7 @@
 const hyper = window.hyperHTML
 
+const USE_VIMEO = true
+
 export class VideoCustom extends HTMLElement {
 	constructor() {
 		super()
@@ -14,20 +16,24 @@ export class VideoCustom extends HTMLElement {
 		const title = this.getAttribute('data-title')
 		const cloudinaryId = this.getAttribute('cloudinary-id')
 
-		// if (vimeoEmbed) {
-		// 	const id = src.split('external/')[1].split('.sd')[0]
-		// 	const vimeoSrc = `https://player.vimeo.com/video/${id}`
-		// 	return this.html`
-		// 		<iframe src=${vimeoSrc} width="640" height="360" frameborder="0" allow="autoplay"></iframe>
-		// 	`
-		// }
+		if (USE_VIMEO) {
+			return this.html`
+				<span class="ActiveDot"></span>
+				<video class="Video" src=${src}></video>
+			`
+			// Alternate version with the iframe embed.
+			// const id = src.split('external/')[1].split('.sd')[0]
+			// const vimeoSrc = `https://player.vimeo.com/video/${id}`
+			// return this.html`<iframe class="Video" src=${vimeoSrc} width="640" height="360" frameborder="0" allow="autoplay"></iframe>`
+		}
+
 
 		// If present, prefer cloudinary to normal src.
 		if (cloudinaryId) {
 			const {poster, h265, vp9, auto} = this.getCloudinaryUrls(cloudinaryId)
 			return this.html`
 				<span class="ActiveDot"></span>
-				<video>
+				<video class="Video">
 					<source src=${h265} type="video/mp4; codecs=hvc1">
 					<source src=${vp9} type="video/webm; codecs=vp9">
 					<source src=${auto} type="video/mp4">
@@ -51,8 +57,8 @@ export class VideoCustom extends HTMLElement {
 		}
 	}
 	loadVideo() {
-		const video = this.querySelector('video')
-		const src = video.getAttribute('data-src')
-		if (src) video.src = src
+		const video = this.querySelector('.Video')
+		const tempSrc = video.getAttribute('data-src')
+		if (tempSrc) video.src = tempSrc
 	}
 }

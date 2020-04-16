@@ -13,8 +13,8 @@ customElements.define('tour-dates', TourDates)
 document.querySelector('tour-dates').dates = tourData
 
 const elements = {
-	mainVideo: document.querySelector('.Main > video'),
-	videos: document.querySelectorAll('video'),
+	mainVideo: document.querySelector('.Main > .Video'),
+	videos: document.querySelectorAll('.Video'),
 	loading: document.querySelector('.LoadingText'),
 	controls: document.querySelector('.Controls'),
 	controlsPlay: document.querySelector('.Controls-play'),

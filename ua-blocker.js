@@ -4,8 +4,12 @@ const parser = new window.UAParser()
 
 function toggleMediaContent(mediaQ) {
 	// If the screen is below X the site's layout simply doesn't work.
-	// Safari and iOS has a tiny lag when switching videos that makes it unusable.
-	const notAllowedIf = mediaQ.matches || parser.getBrowser().name === 'Safari' || parser.getOS().name === 'iOS'
+	// Safari, Firefox and iOS has a tiny lag when switching videos that makes it unusable.
+	const notAllowedIf =
+		mediaQ.matches ||
+		parser.getBrowser().name === 'Safari' ||
+		parser.getBrowser().name === 'Firefox' ||
+		parser.getOS().name === 'iOS'
 	document.body.classList.toggle('BlockUsageMode', notAllowedIf)
 }
 
@@ -14,3 +18,8 @@ if (matchMedia) {
 	mediaQ.addListener(toggleMediaContent)
 	toggleMediaContent(mediaQ)
 }
+
+const btn = document.querySelector('.IACCEPTTHEDANGER')
+btn.addEventListener('click', () => {
+	document.body.classList.remove('BlockUsageMode')
+})

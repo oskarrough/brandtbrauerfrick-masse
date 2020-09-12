@@ -7,51 +7,37 @@ export const tourData = [
 	},
 	
 		{
-		date: 'February 15th',
-		location: 'Fields - Moscow, RU',
+		date: 'October 10th',
+		location: 'Resonanzen Festival - Saarbruecken, DE',
 		link:
-			'https://fields55.ticketscloud.org/?fbclid=IwAR3d3wgBpLIMPhsgkiRQSbw8AsLUukYBiCW8J4DZX2sepvknBbBJPbKE8TM'
+			'https://resonanzenfestival.de/project/brandt-brauer-frick-de'
 	},
 
-{
-		date: 'May 8th',
-		location: 'Tempodrom (Pitchfork Festival) - Berlin, DE',
-		link:
-			'https://www.pitchforkmusicfestival.de/'
-	},
 
 {
-		date: 'May 14th',
-		location: 'Bundeskunsthalle (Ensemble Show) - Bonn, DE',
+		date: 'October 9th',
+		location: 'Bundeskunsthalle - Bonn, DE',
 		link:
 			'https://www.bonnticket.de/brandt+brauer+frick+ensemble+-+bundeskunsthalle+-+live+arts-ticket-7480/?evid=2190712&referer_info=&tId=&forwardingTicket=&pageId=7480'
 	},
 
 {
-		date: 'May 15th',
-		location: 'Mozartfest (Ensemble Show) - Augsburg, DE',
+		date: 'November 1st',
+		location: 'Strings Of Autumn Festival - Pargue, CZ',
 		link:
-			'https://www.mozartstadt.de/'
+			'https://strunypodzimu.cz/en/brandt-brauer-frick-ensemble-en/'
 	},
 
-{
-		date: 'May 16th',
-		location: 'RWTH (Ensemble Show) - Aachen, DE',
-		link:
-			'http://www.kulturfestival-x.de'
-	},
-	
-	{
-		date: 'May 30th',
-		location: 'Open Ohr Festival - Mainz, DE',
-		link:
-			'https://www.adticket.de/Open-Ohr-Festival.html'
-	},
+
 
 {
-		date: 'August 1st',
-		location: 'Detect Classic Festival - Neubrandenburg, DE',
+		date: 'December 19th',
+		location: 'RWTH - Aachen, DE',
 		link:
-			'https://detectclassicfestival.de/'
+			'https://www.staedteregion-aachen.de/de/navigation/aemter/kultur-s-16/kulturfestival-x-2020/brandt-brauer-frick-ensemble-16-mai/'
 	}
+
+
+
+
 ]

@@ -1,4 +1,5 @@
-const hyper = window.hyperHTML
+import {hyper} from './web_modules/hyperhtml.js'
+// const hyper = window.hyperHTML
 
 export class ShareDialog extends HTMLElement {
 	constructor() {

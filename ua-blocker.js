@@ -1,4 +1,6 @@
-const parser = new window.UAParser()
+import './web_modules/ua-parser.min.js'
+
+const parser = new UAParser()
 
 // Adds a class to the body when the site is considered unusable.
 

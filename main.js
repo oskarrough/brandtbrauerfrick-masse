@@ -3,7 +3,7 @@ import {ShareDialog} from './share-dialog.js'
 import {TourDates} from './tour-dates.js'
 import {tourData} from './model.js'
 import './overlays.js'
-import './ua-blocker.js'
+//import './ua-blocker.js'
 
 customElements.define('video-custom', VideoCustom)
 customElements.define('share-dialog', ShareDialog)
@@ -29,7 +29,7 @@ class View {
 		this.metadata = 0
 
 		elements.controlsRefresh.addEventListener('click', this.refresh.bind(this))
-		elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this))
+		// elements.fullScreenBtn.addEventListener('click', this.showFullScreen.bind(this))
 		elements.mainVideo.addEventListener('ended', this.showRefresh.bind(this))
 
 		// Store a reference to the method so we can remove it again.
@@ -187,3 +187,11 @@ class View {
 }
 
 window.onload = new View()
+
+// Disable links in overlays.
+const links = document.querySelectorAll('.Overlay a')
+links.forEach(link => {
+	link.addEventListener('click', event => {
+		event.preventDefault()
+	})
+})

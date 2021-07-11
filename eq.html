@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Brand Brauer Frick - Masse</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0" />
+    <meta name="description" content="Masse is taken from Brand Brauer Frick's Echo album, out on May 31st 2019" />
+    <style>
+      body {
+        margin: 0;
+        background: #012;
+        overflow: hidden;
+      }
+      .Overlay {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1;
+      }
+      canvas {
+        display: block;
+        background: #012;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="Overlay">
+      <audio controls src='./assets/05-masse-zmstr-x-4424.wav'></audio>
+    </div>
+
+    <canvas id="c"></canvas>
+    	
+    <script async src="eq.js"></script>
+  </body>
+</html>
